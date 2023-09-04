@@ -1,4 +1,3 @@
-const express = require('express')
 const {Battles} = require('../models')
 
 // EXPORT Controller Action
@@ -6,8 +5,8 @@ module.exports = {
 	index,
 	create,
 	show,
-    delete: destroy,
-    update
+  delete: destroy,
+  update
 }
 
 ///////////////////////////////

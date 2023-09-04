@@ -7,15 +7,16 @@ const Schema = mongoose.Schema
 // MODELS
 ////////////////////////////////
 const BattleSchema = new Schema({
-  superOneName: {type: String},
-  superTwoName: {type: String},
-  superOneImg: {type: String},
-  superTwoImg: {type: String},
-  winner: {type: String},
-  details: {type: String},
-  creator: {type: Schema.Types.ObjectId}
+  superOneName: String,
+  superTwoName: String,
+  superOneImg: String,
+  superTwoImg: String,
+  winner: String,
+  details: String,
+  creator: Schema.Types.ObjectId
 
-},{timestamps: true});
+},{
+  timestamps: true
+});
 
 module.exports = mongoose.model("Battle", BattleSchema);
-
