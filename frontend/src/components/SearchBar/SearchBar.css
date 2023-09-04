@@ -1,0 +1,31 @@
+.SearchBar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    background-color: #fff;
+    border: 5px solid #f25555;
+    border-radius: 10px;
+    box-shadow: 0px 2.5px 2.5px #00000040;
+}
+
+.search-input{
+    background-color: transparent;
+    padding: 0 10px;
+    font-size: 26px;
+    border: none;
+}
+
+.search-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+.magnifying-glass{
+    width: 26px;
+    height: 26px;
+}
