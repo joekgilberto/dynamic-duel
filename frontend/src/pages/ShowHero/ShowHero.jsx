@@ -83,7 +83,7 @@ export default function ShowHero() {
                             <p className="bold">Power:</p>
                             <p>{showHero.powerstats.durability}</p>
                         </div>
-                        <div className="stats">
+                        <div className="stats no-bar">
                             <p className="bold">Combat:</p>
                             <p>{showHero.powerstats.combat}</p>
                         </div>

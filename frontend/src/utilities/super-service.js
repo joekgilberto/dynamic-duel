@@ -20,3 +20,12 @@ export async function getSuper(id){
         return err
     }
 }
+
+export async function searchSuper(string){
+    try {
+        const data = await searchSuper.search(string)
+        return data
+    }catch(err){
+        return err
+    }
+}

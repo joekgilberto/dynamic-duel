@@ -24,3 +24,15 @@ export async function show(id) {
     return new Error("Invalid Request");
   }
 }
+
+export async function search(id) {
+  const res = await fetch(BASE_URL+'/search/'+id, {
+    method: "GET",
+  });
+  
+  if (res.ok) {
+    return res.json();
+  } else {
+    return new Error("Invalid Request");
+  }
+}

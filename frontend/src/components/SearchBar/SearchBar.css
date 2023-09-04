@@ -11,10 +11,15 @@
 }
 
 .search-input{
+    width: 100%;
     background-color: transparent;
     padding: 0 10px;
     font-size: 26px;
     border: none;
+}
+
+.search-input:focus{
+    outline: none;
 }
 
 .search-button{

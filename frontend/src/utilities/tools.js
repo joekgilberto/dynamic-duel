@@ -4,3 +4,10 @@ export function upperCase(string){
     modifiedString = modifiedString.join('')
     return modifiedString
 }
+
+export function searchString(string){
+    let modifiedString = string.toLowerCase()
+    modifiedString = modifiedString.split(' ')
+    modifiedString = modifiedString.join("%20")
+    return modifiedString
+}
