@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react"
+import "./Home.css"
 
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 import { getSixSupers } from "../../utilities/super-service";
 
 
@@ -21,13 +23,21 @@ export default function Home() {
 
     useEffect(() => {
         handleRequest();
-        
+
     }, []);
 
     return (
         <section className="Home">
-            <h3>Home</h3>
-            {homeHeroes ? homeHeroes.map((hero, idx) => <p key={idx}>{hero.name}</p>) : <p>Loading</p>}
+            {homeHeroes ? homeHeroes.map((hero, idx) =>
+                <Link to={`/heroes/${hero.id}`}>
+                    <div key={idx} className="home-hero">
+                        <img src={hero.image.url} alt={hero.name} />
+                        <p>{hero.name}</p>
+                    </div>
+                </Link>
+
+            ) :
+                <p>Loading</p>}
         </section>
     )
 }
