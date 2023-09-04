@@ -95,6 +95,13 @@
     border-radius: 5px;
 }
 
+.neutral{
+    width: 100%;
+    padding: 5px;
+    background-color: #ffc400;
+    border-radius: 5px;
+}
+
 .stats-card{
     width: 420px;
     display: flex;

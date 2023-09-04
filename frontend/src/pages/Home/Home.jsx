@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getSixSupers } from "../../utilities/super-service";
 
 
-export default function Home() {
+export default function Home({setUpdatedSearch}) {
     const [homeHeroes, setHomeHeroes] = useState(null)
 
     async function handleRequest() {
@@ -22,12 +22,13 @@ export default function Home() {
     };
 
     useEffect(() => {
+        setUpdatedSearch('')
         handleRequest();
-
     }, []);
 
     return (
         <section className="Home">
+            <h1 className="welcome">Welcome to Dynamic Duel</h1>
             {homeHeroes ? homeHeroes.map((hero, idx) =>
                 <Link to={`/heroes/${hero.id}`}>
                     <div key={idx} className="home-hero">

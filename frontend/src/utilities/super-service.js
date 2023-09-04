@@ -23,7 +23,7 @@ export async function getSuper(id){
 
 export async function searchSuper(string){
     try {
-        const data = await searchSuper.search(string)
+        const data = await superApi.search(string)
         return data
     }catch(err){
         return err

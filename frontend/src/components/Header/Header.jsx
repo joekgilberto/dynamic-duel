@@ -6,7 +6,7 @@ export default function Header() {
         <header>
             <nav>
                 <Link to="/">
-                    <img className="logo" src="https://i.imgur.com/shSC6zH.png" />
+                    <img className="logo" src="https://i.imgur.com/hoMnxIG.png" />
                 </Link>
 
                 <Link to="/">
