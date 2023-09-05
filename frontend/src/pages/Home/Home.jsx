@@ -4,6 +4,8 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import { getSixSupers } from "../../utilities/super-service";
 
+import HeroCard from "../../components/HeroCard/HeroCard";
+
 
 export default function Home({setUpdatedSearch}) {
     const [homeHeroes, setHomeHeroes] = useState(null)
@@ -31,12 +33,8 @@ export default function Home({setUpdatedSearch}) {
             <h1 className="welcome">Welcome to Dynamic Duel</h1>
             {homeHeroes ? homeHeroes.map((hero, idx) =>
                 <Link to={`/heroes/${hero.id}`}>
-                    <div key={idx} className="home-hero">
-                        <img src={hero.image.url} alt={hero.name} />
-                        <p>{hero.name}</p>
-                    </div>
+                    <HeroCard key={idx} hero={hero} />
                 </Link>
-
             ) :
                 <p>Loading</p>}
         </section>

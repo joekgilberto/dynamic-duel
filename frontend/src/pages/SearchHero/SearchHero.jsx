@@ -5,7 +5,9 @@ import { searchSuper } from "../../utilities/super-service"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
 
-export default function SearchHero({setUpdatedSearch}){
+import HeroCard from "../../components/HeroCard/HeroCard"
+
+export default function SearchHero({setUpdatedSearch,searched,setSearched}){
 
     const id = useParams().id
     const [foundHeroes,setFoundHeroes] = useState(null)
@@ -20,17 +22,15 @@ export default function SearchHero({setUpdatedSearch}){
     useEffect(() => {
         setUpdatedSearch('')
         handleRequest()
-    }, [])
+        setSearched(false)
+    }, [searched])
 
     return(
         <section className="SearchHero">
             <section className="Home">
             {foundHeroes ? foundHeroes.map((hero, idx) =>
                 <Link to={`/heroes/${hero.id}`}>
-                    <div key={idx} className="home-hero">
-                        <img src={hero.image.url} alt={hero.name} />
-                        <p>{hero.name}</p>
-                    </div>
+                    <HeroCard key={idx} hero={hero} />
                 </Link>
 
             ) :

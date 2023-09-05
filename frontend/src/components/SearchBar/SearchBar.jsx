@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { searchString } from "../../utilities/tools";
 
-export default function SearchBar({updatedSearch, setUpdatedSearch}){
+export default function SearchBar({updatedSearch, setUpdatedSearch,setSearched}){
 
     const navigate = useNavigate()
 
@@ -15,6 +15,7 @@ export default function SearchBar({updatedSearch, setUpdatedSearch}){
     async function handleSubmit(e) {
         e.preventDefault()
         try {
+            setSearched(true)
             navigate(`/heroes/search/${searchString(updatedSearch)}`)
             setUpdatedSearch('')
         } catch (error) {

@@ -11,14 +11,15 @@ import Error from "../../pages/Error/Error"
 
 export default function Main() {
     const [updatedSearch, setUpdatedSearch] = useState('')
+    const [searched, setSearched] = useState(false)
 
     return (
         <main>
-            <SearchBar updatedSearch={updatedSearch} setUpdatedSearch={setUpdatedSearch} />
+            <SearchBar updatedSearch={updatedSearch} setUpdatedSearch={setUpdatedSearch} setSearched={setSearched} />
             <Routes>
                 <Route path="/" element={<Home setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/heroes/:id" element={<ShowHero setUpdatedSearch={setUpdatedSearch} />} />
-                <Route path="heroes/search/:id" element={<SearchHero setUpdatedSearch={setUpdatedSearch} />} />
+                <Route path="heroes/search/:id" element={<SearchHero setUpdatedSearch={setUpdatedSearch} searched={searched} setSearched={setSearched} />} />
                 <Route path="/*" element={<Error setUpdatedSearch={setUpdatedSearch} />} />
             </Routes>
         </main>
