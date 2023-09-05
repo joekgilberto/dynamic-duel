@@ -38,6 +38,10 @@ export default function ShowHero({setUpdatedSearch}) {
                             <p>{showHero.biography["full-name"]!==""?showHero.biography["full-name"]:"Not recorded"}</p>
                         </div>
                         <div className="info">
+                            <p className="bold">Species:</p>
+                            <p>{showHero.appearance.race!=="null"?showHero.appearance.race:"Not recorded"}</p>
+                        </div>
+                        <div className="info">
                             <p className="bold">Alignment:</p>
                             <p className={showHero.biography.alignment === "good" ? "good" : showHero.biography.alignment === "bad" ? "bad" : showHero.biography.alignment === "neutral" ? "neutral" : null} >{upperCase(showHero.biography.alignment)}</p>
                         </div>
@@ -52,10 +56,6 @@ export default function ShowHero({setUpdatedSearch}) {
                     </div>
                     <div className="stats-card">
                         <h2>Stats</h2>
-                        <div className="stats">
-                            <p className="bold">Species:</p>
-                            <p>{showHero.appearance.race!=="null"?showHero.appearance.race:"Not recorded"}</p>
-                        </div>
                         <div className="stats">
                             <p className="bold">Height:</p>
                             <p>{showHero.appearance.height[0]==="-"?"Not recorded":showHero.appearance.height[0]}</p>
