@@ -5,6 +5,7 @@ import { searchSuper } from "../../utilities/super-service"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
 
+import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard"
 
 export default function SearchHero({setUpdatedSearch,searched,setSearched}){
@@ -34,7 +35,7 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
                 </Link>
 
             ) :
-                <p>Loading</p>}
+                <Loading />}
         </section>
             
         </section>

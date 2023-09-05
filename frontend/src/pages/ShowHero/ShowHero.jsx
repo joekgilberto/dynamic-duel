@@ -4,6 +4,8 @@ import { useParams } from "react-router"
 import { getSuper } from "../../utilities/super-service";
 import { upperCase } from "../../utilities/tools";
 
+import Loading from "../../components/Loading/Loading";
+
 export default function ShowHero({setUpdatedSearch}) {
 
     const [showHero, setShowHero] = useState(null)
@@ -91,7 +93,7 @@ export default function ShowHero({setUpdatedSearch}) {
                         
                     </div>
                 </div>
-                : <p>Loading...</p>}
+                : <Loading />}
         </section>
     )
 }

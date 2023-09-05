@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import { getSixSupers } from "../../utilities/super-service";
 
+import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard";
 
 
@@ -36,7 +37,7 @@ export default function Home({setUpdatedSearch}) {
                     <HeroCard key={idx} hero={hero} />
                 </Link>
             ) :
-                <p>Loading</p>}
+                <Loading />}
         </section>
     )
 }
