@@ -13,6 +13,10 @@ main{
     align-items: center;
 }
 
+.hero-results a{
+    text-decoration: none;
+}
+
 @media only screen and (min-width: 900px) {
     .hero-results{
         flex-direction: row;

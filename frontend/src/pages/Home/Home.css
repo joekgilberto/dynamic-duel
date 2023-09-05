@@ -5,10 +5,6 @@
     align-items: center;
 }
 
-.Home a{
-    text-decoration: none !important;
-}
-
 .welcome{
     display: flex;
     justify-content: center;
