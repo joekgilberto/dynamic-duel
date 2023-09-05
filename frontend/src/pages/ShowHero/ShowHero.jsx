@@ -45,7 +45,7 @@ export default function ShowHero({setUpdatedSearch}) {
                         </div>
                         <div className="info">
                             <p className="bold">Alignment:</p>
-                            <p className={showHero.biography.alignment === "good" ? "good" : showHero.biography.alignment === "bad" ? "bad" : showHero.biography.alignment === "neutral" ? "neutral" : null} >{upperCase(showHero.biography.alignment)}</p>
+                            <p className={showHero.biography.alignment === "good" ? "alignment good" : (showHero.biography.alignment === "bad" ? "alignment bad" : "alignment neutral")} >{upperCase(showHero.biography.alignment)}</p>
                         </div>
                         <div className="info">
                             <p className="bold">First Appearance:</p>

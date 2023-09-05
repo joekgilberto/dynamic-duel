@@ -26,7 +26,7 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
 
     return(
         <section className="SearchHero">
-            <section className="Home">
+            <section className="hero-results">
             {foundHeroes ? foundHeroes.map((hero, idx) =>
                 <Link key={idx} to={`/heroes/${hero.id}`}>
                     <HeroCard hero={hero} />

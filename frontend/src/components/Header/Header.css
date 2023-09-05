@@ -38,10 +38,24 @@ nav a{
 
 .logo{
     width: auto;
-    height: 80px;
+    height: 70px;
     margin: 10px 0;
 }
 
 .login-button{
     background-color: #4a86e8ff;
+}
+
+@media only screen and (min-width: 900px) {
+    nav h2{
+        width: 140px;
+        height: 90px;
+        font-size: 38px;
+    }
+    
+    .logo{
+        width: auto;
+        height: 100px;
+        margin: 10px 0;
+    } 
 }
