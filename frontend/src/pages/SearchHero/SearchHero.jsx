@@ -15,9 +15,7 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
 
     async function handleRequest(){
         const searchResults = await searchSuper(id)
-        console.log(searchResults)
         setFoundHeroes(searchResults.results)
-        console.log(foundHeroes)
     }
 
     useEffect(() => {
@@ -30,8 +28,8 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
         <section className="SearchHero">
             <section className="Home">
             {foundHeroes ? foundHeroes.map((hero, idx) =>
-                <Link to={`/heroes/${hero.id}`}>
-                    <HeroCard key={idx} hero={hero} />
+                <Link key={idx} to={`/heroes/${hero.id}`}>
+                    <HeroCard hero={hero} />
                 </Link>
 
             ) :

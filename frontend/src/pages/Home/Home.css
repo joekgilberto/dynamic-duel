@@ -13,8 +13,10 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
-    margin: 0;
-    font-size: 75px;
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-size: 50px;
+    line-height: .9;
     color: #f25555ff;
     text-shadow: 0px 2.5px 2.5px #00000040;
 }

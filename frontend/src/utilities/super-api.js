@@ -29,9 +29,7 @@ export async function search(string) {
   const res = await fetch(BASE_URL+'/search/'+string, {
     method: "GET",
   });
-  
-  console.log(res)
-  
+    
   if (res.ok) {
     return res.json();
   } else {

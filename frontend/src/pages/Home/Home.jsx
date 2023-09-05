@@ -33,8 +33,8 @@ export default function Home({setUpdatedSearch}) {
         <section className="Home">
             <h1 className="welcome">Welcome to Dynamic Duel</h1>
             {homeHeroes ? homeHeroes.map((hero, idx) =>
-                <Link to={`/heroes/${hero.id}`}>
-                    <HeroCard key={idx} hero={hero} />
+                <Link key={idx} to={`/heroes/${hero.id}`}>
+                    <HeroCard hero={hero} />
                 </Link>
             ) :
                 <Loading />}
