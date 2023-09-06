@@ -29,6 +29,11 @@
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    background-color: #ffc400;
+}
+
+.contain{
+    object-fit: contain !important;
 }
 
 .info-card>h2,

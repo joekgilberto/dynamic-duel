@@ -7,6 +7,10 @@ TBA
 ## Technologies Used
 TBA
 
+## Attributions
+- [File not found image](https://commons.wikimedia.org/wiki/File:File-fav-dynamic-color.png)
+- [Maginifying glass icon](https://commons.wikimedia.org/wiki/File:Search-icon.png)
+
 ## Getting Started
 A link to the deployed app: TBA
 

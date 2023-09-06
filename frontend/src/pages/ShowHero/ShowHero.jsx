@@ -9,11 +9,12 @@ import Loading from "../../components/Loading/Loading";
 export default function ShowHero({setUpdatedSearch}) {
 
     const [showHero, setShowHero] = useState(null)
+    const [source, setSource] = useState(require("../../assets/image-not-found.png"))
 
     const id = useParams().id
 
     async function handleRequest() {
-        const superResponse = await getSuper(id);
+        const superResponse = await getSuper(id,setSource);
 
         if (superResponse) {
             setShowHero(superResponse);
@@ -33,7 +34,7 @@ export default function ShowHero({setUpdatedSearch}) {
             {showHero ?
                 <div>
                     <div className="info-card">
-                        <img src={showHero.image.url} alt={showHero.name} />
+                        <img className={source!==showHero.image.url?"contain":null} src={source} alt={showHero.name} />
                         <h2>{showHero.name}</h2>
                         <div className="info">
                             <p className="bold">Alter-Ego:</p>

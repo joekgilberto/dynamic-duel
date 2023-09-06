@@ -1,6 +1,6 @@
 .HeroCard{
     width: 300px;
-    height: 426px;
+    height: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,9 +15,10 @@
 
 .HeroCard>img{
     width: 275px;
-    height: 320px;
+    height: 275px;
     object-fit: cover;
     border-radius: 10px;
+    background-color: #69a0f9;
 }
 
 .HeroCard>p{

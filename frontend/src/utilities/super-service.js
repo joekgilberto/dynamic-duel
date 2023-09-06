@@ -1,4 +1,5 @@
 import * as superApi from './super-api'
+import * as tools from "./tools"
 
 export async function getSixSupers(){
     try {
@@ -12,9 +13,10 @@ export async function getSixSupers(){
     }
 }
 
-export async function getSuper(id){
+export async function getSuper(id,cb){
     try {
         const data = await superApi.show(id)
+        tools.checkImage(data.image.url,cb)
         return data
     }catch(err){
         return err
