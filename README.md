@@ -10,7 +10,7 @@ TBA
 ## Attributions and Acknowledgements
 - [File not found image](https://commons.wikimedia.org/wiki/File:File-fav-dynamic-color.png)
 - [Maginifying glass icon](https://commons.wikimedia.org/wiki/File:Search-icon.png)
-- [Resource for using onerror in images](https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
+- [Stack overflow resource for using onerror in images](https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
 
 ## Getting Started
 A link to the deployed app: TBA
