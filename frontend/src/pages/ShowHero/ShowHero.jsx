@@ -54,7 +54,7 @@ export default function ShowHero({setUpdatedSearch}) {
                         </div>
                         <div className="info no-bar">
                             <p className="bold">Publisher:</p>
-                            <p>{showHero.biography.publisher}</p>
+                            <p>{showHero.biography.publisher!=="null"?showHero.biography.publisher:"Not recorded"}</p>
                         </div>
                     </div>
                     <div className="stats-card">
