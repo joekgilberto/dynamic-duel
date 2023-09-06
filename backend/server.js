@@ -18,6 +18,7 @@ const express = require("express");
 const app = express();
 
 const battlesRouter = require('./routes/battles')
+const authRouter = require("./routes/auth.js");
 
 const cors = require("cors")
 const morgan = require("morgan")
@@ -33,6 +34,7 @@ app.use(morgan("dev")); // logging for development
 
 // all requests for endpoints that begin with '/battles'
 app.use('/battles', battlesRouter)
+app.use("/auth", authRouter)
 
 ///////////////////////////////
 // ROUTES

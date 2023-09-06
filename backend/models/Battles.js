@@ -7,12 +7,19 @@ const Schema = mongoose.Schema
 // MODELS
 ////////////////////////////////
 const BattleSchema = new Schema({
-  superOne: String,
-  superTwo: String,
+  superOneId: String,
+  superTwoId: String,
+  superOneName: String,
+  superTwoName: String,
+  superOneImage: String,
+  superTwoImage: String,
   winner: String,
   details: String,
   comments: Array,
-  user: Schema.Types.ObjectId
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }
 
 },{
   timestamps: true
