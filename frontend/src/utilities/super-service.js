@@ -16,7 +16,6 @@ export async function getSixSupers(){
 export async function getSuper(id,cb){
     try {
         const data = await superApi.show(id)
-        tools.checkImage(data.image.url,cb)
         return data
     }catch(err){
         return err
