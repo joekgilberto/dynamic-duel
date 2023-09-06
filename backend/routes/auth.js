@@ -8,6 +8,6 @@ router.post("/register", authCtrl.register);
 
 // SIGN IN
 // POST /auth/login
-router.post("/login", async (req, res, next) => {});
+router.post("/login", authCtrl.login);
 
 module.exports = router;

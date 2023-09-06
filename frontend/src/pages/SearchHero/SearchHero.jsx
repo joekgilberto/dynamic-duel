@@ -32,8 +32,8 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
                     <HeroCard hero={hero} />
                 </Link>
 
-            ) :
-                <Loading />}
+            ) : searched?
+                <Loading />:<h2 className="none-found">No supers found</h2>}
         </section>
             
         </section>

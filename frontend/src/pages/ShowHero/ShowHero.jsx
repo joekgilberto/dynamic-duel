@@ -38,7 +38,8 @@ export default function ShowHero({setUpdatedSearch}) {
                         onError={({ currentTarget }) => {
                             currentTarget.onerror = null; // prevents looping
                             currentTarget.src=require("../../assets/image-not-found.png");
-                            currentTarget.className="contain"
+                            currentTarget.className="contain";
+                            currentTarget.alt=showHero.name;
                           }}
                         alt={showHero.name}
                         />
