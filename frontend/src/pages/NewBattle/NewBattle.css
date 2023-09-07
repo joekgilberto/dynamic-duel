@@ -28,7 +28,6 @@
 }
 
 .battle-finalizations{
-    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,6 +40,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
     padding: 2px;
     line-height: 1.2;
     font-size: 28px;
@@ -69,6 +69,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0;
     padding: 2px;
     line-height: 1.2;
     font-size: 28px;
@@ -93,6 +94,7 @@
 
 .post{
     width: 170px;
+    margin: 10px 0;
     font-size: 34px;
     font-family: 'Koulen', cursive;
     color: #fff;
