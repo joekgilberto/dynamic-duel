@@ -5,7 +5,7 @@ import { searchString } from "../../utilities/tools";
 
 import SelectSuper from "./SelectSuper";
 
-export default function NewBattleForm({whichOne, thisSuper, setThisSuper}) {
+export default function NewBattleForm({ whichOne, thisSuper, setThisSuper }) {
 
     const [superTyping, setSuperTyping] = useState('')
     const [superSearched, setSuperSearched] = useState('')
@@ -27,8 +27,12 @@ export default function NewBattleForm({whichOne, thisSuper, setThisSuper}) {
 
     return (
         <form className="NewBattleForm" onSubmit={handleSubmit}>
-            <input type="text" placeholder={`Search your ${whichOne} super...`} onChange={handleChange} value={superTyping} />
-            <button type="submit">Find {whichOne} super</button>
+            {!thisSuper ? (
+                <>
+                    <input type="text" placeholder={`Search your ${whichOne} super...`} onChange={handleChange} value={superTyping} />
+                    <button type="submit">Find {whichOne} super</button>
+                </>
+            ) : null}
             <SelectSuper superSearched={superSearched} setSuper={setThisSuper} battleSearched={battleSearched} setBattleSearched={setBattleSearched} setSuperTyping={setSuperTyping} thisSuper={thisSuper} />
         </form>
     )

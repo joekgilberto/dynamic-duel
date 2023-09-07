@@ -1,7 +1,7 @@
 .BattleCard {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     margin: 15px;
     padding: 10px;
     background-color: #4a86e8ff;

@@ -1,6 +1,6 @@
 import * as battleApi from './battle-api'
 
-export async function getBattles(){
+export async function getAllBattles(){
     try {
         const data = await battleApi.index()
         return data
@@ -8,6 +8,15 @@ export async function getBattles(){
         return err
     }
 }
+
+export async function getBattle(id) {
+    try {
+      const foundBattle = await battleApi.show(id);
+      return foundBattle;
+    } catch (err) {
+      throw err;
+    }
+  }
 
 export async function createBattle(newBattleData){
     try {
