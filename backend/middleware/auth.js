@@ -40,7 +40,7 @@ const opts = {
 // AUTHENTICATION FUNCTIONALITY
 ////////////////////////////////
 
-const verify = async (jwt_payload, done) => {
+async function verify(jwt_payload, done){
   // In the callback we run our custom code. With the data extracted from
   // the token that we're passed as jwt_payload we'll have the user's id.
   // Using Mongoose's `.findById()` method, we find the user in our database
@@ -81,7 +81,7 @@ const requireToken = passport.authenticate("jwt", { session: false });
 
 // Create a function that takes the request and a user document
 // and uses them to create a token to send back to the user
-const createUserToken = (req, user) => {
+async function createUserToken(req, user){
   // Make sure that we have a user, if it's null that means we didn't
   // find the email in the database.  If there is a user, make sure
   // that the password is correct.  For security reason, we don't want
@@ -104,7 +104,7 @@ const createUserToken = (req, user) => {
   return jwt.sign({ id: user._id }, secret, { expiresIn: 36000 });
 };
 
-const handleValidateOwnership = (req, document) => {
+function handleValidateOwnership(req, document){
     const ownerId = document.owner._id || document.owner;
   
     // Check if the current user is also the owner of the document

@@ -13,7 +13,7 @@ export async function signUp(data) {
 
 export async function login(data) {
     try {
-        const apiLoginResp = await AuthAPI.signUpUser(data)
+        const apiLoginResp = await AuthAPI.loginUser(data)
         console.log(apiLoginResp)
         return apiLoginResp
     } catch (err) {

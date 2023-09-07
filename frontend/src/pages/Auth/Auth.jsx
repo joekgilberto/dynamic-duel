@@ -11,7 +11,6 @@ import LoginForm from "../../components/Auth/LoginForm";
 
 export default function Auth() {
     const { setAuth, setUser } = useContext(UserContext);
-    console.log(setAuth, setUser)
 
     async function handleSignUpUser(data){
         try {
