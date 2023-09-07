@@ -30,8 +30,8 @@ export default function SelectSuper({ superSearched, setSuper, battleSearched, s
         <section className="SelectSuper">
             {thisSuper? <HeroCard hero={thisSuper} />:(
             foundHeroes ? foundHeroes.map((hero, idx) =>
-            <div onClick={(e)=>{handleClick(e,hero)}}>
-                    <HeroCard key={idx} hero={hero} />
+            <div key={idx} onClick={(e)=>{handleClick(e,hero)}}>
+                    <HeroCard hero={hero} />
             </div>
 
             ) : superSearched ?
