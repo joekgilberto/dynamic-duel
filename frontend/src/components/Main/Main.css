@@ -1,8 +1,11 @@
 main{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 115px;
 }
 
 .hero-results{
@@ -18,6 +21,9 @@ main{
 }
 
 @media only screen and (min-width: 900px) {
+    main{
+        margin: 0 0 0 140px;
+    }
     .hero-results{
         flex-direction: row;
         flex-wrap: wrap;

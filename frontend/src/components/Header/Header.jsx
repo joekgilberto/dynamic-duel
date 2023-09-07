@@ -9,6 +9,7 @@ export default function Header() {
                     <img className="logo" src={require("../../assets/logo.png")} />
                 </Link>
 
+                <div className="nav-buttons">
                 <Link to="/">
                     <h2>Home</h2>
                 </Link>
@@ -21,6 +22,7 @@ export default function Header() {
                 <Link to="/auth">
                     <h2 className="login-button">Login</h2>
                 </Link>
+                </div>
             </nav>
         </header>
     )
