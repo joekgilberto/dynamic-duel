@@ -1,8 +1,8 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const { createUserToken, requireToken } = require("../middleware/auth");
+const { createUserToken } = require("../middleware/auth");
 
-async function register(req, res, next) {
+async function signUp(req, res, next) {
     //   has the password before storing the user info in the database
     try {
 
@@ -49,8 +49,19 @@ async function login(req, res, next) {
     }
 }
 
+export async function logout(req, res, next) {
+    try {
+        res.status(200).json({
+            token: ""
+        })
+
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+};
+
 module.exports = {
-    register,
+    signUp,
     login
 }
 

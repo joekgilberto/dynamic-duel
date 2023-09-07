@@ -18,7 +18,7 @@ export default function Header() {
                 <Link to="/battles/new">
                     <h2>Pick A Fight</h2>
                 </Link> */}
-                <Link>
+                <Link to="/auth">
                     <h2 className="login-button">Login</h2>
                 </Link>
             </nav>

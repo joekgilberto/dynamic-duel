@@ -1,4 +1,5 @@
 const { Battles } = require('../models')
+const { handleValidateOwnership } = require("../middleware/auth");
 
 // EXPORT Controller Action
 module.exports = {
@@ -18,7 +19,7 @@ async function index(req, res, next) {
   try {
     // get all battles
     const allBattles = await Battles.find({}).populate('owner', 'username -_id')
-    
+
     res.status(200).json(allBattles);
   } catch (error) {
     //send error
@@ -30,7 +31,11 @@ async function index(req, res, next) {
 async function create(req, res, next) {
   try {
     // create new battle
-    res.status(201).json(await Battles.create(req.body));
+    const owner = req.user._id
+    req.body.owner = owner
+
+    const newBattle = await Battles.create(req.body)
+    res.status(201).json(newBattle);
   } catch (error) {
     //send error
     res.status(400).json(error);
@@ -55,7 +60,9 @@ async function show(req, res, next) {
 async function destroy(req, res, next) {
   try {
     // send one battle
-    res.status(200).json(await Battles.findByIdAndRemove(req.params.id));
+    handleValidateOwnership(req, await Battles.findById(req.params.id));
+    const deletedBattle = await Battles.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedBattle);
   } catch (error) {
     //send error
     res.status(400).json(error);
@@ -65,8 +72,15 @@ async function destroy(req, res, next) {
 // BATTLE UPDATE ACTION
 async function update(req, res, next) {
   try {
-    // send one battle
-    res.status(200).json(await Battles.findByIdAndUpdate(req.params.id, req.body, { new: true }));
+    handleValidateOwnership(req, await Battles.findById(req.params.id))
+
+    const updatedBattle = await Battles.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    )
+    res.status(200).json(updatedBattle)
+
   } catch (error) {
     //send error
     res.status(400).json(error);
