@@ -24,6 +24,7 @@ export default function Auth() {
                 setAuth(parsedUser.isLoggedIn);
                 // alternative (safer) implementation would be to use jwt decode library - <https://www.npmjs.com/package/jwt-decode>
                 // this would also require reconfiguring our backend so we only send tokens with a signup
+                return parsedUser
             } else {
                 throw `Server Error: ${parsedUser.err}`;
             }
@@ -45,6 +46,7 @@ export default function Auth() {
             } else {
                 throw `Server Error: ${parsedUser.err}`;
             }
+            return parsedUser
         } catch (err) {
             console.log(err);
             clearUserToken();

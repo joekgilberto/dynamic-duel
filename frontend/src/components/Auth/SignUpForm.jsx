@@ -13,9 +13,9 @@ export default function SignUpForm({ signUp }){
     const createdUserToken = await signUp(input);
 
     if (createdUserToken.token) {
-      navigate("/people");
-    } else {
       navigate("/");
+    } else {
+      navigate("/auth");
     }
     setInput(initialState);
   };

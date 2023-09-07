@@ -44,6 +44,7 @@ async function login(req, res, next) {
             user: foundUser,
             token,
         });
+
     } catch (err) {
         console.log(res.status(401).json({ error: err.message }));
     }

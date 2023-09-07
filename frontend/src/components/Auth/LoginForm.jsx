@@ -11,11 +11,10 @@ export default function LoginForm({ login }){
   async function handleSubmit(e){
     e.preventDefault();
     const createdUserToken = await login(input);
-
     if (createdUserToken.token) {
-      navigate("/people");
-    } else {
       navigate("/");
+    } else {
+      navigate("/auth");
     }
     setInput(initialState);
   };
