@@ -16,6 +16,7 @@
     padding: 0 10px;
     font-size: 26px;
     border: none;
+    font-family: "Roboto", san-serif;
 }
 
 .search-input:focus{

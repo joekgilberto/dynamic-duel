@@ -25,15 +25,23 @@ export default function NewBattleForm({ whichOne, thisSuper, setThisSuper }) {
         }
     }
 
+    async function handleReset(e){
+        setThisSuper(null)
+        setSuperTyping('')
+        setSuperSearched('')
+        setBattleSearched(false)
+    }
+
     return (
         <form className="NewBattleForm" onSubmit={handleSubmit}>
             {!thisSuper ? (
-                <>
-                    <input type="text" placeholder={`Search your ${whichOne} super...`} onChange={handleChange} value={superTyping} />
-                    <button type="submit">Find {whichOne} super</button>
-                </>
+                <div className="new-battle-search-bar">
+                    <input className="new-battle-search" type="text" placeholder={`Search your ${whichOne} super...`} onChange={handleChange} value={superTyping} />
+                    <button className="new-battle-search-button" type="submit">Find {whichOne} super</button>
+                </div>
             ) : null}
             <SelectSuper superSearched={superSearched} setSuper={setThisSuper} battleSearched={battleSearched} setBattleSearched={setBattleSearched} setSuperTyping={setSuperTyping} thisSuper={thisSuper} />
+            {thisSuper? <button className="change-super" onClick={handleReset}>Change Super</button>:null}
         </form>
     )
 }

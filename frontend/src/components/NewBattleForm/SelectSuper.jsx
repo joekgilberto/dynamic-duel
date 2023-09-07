@@ -34,8 +34,7 @@ export default function SelectSuper({ superSearched, setSuper, battleSearched, s
                     <HeroCard hero={hero} />
             </div>
 
-            ) : superSearched ?
-                <Loading /> : <h2 className="none-found">Search a hero!</h2>
+            ) : null
             )}
         </section>
     )

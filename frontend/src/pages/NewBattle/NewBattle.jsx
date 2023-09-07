@@ -52,28 +52,35 @@ export default function NewBattle({ setUpdatedSearch }) {
 
     return (
         <section className="NewBattle">
-            <NewBattleForm whichOne={"first"} thisSuper={superOne} setThisSuper={setSuperOne} />
-            <form className="final-submit" onSubmit={handleSubmit}>
-                <h1>VS</h1>
-                {superOne && superTwo ? (
-                    <>
-                        <label>Winner
-                            <select name="winner" onChange={handleChange} required>
-                                <option>Draw</option>
-                                <option>{superOne.name}</option>
-                                <option>{superTwo.name}</option>
-                            </select>
-                        </label>
-                        <label>Details
-                            <input name="details" type="text" onChange={handleChange} placeholder="Optional" />
-                        </label>
-                        <button type="submit">Post</button>
-                    </>
+            <h1 className="headline">Pick A Fight!</h1>
+            <div className="pick-a-fight">
+                <NewBattleForm whichOne={"first"} thisSuper={superOne} setThisSuper={setSuperOne} />
+                <form className="final-submit" onSubmit={handleSubmit}>
+                    {superOne && superTwo ? (
+                        <div className="battle-finalizations">
+                            <h1 className="vs">VS</h1>
+                            <label className="winner">Winner
+                                <select name="winner" onChange={handleChange} required>
+                                    <option>Draw</option>
+                                    <option>{superOne.name}</option>
+                                    <option>{superTwo.name}</option>
+                                </select>
+                            </label>
+                            <label className="details">Details
+                                <textarea name="details" onChange={handleChange} placeholder="Optional" />
+                            </label>
+                            <button className="post" type="submit">Post</button>
+                        </div>
 
-                ) : null}
+                    ) : (
+                        <div className="battle-finalizations no-picks-yet">
+                            <h1 className="vs">VS</h1>
+                        </div>
+                    )}
 
-            </form>
-            <NewBattleForm whichOne={"second"} thisSuper={superTwo} setThisSuper={setSuperTwo} />
+                </form>
+                <NewBattleForm whichOne={"second"} thisSuper={superTwo} setThisSuper={setSuperTwo} />
+            </div>
         </section>
     )
 }
