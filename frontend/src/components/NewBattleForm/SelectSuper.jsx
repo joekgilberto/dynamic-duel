@@ -2,10 +2,10 @@ import "./SelectSuper.css"
 
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { searchSuper } from "../../utilities/super-service"
+import { searchSuper } from "../../utilities/super-services"
 
-import HeroCard from "../../components/HeroCard/HeroCard"
-import Loading from "../../components/Loading/Loading"
+import HeroCard from "../HeroCard/HeroCard"
+import Loading from "../Loading/Loading"
 
 export default function SelectSuper({ superSearched, setSuper, battleSearched, setBattleSearched, setSuperTyping, thisSuper }) {
 

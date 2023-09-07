@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { useEffect, useState } from "react"
 import { createBattle } from "../../utilities/battle-services";
 
-import NewBattleForm from "./NewBattleForm";
+import NewBattleForm from "../../components/NewBattleForm/NewBattleForm";
 
 const initState = {
     winner: "Draw",
@@ -23,10 +23,7 @@ export default function NewBattle({ setUpdatedSearch }) {
     }, []);
 
     function handleChange(e) {
-        console.log("name", e.target.name)
-        console.log("value", e.target.value)
         const updatedData = { ...formData, [e.target.name]: e.target.value }
-        console.log("updatedData", updatedData)
         setFormData(updatedData)
     }
 
@@ -42,8 +39,9 @@ export default function NewBattle({ setUpdatedSearch }) {
                 superOneImage: superOne.image.url,
                 superTwoImage: superTwo.image.url,
             }
-            console.log(dataToSend)
-            await createBattle(dataToSend)
+            console.log("dataToSend", dataToSend)
+            const battleData = await createBattle(dataToSend)
+            console.log("battleData", battleData)
             setFormData(initState)
             navigate("/battles")
         } catch (error) {

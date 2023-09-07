@@ -2,7 +2,7 @@ import "./Home.css"
 
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
-import { getSixSupers } from "../../utilities/super-service";
+import { getSixSupers } from "../../utilities/super-services";
 
 import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard";

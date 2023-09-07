@@ -1,0 +1,42 @@
+import "./IndexBattle.css"
+
+import { useState,useEffect } from "react";
+import { getBattles } from "../../utilities/battle-services";
+import { Link } from "react-router-dom";
+
+import Loading from "../../components/Loading/Loading";
+import BattleCard from "../../components/BattleCard/BattleCard";
+
+export default function IndexBattle({setUpdatedSearch}){
+    
+    const [indexBattles, setIndexBattles] = useState(null)
+
+    async function handleRequest() {
+        const battlesResponse = await getBattles();
+
+        if (battlesResponse) {
+            setIndexBattles(battlesResponse);
+        } else {
+            console.log(battlesResponse);
+            // context update for error handling might be called
+        }
+
+
+    };
+
+    useEffect(() => {
+        setUpdatedSearch('')
+        handleRequest();
+    }, []);
+
+    return(
+        <section className="IndexBattle">
+            {indexBattles ? indexBattles.map((battle, idx) =>
+                    <Link key={idx} to={`/battles/${battle.id}`}>
+                        <BattleCard battle={battle} />
+                    </Link>
+                ) :
+                    <Loading />}
+        </section>
+    )
+}

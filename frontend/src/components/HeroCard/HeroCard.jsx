@@ -10,7 +10,6 @@ export default function HeroCard({ hero }) {
             onError={({ currentTarget }) => {
                 currentTarget.onerror = null; // prevents looping
                 currentTarget.src=require("../../assets/image-not-found.png");
-                currentTarget.alt=hero.name;
               }}
             alt={hero.name} />
             <p>{hero.name}</p>

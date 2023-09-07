@@ -13,9 +13,9 @@ export default function Header() {
                 <Link to="/">
                     <h2>Home</h2>
                 </Link>
-                {/* <Link to="/battles">
+                <Link to="/battles">
                     <h2>Battles</h2>
-                </Link> */}
+                </Link>
                 <Link to="/battles/new">
                     <h2>Pick A Fight</h2>
                 </Link>
