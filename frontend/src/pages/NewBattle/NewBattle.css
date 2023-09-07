@@ -1,0 +1,12 @@
+.NewBattle{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.NewBattle form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
