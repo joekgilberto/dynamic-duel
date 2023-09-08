@@ -26,7 +26,6 @@ export async function show(id) {
 
 export async function create(data) {
 
-    console.log("getUserToken()", getUserToken())
     const res = await fetch(BASE_URL, {
         method: "POST",
         headers: {

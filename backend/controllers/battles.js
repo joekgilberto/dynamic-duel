@@ -33,11 +33,12 @@ async function create(req, res, next) {
     // create new battle
     const owner = req.user._id
     req.body.owner = owner
-
     const newBattle = await Battles.create(req.body)
+    console.log(newBattle)
     res.status(201).json(newBattle);
   } catch (error) {
     //send error
+    console.log(error)
     res.status(400).json(error);
   }
 };

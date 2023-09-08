@@ -39,9 +39,7 @@ export default function NewBattle({ setUpdatedSearch }) {
                 superOneImage: superOne.image.url,
                 superTwoImage: superTwo.image.url,
             }
-            console.log("dataToSend", dataToSend)
             const battleData = await createBattle(dataToSend)
-            console.log("battleData", battleData)
             setFormData(initState)
             navigate("/battles")
         } catch (error) {

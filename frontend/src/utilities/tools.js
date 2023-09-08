@@ -9,5 +9,7 @@ export function searchString(string){
     let modifiedString = string.toLowerCase()
     modifiedString = modifiedString.split(' ')
     modifiedString = modifiedString.join("%20")
+    modifiedString = modifiedString.split('\'')
+    modifiedString = modifiedString.join("'%27")
     return modifiedString
 }

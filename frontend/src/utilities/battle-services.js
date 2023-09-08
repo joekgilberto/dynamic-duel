@@ -20,7 +20,6 @@ export async function getBattle(id) {
 
 export async function createBattle(newBattleData){
     try {
-        console.log(newBattleData)
         const data = await battleApi.create(newBattleData)
         // the promise from res.json()
         return data

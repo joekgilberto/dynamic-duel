@@ -1,15 +1,20 @@
 import "./Header.css"
 import { Link } from "react-router-dom";
-import { getUserToken } from "../../utilities/auth-token";
+import { clearUserToken, getUserToken } from "../../utilities/auth-token";
+import { useState, useEffect } from "react";
 
 export default function Header() {
-    const token = getUserToken()
+    
+    const [token, setToken] = useState(getUserToken())
 
-    console.log("token", token)
-
-   async function handleClick(e){
-        //logout function
+    function handleClick(e){
+        clearUserToken()
+        setToken(getUserToken())
     }
+
+    useEffect(()=>{
+        setToken(getUserToken())
+    },[getUserToken()])
 
     return (
         <header>
@@ -34,13 +39,12 @@ export default function Header() {
                         <>
                         {/* <Link to="/user">
                             <h2 className="login-button">User</h2>
-                        </Link> 
-                        <h2 className="login-button">Logout</h2>
-                        */}
+                        </Link>  */}
+                        <button className="login-button" onClick={handleClick}>Logout</button>
                         </>
                     ) : (
                         <Link to="/auth">
-                            <h2 className="login-button" onClick={handleClick}>Login</h2>
+                            <h2 className="login-button">Login</h2>
                         </Link>
                     )}
                 </div>

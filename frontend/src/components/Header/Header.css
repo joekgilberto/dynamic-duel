@@ -30,7 +30,8 @@ nav{
     margin-right: 10px;
 }
 
-nav h2{
+nav h2,
+button.login-button{
     width: 80px;
     height: 70px;
     display: flex;
@@ -53,8 +54,13 @@ nav a{
 }
 
 .login-button{
+    background-color: #4a86e8ff !important;
+}
+
+button.login-button{
+    font-family: 'Koulen', cursive;
     color: #fff;
-    background-color: #4a86e8ff;
+    border: none;
 }
 
 @media only screen and (min-width: 900px) {
@@ -74,7 +80,8 @@ nav a{
         margin: 0;
     }
 
-    nav h2{
+    nav h2,
+    button.login-button{
         width: 120px;
         height: 90px;
         margin: 10px;
