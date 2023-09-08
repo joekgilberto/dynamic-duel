@@ -11,6 +11,7 @@ import SearchHero from "../../pages/SearchHero/SearchHero"
 import IndexBattle from "../../pages/IndexBattle/IndexBattle"
 import NewBattle from "../../pages/NewBattle/NewBattle"
 import ShowBattle from "../../pages/ShowBattle/ShowBattle"
+import EditBattle from "../../pages/EditBattle/EditBattle"
 import Error from "../../pages/Error/Error"
 
 export default function Main() {
@@ -28,6 +29,7 @@ export default function Main() {
                 <Route path="/battles" element={<IndexBattle setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/battles/new" element={<NewBattle setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/battles/:id" element={<ShowBattle setUpdatedSearch={setUpdatedSearch} />} />
+                <Route path="/battles/:id/edit" element={<EditBattle setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/*" element={<Error setUpdatedSearch={setUpdatedSearch} />} />
             </Routes>
         </main>

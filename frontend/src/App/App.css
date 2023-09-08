@@ -15,6 +15,10 @@ h6 {
   font-weight: 400 !important;
 }
 
+a{
+  text-decoration: none !important;
+}
+
 .bold {
   font-weight: 700 !important;
 }

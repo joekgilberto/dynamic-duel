@@ -1,15 +1,14 @@
-import "./ShowBattle.css"
+import "./EditBattle.css"
 
-import { useState, useEffect, useContext } from 'react'
-import { useParams, useNavigate } from 'react-router'
-import { Link } from "react-router-dom"
-import { getBattle } from "../../utilities/battle-services"
+import { useState, useEffect, useContext } from "react"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import { UserContext } from "../../data"
+import { getBattle } from "../../utilities/battle-services"
 
 import Loading from "../../components/Loading/Loading"
 import BattleChampion from "../../components/BattleChampion/BattleChampion"
 
-export default function ShowBattle({ setUpdatedSearch }) {
+export default function EditBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
     const { id } = useParams()
@@ -23,6 +22,10 @@ export default function ShowBattle({ setUpdatedSearch }) {
         isOwner = battle?.owner?._id === user._id;
     } else {
         isOwner = false;
+    }
+
+    if (!isOwner) {
+        navigate('/')
     }
 
     async function handleRequest() {
@@ -40,25 +43,23 @@ export default function ShowBattle({ setUpdatedSearch }) {
     }, [])
 
     return (
-        <section className="ShowBattle">
+        <section className="EditBattle">
             {battle ? (
-                <>
-                    {battle.winner === "Draw" ? (
-                        <div className="outcome">
-                            <h2>{battle.winner}</h2>
-                        </div>
-                    ) : (
-                        <div className="outcome">
-                            <h2>Champion</h2>
-                            <h3>{battle.winner}</h3>
-                        </div>
-                    )}
+                <form>
+                    <div className="edit-outcome">
+                        <h2>Outcome</h2>
+                        <select>
+                            <option>Draw</option>
+                            <option>{battle.superOneName}</option>
+                            <option>{battle.superTwoName}</option>
+                        </select>
+                    </div>
                     <div className="whole-battle">
                         <Link to={`/heroes/${battle.superOneId}`}>
                             <BattleChampion image={battle.superOneImage} name={battle.superOneName} />
                         </Link>
 
-                        <div className="show-battle-vs">
+                        <div className="edit-battle-vs">
                             <h2 className="vs">VS</h2>
                         </div>
 
@@ -68,18 +69,18 @@ export default function ShowBattle({ setUpdatedSearch }) {
 
                     </div>
                     {battle.details ? (
-                        <div className="show-battle-details">
+                        <div className="edit-battle-details">
                             <h3>Details:</h3>
-                            <p>{battle.details}</p>
+                            <textarea value={battle.details} />
                         </div>
                     ) : null}
                     {
                         isOwner ? (
-                            <Link to={`/battles/${id}/edit`}>
-                                <button className="show-battle-edit">Edit</button>
+                            <Link to={`/battle/${id}/edit`}>
+                                <button className="edit-battle-save">Save</button>
                             </Link>
                         ) : null}
-                </>
+                </form>
             ) :
                 <Loading />}
         </section>
