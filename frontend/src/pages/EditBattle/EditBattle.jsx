@@ -3,7 +3,7 @@ import "./EditBattle.css"
 import { useState, useEffect, useContext } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
 import { UserContext } from "../../data"
-import { getBattle } from "../../utilities/battle-services"
+import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
 
 import Loading from "../../components/Loading/Loading"
 import BattleChampion from "../../components/BattleChampion/BattleChampion"
@@ -14,6 +14,8 @@ export default function EditBattle({ setUpdatedSearch }) {
     const { id } = useParams()
 
     const [battle, setBattle] = useState(null)
+    const [editFormData, setEditFormData] = useState(null);
+
     let isOwner
 
     const { user } = useContext(UserContext);
@@ -32,10 +34,39 @@ export default function EditBattle({ setUpdatedSearch }) {
         try {
             const battleData = await getBattle(id)
             setBattle(battleData)
+            setEditFormData({ ...battleData, winner: "Draw" })
         } catch (err) {
             console.log(err)
         }
     }
+
+    function handleChange(e) {
+        const updatedData = { ...editFormData, [e.target.name]: e.target.value }
+        setEditFormData(updatedData)
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            console.log(editFormData)
+            const battleData = await editBattle(battle._id, editFormData)
+            navigate(`/battles/${battle._id}`)
+        } catch (error) {
+            navigate(`/battles/${battle._id}/edit`)
+            console.log(error)
+        }
+    }
+
+    async function handleDelete(e) {
+        try {
+            const deletedResp = await deleteBattle(battle._id)
+            navigate('/battles')
+        } catch (err) {
+            console.log(err)
+            navigate(`/battles/${battle._id}`)
+        }
+    }
+
 
     useEffect(() => {
         setUpdatedSearch('')
@@ -45,41 +76,34 @@ export default function EditBattle({ setUpdatedSearch }) {
     return (
         <section className="EditBattle">
             {battle ? (
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="edit-outcome">
                         <h2>Outcome</h2>
-                        <select>
+                        <select name="winner" onChange={handleChange}>
                             <option>Draw</option>
                             <option>{battle.superOneName}</option>
                             <option>{battle.superTwoName}</option>
                         </select>
                     </div>
                     <div className="whole-battle">
-                        <Link to={`/heroes/${battle.superOneId}`}>
-                            <BattleChampion image={battle.superOneImage} name={battle.superOneName} />
-                        </Link>
+                        <BattleChampion image={battle.superOneImage} name={battle.superOneName} />
 
                         <div className="edit-battle-vs">
                             <h2 className="vs">VS</h2>
                         </div>
 
-                        <Link to={`/heroes/${battle.superTwoId}`}>
-                            <BattleChampion image={battle.superTwoImage} name={battle.superTwoName} />
-                        </Link>
+                        <BattleChampion image={battle.superTwoImage} name={battle.superTwoName} />
 
                     </div>
-                    {battle.details ? (
-                        <div className="edit-battle-details">
-                            <h3>Details:</h3>
-                            <textarea value={battle.details} />
-                        </div>
-                    ) : null}
-                    {
-                        isOwner ? (
-                            <Link to={`/battle/${id}/edit`}>
-                                <button className="edit-battle-save">Save</button>
-                            </Link>
-                        ) : null}
+                    <div className="edit-battle-details">
+                        <h3>Details:</h3>
+                        <textarea name="details" onChange={handleChange} placeholder="Optional" value={editFormData.details} />
+                    </div>
+                    <div className="save-or-destroy">
+                        <button type="submit" className="edit-battle-save">Save</button>
+                        <button className="edit-battle-delete" onClick={handleDelete}>Delete</button>
+
+                    </div>
                 </form>
             ) :
                 <Loading />}
