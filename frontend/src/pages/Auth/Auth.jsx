@@ -48,7 +48,6 @@ export default function Auth() {
                 setUserToken(parsedUser.token);
                 setUser(parsedUser.user);
                 setAuth(parsedUser.isLoggedIn);
-                console.log(user)
             } else {
                 throw `Server Error: ${parsedUser.err}`;
             }

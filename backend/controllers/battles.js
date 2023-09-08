@@ -34,7 +34,6 @@ async function create(req, res, next) {
     const owner = req.user._id
     req.body.owner = owner
     const newBattle = await Battles.create(req.body)
-    console.log(newBattle)
     res.status(201).json(newBattle);
   } catch (error) {
     //send error

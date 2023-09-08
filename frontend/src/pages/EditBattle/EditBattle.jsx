@@ -37,7 +37,6 @@ export default function EditBattle({ setUpdatedSearch }) {
             setBattle(battleData)
             setEditFormData({ ...battleData, winner: "Draw" })
             console.log(battleData)
-            console.log(user)
             if (user._id !== battleData.owner._id ) {
                 navigate("/");
             }

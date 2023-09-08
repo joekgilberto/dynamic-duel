@@ -13,7 +13,7 @@ export async function getEightSupers(){
     }
 }
 
-export async function getSuper(id,cb){
+export async function getSuper(id){
     try {
         const data = await superApi.show(id)
         return data
