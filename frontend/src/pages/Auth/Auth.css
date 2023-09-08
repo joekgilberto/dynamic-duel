@@ -54,6 +54,7 @@
 }
 
 .auth-label-input input{
+    height: 100%;
     margin: 0;
     padding: 7px;
     font-size: 20px;

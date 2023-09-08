@@ -1,20 +1,15 @@
 import "./Header.css"
 import { Link } from "react-router-dom";
-import { clearUserToken, getUserToken } from "../../utilities/auth-token";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { UserContext } from "../../data";
+import { clearUserToken } from "../../utilities/auth-token";
 
 export default function Header() {
-    
-    const [token, setToken] = useState(getUserToken())
+    const { user } = useContext(UserContext);
 
-    function handleClick(e){
+    function handleClick(e) {
         clearUserToken()
-        setToken(getUserToken())
     }
-
-    useEffect(()=>{
-        setToken(getUserToken())
-    },[getUserToken()])
 
     return (
         <header>
@@ -30,19 +25,17 @@ export default function Header() {
                     <Link to="/battles">
                         <h2>Battles</h2>
                     </Link>
-                    {token ? (
-                        <Link to="/battles/new">
-                            <h2>Pick A Fight</h2>
-                        </Link>
-                    ) : null}
-                    {token ? (
+                    {user ? (
                         <>
-                        {/* <Link to="/user">
+                            <Link to="/battles/new">
+                                <h2>Pick A Fight</h2>
+                            </Link>
+                            {/* <Link to="/user">
                             <h2 className="login-button">User</h2>
                         </Link>  */}
-                        <Link to="/auth" onClick={handleClick}>
-                            <h2 className="login-button">Logout</h2>
-                        </Link>
+                            <Link to="/auth" onClick={handleClick}>
+                                <h2 className="login-button">Logout</h2>
+                            </Link>
                         </>
                     ) : (
                         <Link to="/auth">
