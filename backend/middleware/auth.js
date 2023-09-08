@@ -21,7 +21,7 @@ const { Strategy, ExtractJwt } = require("passport-jwt");
 // Create a secret to be used to encrypt/decrypt the token
 // This can be any string value you want -- even gibberish.
 
-const secret = process.env.JWT_SECRET || "AnotherSecret";
+const secret = process.env.JWT_SECRET;
 
 // Minimum required options for passport-jwt
 

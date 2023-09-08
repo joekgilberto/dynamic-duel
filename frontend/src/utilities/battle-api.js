@@ -1,3 +1,5 @@
+import { getUserToken } from "./auth-token";
+
 const BASE_URL = `${process.env.REACT_APP_BATTLE_URL}/`;
 
 export async function index() {
@@ -23,13 +25,17 @@ export async function show(id) {
 }
 
 export async function create(data) {
+
+    console.log("getUserToken()", getUserToken())
     const res = await fetch(BASE_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${getUserToken()}`
         },
         body: JSON.stringify(data),
     });
+
     if (res.ok) {
         return res.json();
     } else {

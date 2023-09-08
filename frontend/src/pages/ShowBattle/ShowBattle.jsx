@@ -1,8 +1,10 @@
 import "./ShowBattle.css"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router'
+import { Link } from "react-router-dom"
 import { getBattle } from "../../utilities/battle-services"
+import { UserContext } from "../../data"
 
 import Loading from "../../components/Loading/Loading"
 import HeroCard from "../../components/HeroCard/HeroCard"
@@ -11,6 +13,9 @@ export default function ShowBattle({ setUpdatedSearch }) {
 
     const { id } = useParams()
     const [battle, setBattle] = useState(null)
+
+    const { user } = useContext(UserContext);
+    const isOwner = battle?.owner?._id == user._id;
 
     const navigate = useNavigate()
 
@@ -74,6 +79,12 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             <p>{battle.details}</p>
                         </div>
                     ) : null}
+                    {
+                        isOwner ? (
+                            <Link to={`/battle/${id}/edit`}>
+                                <button>Edit</button>
+                            </Link>
+                        ) : null}
                 </>
             ) :
                 <Loading />}

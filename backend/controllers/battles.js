@@ -31,8 +31,9 @@ async function index(req, res, next) {
 async function create(req, res, next) {
   try {
     // create new battle
-    // const owner = req.user._id
-    // req.body.owner = owner
+    const owner = req.user._id
+    req.body.owner = owner
+
     const newBattle = await Battles.create(req.body)
     res.status(201).json(newBattle);
   } catch (error) {
@@ -58,6 +59,7 @@ async function show(req, res, next) {
 // BATTLE DESTROY ACTION 
 async function destroy(req, res, next) {
   try {
+    handleValidateOwnership(req, await Battles.findById(req.params.id))
     // send one battle
     const deletedBattle = await Battles.findByIdAndRemove(req.params.id);
     res.status(200).json(deletedBattle);
@@ -70,6 +72,7 @@ async function destroy(req, res, next) {
 // BATTLE UPDATE ACTION
 async function update(req, res, next) {
   try {
+    handleValidateOwnership(req, await Battles.findById(req.params.id))
 
     const updatedBattle = await Battles.findByIdAndUpdate(
       req.params.id,

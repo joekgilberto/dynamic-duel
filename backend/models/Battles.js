@@ -7,18 +7,19 @@ const Schema = mongoose.Schema
 // MODELS
 ////////////////////////////////
 const BattleSchema = new Schema({
-  superOneId: String,
-  superTwoId: String,
-  superOneName: String,
-  superTwoName: String,
-  superOneImage: String,
-  superTwoImage: String,
-  winner: String,
-  details: String,
+  superOneId: {type: String, required: true},
+  superTwoId: {type: String, required: true},
+  superOneName: {type: String, required: true},
+  superTwoName: {type: String, required: true},
+  superOneImage: {type: String, required: true},
+  superTwoImage: {type: String, required: true},
+  winner: {type: String, required: true},
+  details: {type: String, required: true},
   comments: {type: Array, default: []},
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true
   }
 
 },{
