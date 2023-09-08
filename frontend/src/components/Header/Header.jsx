@@ -5,10 +5,12 @@ import { UserContext } from "../../data";
 import { clearUserToken } from "../../utilities/auth-token";
 
 export default function Header() {
-    const { user } = useContext(UserContext);
+    const { setAuth, setUser, user } = useContext(UserContext);
 
     function handleClick(e) {
         clearUserToken()
+        setUser(null);
+        setAuth(null);
     }
 
     return (
