@@ -1,7 +1,9 @@
 .BattleCard {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     margin: 15px;
     padding: 10px;
     background-color: #4a86e8ff;
@@ -9,12 +11,15 @@
     box-shadow: 0px 2.5px 2.5px #00000040;
 }
 
-.BattleCard img{
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
+.underneath{
+    display: flex;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    z-index: 0;
 }
 
-.BattleCard h2{
-    margin: 10px;
+.BattleCard .vs{
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    z-index: 1;
 }
