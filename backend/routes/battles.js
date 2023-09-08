@@ -1,3 +1,5 @@
+const {requireToken} = require('../middleware/auth');
+
 const express = require('express')
 const router = express.Router()
 
@@ -10,13 +12,13 @@ router.get("/", battlesCtrl.index);
 router.get("/:id", battlesCtrl.show);
 
 // create
-router.post("/", battlesCtrl.create);
+router.post("/", requireToken, battlesCtrl.create);
 
 // update
-router.put("/:id", battlesCtrl.update);
+router.put("/:id", requireToken, battlesCtrl.update);
 
 // delete
-router.delete("/:id", battlesCtrl.delete);
+router.delete("/:id", requireToken, battlesCtrl.delete);
 
 module.exports = router
 

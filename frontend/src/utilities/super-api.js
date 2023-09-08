@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 export async function index() {
     let rando = Math.ceil(Math.random()*732)

@@ -16,6 +16,7 @@
     padding: 0 10px;
     font-size: 26px;
     border: none;
+    font-family: "Roboto", san-serif;
 }
 
 .search-input:focus{
@@ -33,4 +34,10 @@
 .magnifying-glass{
     width: 26px;
     height: 26px;
+}
+
+@media only screen and (min-width: 900px) {
+    .SearchBar{
+        margin-top: 20px;
+    }
 }

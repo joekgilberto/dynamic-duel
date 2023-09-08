@@ -1,0 +1,45 @@
+.new-battle-search-bar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 5px solid #4a86e8ff;
+    border-radius: 7.5px;
+    box-shadow: 0px 2.5px 2.5px #00000040;
+}
+
+.new-battle-search{
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding-left: 10px;
+    font-family: "Roboto", san-serif;
+}
+
+.new-battle-search:focus{
+    outline: none;
+}
+
+.new-battle-search-button{
+    width: 215px;
+    padding-left: 5px;
+    text-align: center;
+    font-family: 'Koulen', cursive;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 0px 2.5px 2.5px #00000040;
+    background-color: #4a86e8ff;
+    border: none;
+}
+
+.change-super{
+    font-size: 18px;
+    font-family: 'Koulen', cursive;
+    color: #fff;
+    text-shadow: 0px 2.5px 2.5px #00000040;
+    background-color: #ffd500ff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2.5px 2.5px #00000040;
+}
