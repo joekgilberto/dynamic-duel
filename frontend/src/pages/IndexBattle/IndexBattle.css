@@ -1,3 +1,18 @@
+.IndexBattle{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .IndexBattle a{
     color: #fff;
+}
+
+@media only screen and (min-width: 900px) {
+    .IndexBattle{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

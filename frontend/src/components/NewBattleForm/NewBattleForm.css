@@ -1,5 +1,5 @@
-.new-battle-search-bar{
-    width: 100%;
+.new-battle-search-bar {
+    width: 80%;
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -8,7 +8,7 @@
     box-shadow: 0px 2.5px 2.5px #00000040;
 }
 
-.new-battle-search{
+.new-battle-search {
     width: 100%;
     font-size: 18px;
     border: none;
@@ -17,12 +17,12 @@
     font-family: "Roboto", san-serif;
 }
 
-.new-battle-search:focus{
+.new-battle-search:focus {
     outline: none;
 }
 
-.new-battle-search-button{
-    width: 215px;
+.new-battle-search-button {
+    width: 250px;
     padding-left: 5px;
     text-align: center;
     font-family: 'Koulen', cursive;
@@ -33,7 +33,7 @@
     border: none;
 }
 
-.change-super{
+.change-super {
     font-size: 18px;
     font-family: 'Koulen', cursive;
     color: #fff;
@@ -42,4 +42,20 @@
     border: none;
     border-radius: 5px;
     box-shadow: 0px 2.5px 2.5px #00000040;
+}
+
+@media only screen and (min-width: 900px) {
+    .new-battle-search-button{
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .new-battle-search-bar {
+        width: 100%;
+    }
+
+    .new-battle-search-button{
+        width: 215px;
+    }
 }
