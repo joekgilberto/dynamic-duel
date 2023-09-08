@@ -1,7 +1,7 @@
 import "./ShowHero.css"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
-import { getSuper } from "../../utilities/super-service";
+import { getSuper } from "../../utilities/super-services";
 import { upperCase } from "../../utilities/tools";
 
 import Loading from "../../components/Loading/Loading";
@@ -39,7 +39,6 @@ export default function ShowHero({setUpdatedSearch}) {
                             currentTarget.onerror = null; // prevents looping
                             currentTarget.src=require("../../assets/image-not-found.png");
                             currentTarget.className="contain";
-                            currentTarget.alt=showHero.name;
                           }}
                         alt={showHero.name}
                         />

@@ -2,7 +2,7 @@ import "./Home.css"
 
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
-import { getSixSupers } from "../../utilities/super-service";
+import { getSixSupers } from "../../utilities/super-services";
 
 import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard";
@@ -31,7 +31,7 @@ export default function Home({ setUpdatedSearch }) {
 
     return (
         <section className="Home">
-            <h1 className="welcome">Welcome to Dynamic Duel</h1>
+            <h1 className="headline">Welcome to Dynamic Duel</h1>
             <div className="hero-results">
                 {homeHeroes ? homeHeroes.map((hero, idx) =>
                     <Link key={idx} to={`/heroes/${hero.id}`}>

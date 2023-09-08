@@ -12,13 +12,13 @@ router.get("/", battlesCtrl.index);
 router.get("/:id", battlesCtrl.show);
 
 // create
-router.post("/", middleware.requireToken, battlesCtrl.create);
+router.post("/", battlesCtrl.create);
 
 // update
-router.put("/:id", middleware.requireToken, battlesCtrl.update);
+router.put("/:id", battlesCtrl.update);
 
 // delete
-router.delete("/:id", middleware.requireToken, battlesCtrl.delete);
+router.delete("/:id", battlesCtrl.delete);
 
 module.exports = router
 

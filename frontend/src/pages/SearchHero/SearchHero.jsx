@@ -1,9 +1,9 @@
 import "./SearchHero.css"
 
 import { useState, useEffect } from "react"
-import { searchSuper } from "../../utilities/super-service"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
+import { searchSuper } from "../../utilities/super-services"
 
 import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard"

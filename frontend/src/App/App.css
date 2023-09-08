@@ -1,9 +1,40 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 h1,
-h2{
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Koulen', cursive;
   font-weight: 400 !important;
 }
 
-.bold{
+.bold {
   font-weight: 700 !important;
+}
+
+.headline{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 50px;
+  line-height: .9;
+  color: #f25555ff;
+  text-shadow: 0px 2.5px 2.5px #00000040;
+}
+
+@media only screen and (min-width: 900px) {
+  .App {
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+  }
 }

@@ -15,7 +15,7 @@ const BattleSchema = new Schema({
   superTwoImage: String,
   winner: String,
   details: String,
-  comments: Array,
+  comments: {type: Array, default: []},
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
