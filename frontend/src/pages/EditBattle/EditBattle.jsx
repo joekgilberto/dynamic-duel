@@ -1,7 +1,7 @@
 import "./EditBattle.css"
 
 import { useState, useEffect, useContext } from "react"
-import { useParams, Link, useNavigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { UserContext } from "../../data"
 import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
 
@@ -11,6 +11,8 @@ import BattleChampion from "../../components/BattleChampion/BattleChampion"
 export default function EditBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
+    const { user } = useContext(UserContext);
+
     const { id } = useParams()
 
     const [battle, setBattle] = useState(null)
@@ -18,7 +20,6 @@ export default function EditBattle({ setUpdatedSearch }) {
 
     let isOwner
 
-    const { user } = useContext(UserContext);
 
     if (user) {
         isOwner = battle?.owner?._id === user._id;
@@ -35,6 +36,11 @@ export default function EditBattle({ setUpdatedSearch }) {
             const battleData = await getBattle(id)
             setBattle(battleData)
             setEditFormData({ ...battleData, winner: "Draw" })
+            console.log(battleData)
+            console.log(user)
+            if (user._id !== battleData.owner._id ) {
+                navigate("/");
+            }
         } catch (err) {
             console.log(err)
         }

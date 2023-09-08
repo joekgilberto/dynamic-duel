@@ -7,7 +7,7 @@ import { clearUserToken } from "../../utilities/auth-token";
 export default function Header() {
     const { setAuth, setUser, user } = useContext(UserContext);
 
-    function handleClick(e) {
+    function handleLogout(e) {
         clearUserToken()
         setUser(null);
         setAuth(null);
@@ -35,7 +35,7 @@ export default function Header() {
                             {/* <Link to="/user">
                             <h2 className="login-button">User</h2>
                         </Link>  */}
-                            <Link to="/auth" onClick={handleClick}>
+                            <Link to="/" onClick={handleLogout}>
                                 <h2 className="login-button">Logout</h2>
                             </Link>
                         </>
