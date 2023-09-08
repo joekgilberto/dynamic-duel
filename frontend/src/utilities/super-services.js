@@ -1,10 +1,10 @@
 import * as superApi from './super-api'
 import * as tools from "./tools"
 
-export async function getSixSupers(){
+export async function getEightSupers(){
     try {
         const data = []
-        for(let i=0;i<6;i++){
+        for(let i=0;i<8;i++){
             data.push(await superApi.index())
         }
         return data

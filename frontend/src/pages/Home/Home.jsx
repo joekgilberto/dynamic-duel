@@ -2,7 +2,7 @@ import "./Home.css"
 
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
-import { getSixSupers } from "../../utilities/super-services";
+import { getEightSupers } from "../../utilities/super-services";
 
 import Loading from "../../components/Loading/Loading";
 import HeroCard from "../../components/HeroCard/HeroCard";
@@ -12,8 +12,7 @@ export default function Home({ setUpdatedSearch }) {
     const [homeHeroes, setHomeHeroes] = useState(null)
 
     async function handleRequest() {
-        const superResponse = await getSixSupers();
-
+        const superResponse = await getEightSupers();
         if (superResponse) {
             setHomeHeroes(superResponse);
         } else {

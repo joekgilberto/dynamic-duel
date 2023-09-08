@@ -2,7 +2,7 @@ const BASE_URL = process.env.REACT_APP_API_URL;
 
 export async function index() {
     let rando = Math.ceil(Math.random()*732)
-    const res = await fetch(BASE_URL+rando, {
+    const res = await fetch(`${BASE_URL}/${rando}`, {
       method: "GET",
     });
     
@@ -14,7 +14,7 @@ export async function index() {
 }
 
 export async function show(id) {
-  const res = await fetch(BASE_URL+id, {
+  const res = await fetch(`${BASE_URL}/${id}`, {
     method: "GET",
   });
   
@@ -26,7 +26,7 @@ export async function show(id) {
 }
 
 export async function search(string) {
-  const res = await fetch(BASE_URL+'/search/'+string, {
+  const res = await fetch(`${BASE_URL}/search/${string}`, {
     method: "GET",
   });
     
