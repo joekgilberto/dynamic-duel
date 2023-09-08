@@ -40,7 +40,9 @@ export default function Header() {
                         {/* <Link to="/user">
                             <h2 className="login-button">User</h2>
                         </Link>  */}
-                        <button className="login-button" onClick={handleClick}>Logout</button>
+                        <Link to="/auth" onClick={handleClick}>
+                            <h2 className="login-button">Logout</h2>
+                        </Link>
                         </>
                     ) : (
                         <Link to="/auth">

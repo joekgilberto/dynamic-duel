@@ -1,8 +1,8 @@
 import "./BattleCardImage.css"
 
-export default function BattleCardImage({ superImage, superName }) {
+export default function BattleCardImage({ superImage, superName, side }) {
     return(
-    <div className="BattleCardImage">
+    <div className={`BattleCardImage ${side}`}>
         <img src={superImage} alt={superName} onError={({ currentTarget }) => {
             currentTarget.onerror = null; // prevents looping
             currentTarget.src = require("../../assets/image-not-found.png");

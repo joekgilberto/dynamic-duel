@@ -1,5 +1,3 @@
-import "./LoginForm.css"
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -24,29 +22,32 @@ export default function LoginForm({ login }){
   };
 
   return (
-    <>
+    <div className="login-signup">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="login-signup-form" onSubmit={handleSubmit}>
+        <div className="auth-label-input">
         <label htmlFor="username">Username: </label>
         <input
           id="username"
           name="username"
           value={input.username}
           onChange={handleChange}
+          required
         />
-        <br />
-        <br />
+        </div>
+        <div className="auth-label-input">
         <label htmlFor="password">Password: </label>
         <input
+        type="password"
           id="password"
           name="password"
           value={input.password}
           onChange={handleChange}
+          required
         />
-        <br />
-        <br />
-        <input type="submit" value="Login" />
+        </div>
+        <button className="login-signup-submit" type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 };

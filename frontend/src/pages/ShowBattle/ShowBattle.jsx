@@ -7,17 +7,23 @@ import { getBattle } from "../../utilities/battle-services"
 import { UserContext } from "../../data"
 
 import Loading from "../../components/Loading/Loading"
-import HeroCard from "../../components/HeroCard/HeroCard"
+import BattleChampion from "../../components/BattleChampion/BattleChampion"
 
 export default function ShowBattle({ setUpdatedSearch }) {
 
+    const navigate = useNavigate()
     const { id } = useParams()
+
     const [battle, setBattle] = useState(null)
+    let isOwner
 
     const { user } = useContext(UserContext);
-    const isOwner = battle?.owner?._id == user._id;
 
-    const navigate = useNavigate()
+    if (user){
+        isOwner = battle?.owner?._id == user._id;
+    } else {
+        isOwner = false;
+    }
 
     async function handleRequest() {
         try {
@@ -48,30 +54,14 @@ export default function ShowBattle({ setUpdatedSearch }) {
                         </div>
                     )}
                     <div className="whole-battle">
-                        <div className="show-battle-info left">
-                            <div className="show-battle-display">
-                                <img className="show-battle-image" src={battle.superOneImage} alt={battle.superOneName} onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null; // prevents looping
-                                    currentTarget.src = require("../../assets/image-not-found.png");
-                                    currentTarget.className = "show-battle-image contain";
-                                }} />
-                                <h1>{battle.superOneName}</h1>
-                            </div>
-                        </div>
+                        <BattleChampion image={battle.superOneImage} name={battle.superOneName} />
+                        
                         <div className="show-battle-vs">
                             <h2 className="vs">VS</h2>
                         </div>
 
-                        <div className="show-battle-info right">
-                            <div className="show-battle-display">
-                                <img className="show-battle-image" src={battle.superTwoImage} alt={battle.superTwoName} onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null; // prevents looping
-                                    currentTarget.src = require("../../assets/image-not-found.png");
-                                    currentTarget.className = "show-battle-image contain";
-                                }} />
-                                <h1>{battle.superTwoName}</h1>
-                            </div>
-                        </div>
+                        <BattleChampion image={battle.superTwoImage} name={battle.superTwoName} />
+
                     </div>
                     {battle.details ? (
                         <div className="show-battle-details">

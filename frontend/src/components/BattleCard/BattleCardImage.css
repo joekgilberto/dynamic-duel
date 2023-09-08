@@ -30,5 +30,13 @@
     text-shadow: 0px 2.5px 2.5px #00000040;
     background-color: #f25555ff;
     border-radius: 5px;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 5px 5px #00000040;
+}
+
+.left img{
+    border-radius: 7.5px 0 0 7.5px;
+}
+
+.right img{
+    border-radius: 0 7.5px 7.5px 0;
 }

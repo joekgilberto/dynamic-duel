@@ -1,7 +1,7 @@
 // src/pages/Auth.jsx
 import "./Auth.css"
 
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { UserContext } from "../../data";
 import { setUserToken, clearUserToken } from "../../utilities/auth-token";
 import { login, signUp } from "../../utilities/auth-services";
@@ -10,9 +10,10 @@ import SignUpForm from "../../components/Auth/SignUpForm";
 import LoginForm from "../../components/Auth/LoginForm";
 
 export default function Auth() {
-    const { setAuth, setUser } = useContext(UserContext);
+    const { setAuth, setUser, user } = useContext(UserContext);
+    const [returningUser, setReturningUser] = useState(true)
 
-    async function handleSignUpUser(data){
+    async function handleSignUpUser(data) {
         try {
             const parsedUser = await signUp(data);
             if (parsedUser.token) {
@@ -36,13 +37,18 @@ export default function Auth() {
         }
     };
 
-    async function handleLoginUser(data){
+    function toggleReturning() {
+        setReturningUser(!returningUser)
+    }
+
+    async function handleLoginUser(data) {
         try {
             const parsedUser = await login(data);
             if (parsedUser.token) {
                 setUserToken(parsedUser.token);
                 setUser(parsedUser.user);
                 setAuth(parsedUser.isLoggedIn);
+                console.log(user)
             } else {
                 throw `Server Error: ${parsedUser.err}`;
             }
@@ -56,9 +62,18 @@ export default function Auth() {
     };
 
     return (
-        <section className="container">
-            <SignUpForm signUp={handleSignUpUser} />
-            <LoginForm login={handleLoginUser} />
+        <section className="Auth">
+            {!returningUser ? (
+                <>
+                    <SignUpForm signUp={handleSignUpUser} />
+                    <button className="toggle-login-signup" onClick={toggleReturning}>Login</button>
+                </>
+            ) : (
+                <>
+                    <LoginForm login={handleLoginUser} />
+                    <button className="toggle-login-signup" onClick={toggleReturning}>Sign Up</button>
+                </>
+            )}
         </section>
     );
 }
