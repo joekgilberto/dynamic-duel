@@ -3,6 +3,7 @@ import "./Main.css"
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from "react"
 
+import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import SearchBar from "../SearchBar/SearchBar"
 import Home from "../../pages/Home/Home"
 import Auth from "../../pages/Auth/Auth"
@@ -27,11 +28,25 @@ export default function Main() {
                 <Route path="/heroes/:id" element={<ShowHero setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/heroes/search/:id" element={<SearchHero setUpdatedSearch={setUpdatedSearch} searched={searched} setSearched={setSearched} />} />
                 <Route path="/battles" element={<IndexBattle setUpdatedSearch={setUpdatedSearch} />} />
-                <Route path="/battles/new" element={<NewBattle setUpdatedSearch={setUpdatedSearch} />} />
+                <Route
+                    path="/battles/new"
+                    element={
+                        <PrivateRoute>
+                            <NewBattle setUpdatedSearch={setUpdatedSearch} />
+                        </PrivateRoute>
+                    }
+                />
                 <Route path="/battles/:id" element={<ShowBattle setUpdatedSearch={setUpdatedSearch} />} />
-                <Route path="/battles/:id/edit" element={<EditBattle setUpdatedSearch={setUpdatedSearch} />} />
-                <Route path="/*" element={<Error setUpdatedSearch={setUpdatedSearch} />} />
-            </Routes>
-        </main>
+                <Route
+                    path="/battles/:id/edit"
+                    element={
+                        <PrivateRoute>
+                            <EditBattle setUpdatedSearch={setUpdatedSearch} />
+                        </PrivateRoute>
+                    }
+                />
+            <Route path="/*" element={<Error setUpdatedSearch={setUpdatedSearch} />} />
+        </Routes>
+        </main >
     )
 }

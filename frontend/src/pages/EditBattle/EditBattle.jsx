@@ -18,18 +18,6 @@ export default function EditBattle({ setUpdatedSearch }) {
     const [battle, setBattle] = useState(null)
     const [editFormData, setEditFormData] = useState(null);
 
-    let isOwner
-
-
-    if (user) {
-        isOwner = battle?.owner?._id === user._id;
-    } else {
-        isOwner = false;
-    }
-
-    if (!isOwner) {
-        navigate('/')
-    }
 
     async function handleRequest() {
         try {
@@ -37,9 +25,6 @@ export default function EditBattle({ setUpdatedSearch }) {
             setBattle(battleData)
             setEditFormData({ ...battleData, winner: "Draw" })
             console.log(battleData)
-            if (user._id !== battleData.owner._id ) {
-                navigate("/");
-            }
         } catch (err) {
             console.log(err)
         }
