@@ -9,7 +9,7 @@
 
 .info-card,
 .stats-card {
-    width: 300px;
+    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +75,7 @@
 }
 
 .info-card p{
-    width: 100px;
+    width: 160px;
 }
 
 .stats-card p{
@@ -98,12 +98,6 @@
 
 .stats {
     border-bottom: 4px solid #406bb0;
-}
-
-.info .bold,
-.stats .bold {
-    width: 130px;
-    margin-right: 40px;
 }
 
 .no-bar {
