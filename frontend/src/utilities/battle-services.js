@@ -1,4 +1,5 @@
 import * as battleApi from './battle-api'
+import { deleteLikes } from './likes-services'
 
 export async function getAllBattles() {
     try {
@@ -28,21 +29,21 @@ export async function createBattle(newBattleData) {
     }
 }
 
-export async function editBattle(id, editedBattleData){
+export async function editBattle(id, editedBattleData) {
     try {
         const data = await battleApi.update(id, editedBattleData)
         // the promise from res.json()
         return data
-    }catch(err){
+    } catch (err) {
         return err
     }
 }
 
-export async function deleteBattle(id) {
+export async function deleteBattle(battleId, likesId) {
     try {
-      const deletedBattle = await battleApi.destroy(id);
-      return deletedBattle;
+        const deletedBattle = await battleApi.destroy(battleId);
+        return deletedBattle;
     } catch (err) {
-      throw err;
+        throw err;
     }
-  }
+}

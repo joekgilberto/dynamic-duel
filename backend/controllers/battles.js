@@ -1,4 +1,5 @@
 const { Battles } = require('../models')
+const { Likes } = require('../models')
 const { handleValidateOwnership } = require("../middleware/auth");
 
 // EXPORT Controller Action
@@ -32,7 +33,16 @@ async function create(req, res, next) {
   try {
     // create new battle
     const owner = req.user._id
+    console.log(owner)
     req.body.owner = owner
+
+    const createdLikes = await Likes.create({likes:[]})
+    console.log("createdLikes",createdLikes)
+
+    req.body.likes = createdLikes._id
+    
+    console.log(req.body.likes)
+    
     const newBattle = await Battles.create(req.body)
     res.status(201).json(newBattle);
   } catch (error) {

@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from "react-router-dom"
 import { getBattle } from "../../utilities/battle-services"
+import { addLike, getLikes, removeLike } from "../../utilities/likes-services"
 import { UserContext } from "../../data"
 
 import Loading from "../../components/Loading/Loading"
@@ -15,7 +16,9 @@ export default function ShowBattle({ setUpdatedSearch }) {
     const { id } = useParams()
 
     const [battle, setBattle] = useState(null)
-    let isOwner
+    const [likes, setLikes] = useState(null)
+    const [likeSource,setLikeSource] = useState(require('../../assets/like.png'))
+    let isOwner;
 
     const { user } = useContext(UserContext);
 
@@ -25,10 +28,36 @@ export default function ShowBattle({ setUpdatedSearch }) {
         isOwner = false;
     }
 
+    async function handleLike(e){
+        if(user){
+            if (likes.likes.includes(user._id)){
+                console.log('unlike')
+                setLikeSource(require('../../assets/like.png'))
+                removeLike(likes._id, likes,user._id)
+            } else {
+                console.log('like')
+                setLikeSource(require('../../assets/liked.png'))
+                addLike(likes._id, likes,user._id)
+            }
+        } else{
+            navigate("/auth")
+        }
+    }
+
     async function handleRequest() {
         try {
             const battleData = await getBattle(id)
             setBattle(battleData)
+            const likesData = await getLikes(battleData.likes)
+            setLikes(likesData)
+            if(user){
+                console.log(user._id)
+                console.log(likesData.likes)
+                if (likesData.likes.includes(user._id)){
+                    setLikeSource(require('../../assets/liked.png'))
+                }   
+            }
+            
         } catch (err) {
             console.log(err)
         }
@@ -37,11 +66,12 @@ export default function ShowBattle({ setUpdatedSearch }) {
     useEffect(() => {
         setUpdatedSearch('')
         handleRequest()
+        console.log(battle)
     }, [])
 
     return (
         <section className="ShowBattle">
-            {battle ? (
+            {battle && likes ? (
                 <>
                     {battle.winner === "Draw" ? (
                         <div className="outcome">
@@ -73,6 +103,12 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             <p>{battle.details}</p>
                         </div>
                     ) : null}
+                    <div className="like-comment">
+                        <div className="likes">
+                            <img className="heart" src={likeSource} onClick={handleLike} />
+                            <p className="like-count">{likes.likes?.length} {likes.likes?.length===1?"Like":"Likes"}</p>
+                        </div>
+                    </div>
                     {
                         isOwner ? (
                             <Link to={`/battles/${id}/edit`}>
@@ -81,7 +117,8 @@ export default function ShowBattle({ setUpdatedSearch }) {
                         ) : null}
                 </>
             ) :
-                <Loading />}
-        </section>
+                <Loading />
+            }
+        </section >
     )
 }

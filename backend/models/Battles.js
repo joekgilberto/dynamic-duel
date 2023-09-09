@@ -16,6 +16,10 @@ const BattleSchema = new Schema({
   winner: {type: String, required: true},
   details: String,
   comments: {type: Array, default: []},
+  likes: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Likes',
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
