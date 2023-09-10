@@ -38,7 +38,7 @@ async function create(req, res, next) {
     const createdComments = await Comments.create({comments:[]})
 
     req.body.likes = createdLikes._id
-    req.body.comments = createdComments._id
+        req.body.likes = createdLikes._id
 
         
     const newBattle = await Battles.create(req.body)

@@ -14,6 +14,7 @@ import IndexBattle from "../../pages/IndexBattle/IndexBattle"
 import NewBattle from "../../pages/NewBattle/NewBattle"
 import ShowBattle from "../../pages/ShowBattle/ShowBattle"
 import EditBattle from "../../pages/EditBattle/EditBattle"
+import User from "../../pages/User/User"
 import Error from "../../pages/Error/Error"
 
 export default function Main() {
@@ -44,6 +45,14 @@ export default function Main() {
                     element={
                         <PrivateRoute>
                             <EditBattle setUpdatedSearch={setUpdatedSearch} />
+                        </PrivateRoute>
+                    }
+                />
+                <Route
+                    path="/user"
+                    element={
+                        <PrivateRoute>
+                            <User setUpdatedSearch={setUpdatedSearch} />
                         </PrivateRoute>
                     }
                 />

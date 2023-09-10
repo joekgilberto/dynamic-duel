@@ -17,9 +17,9 @@
     line-height: 1;
     background-color: #f25555ff;
     border-radius: 15px;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #ba3535;
     font-family: 'Koulen', cursive;
     color: #fff;
     border: none;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
 }

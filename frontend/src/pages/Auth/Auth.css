@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 70px;
     font-family: 'Koulen', cursive;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #ba3535;
 }
 
 .login-signup-form{
@@ -28,14 +28,14 @@
     padding: 30px 10px 10px 10px;
     border-radius: 10px;
     background-color: #ffd500ff;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #ffc400;
 }
 
 .auth-label-input {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #406bb0;
     border-radius: 5px;
 }
 
@@ -91,8 +91,8 @@
     background-color: #f25555ff;
     border: none;
     border-radius: 10px;
-    text-shadow: 0px 2.5px 2.5px #00000040;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
+    box-shadow: 0px 2.5px 0 #ba3535;
 }
 
 .login-signup-submit{
@@ -110,8 +110,8 @@
     background-color: #4a86e8ff;
     border: none;
     border-radius: 10px;
-    text-shadow: 0px 2.5px 2.5px #00000040;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
+    box-shadow: 0px 2.5px 0 #406bb0;
 }
 
 .toggle-login-signup {
@@ -129,8 +129,8 @@
     background-color: #f25555ff;
     border: none;
     border-radius: 10px;
-    text-shadow: 0px 2.5px 2.5px #00000040;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
+    box-shadow: 0px 2.5px 0 #ba3535;
 }
 
 .incorrect-div{

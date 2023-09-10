@@ -32,9 +32,9 @@ export default function Header() {
                             <Link to="/battles/new/0">
                                 <h2>Pick A Fight</h2>
                             </Link>
-                            {/* <Link to="/user">
-                            <h2 className="login-button">User</h2>
-                        </Link>  */}
+                            <Link to="/user">
+                                <h2 className="login-button">Profile</h2>
+                            </Link>
                             <Link to="/" onClick={handleLogout}>
                                 <h2 className="login-button">Logout</h2>
                             </Link>

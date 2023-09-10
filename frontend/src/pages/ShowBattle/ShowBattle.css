@@ -12,14 +12,14 @@
     align-items: center;
     margin-top: 20px;
     padding: 5px;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #ba3535;
 }
 
 .outcome h2 {
-    color: #ad3535;
+    color: #f25555ff;
     line-height: 1.2;
     font-size: 40px;
-    border-bottom: 4px solid #ad3535;
+    border-bottom: 4px solid #ba3535;
     text-align: center;
 }
 
@@ -54,10 +54,10 @@
     padding: 10px;
     line-height: .8;
     color: #fff;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
     background-color: #4a86e8ff;
     border-radius: 10px 10px 0 0;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #406bb0;
 }
 
 .show-battle-details p {
@@ -67,7 +67,7 @@
     background-color: #fff;
     border: 5px solid #4a86e8ff;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #406bb0;
 }
 
 .show-battle-edit {
@@ -82,11 +82,11 @@
     font-family: 'Koulen', cursive;
     font-size: 34px;
     line-height: 1;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
     background-color: #4a86e8ff;
     border-radius: 15px;
     border: none;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #406bb0;
 }
 
 .social {
@@ -95,7 +95,7 @@
     padding: 10px;
     border-radius: 10px;
     background-color: #ffd500ff;
-    box-shadow: 0px 2.5px 2.5px #00000040;
+    box-shadow: 0px 2.5px 0 #ffc400;
 }
 
 .by{
@@ -103,7 +103,7 @@
     color: #fff;
     font-family: 'Koulen', cursive;
     font-size: 26px;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
     text-align: right;
     border-top: 4px solid #ffc400ff;
 }
@@ -134,7 +134,7 @@
     font-size: 40px;
     line-height: .8;
     font-family: 'Koulen', cursive;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
 }
 
 .comments-section {
@@ -178,7 +178,7 @@
     font-family: "Roboto", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
     border-bottom: 5px solid #ffd500ff;
 }
 
@@ -237,7 +237,7 @@
     line-height: 1.4;
     background-color: #ffc400ff;
     border: none;
-    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-shadow: 0px 2.5px 0 #00000040;
     border-radius: 0 10px 10px 0;
 
 }
