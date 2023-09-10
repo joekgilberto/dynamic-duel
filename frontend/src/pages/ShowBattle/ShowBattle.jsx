@@ -151,7 +151,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
                                 <p className="like-count">{likes.likes?.length} {likes.likes?.length === 1 ? "Like" : "Likes"}</p>
                             </div>
                             <div className="comment">
-                                <p className="like-count">{battle.comments.length} {battle.comments.length === 1 ? "Comment" : "Comments"}</p>
+                                <p className="like-count">{comments.comments.length} {battle.comments.length === 1 ? "Comment" : "Comments"}</p>
                             </div>
                         </div>
                         <div className="comments-section">
