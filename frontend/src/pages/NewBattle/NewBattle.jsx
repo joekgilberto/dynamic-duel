@@ -14,6 +14,9 @@ export default function NewBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
     const { id } = useParams()
+    if (id > 732){
+        navigate('/404')
+    }
     const [theId, setTheId] = useState(id)
     
 
