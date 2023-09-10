@@ -3,9 +3,9 @@ import "./ShowBattle.css"
 import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from "react-router-dom"
-import { getBattle, addBattleComment, deleteBattleComment } from "../../utilities/battle-services"
+import { getBattle } from "../../utilities/battle-services"
 import { addLike, getLikes, removeLike } from "../../utilities/likes-services"
-import { getAllComments, deleteComment } from "../../utilities/comments-services"
+import { getComments, addComment, removeComment } from "../../utilities/comments-services"
 import { UserContext } from "../../data"
 
 import Loading from "../../components/Loading/Loading"
@@ -54,9 +54,10 @@ export default function ShowBattle({ setUpdatedSearch }) {
         e.preventDefault();
         if (user) {
             try {
-                const addedBattleComment = await addBattleComment(battle, newCommentData, user)
+                const addedComment = await addComment(comments, newCommentData, user)
+                console.log('addedComment',addedComment)
                 setNewCommentData('')
-                const commentsData = await getAllComments(battle.comments)
+                const commentsData = await getComments(battle.comments)
                 setComments(commentsData)
             } catch (error) {
                 console.log(error)
@@ -67,11 +68,12 @@ export default function ShowBattle({ setUpdatedSearch }) {
     }
 
     async function handleDeleteComment(e, comment) {
+        console.log(user)
         if (user) {
             try {
-                const deletedBattleComment = await deleteBattleComment(battle, comment._id)
-                const deletedComment = await deleteComment(comment._id)
-                const commentsData = await getAllComments(battle.comments)
+
+                const removedComment = await removeComment(comments, e.target.id, user)
+                const commentsData = await getComments(battle.comments)
                 setComments(commentsData)
             } catch (error) {
                 console.log(error)
@@ -88,7 +90,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
             const likesData = await getLikes(battleData.likes)
             setLikes(likesData)
 
-            const commentsData = await getAllComments(battleData.comments)
+            const commentsData = await getComments(battleData.comments)
             setComments(commentsData)
             console.log(commentsData)
 
@@ -153,16 +155,17 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             </div>
                         </div>
                         <div className="comments-section">
-                            {comments.length > 0 ? comments.map((pulledComment, idx) => {
+                            {comments.comments.length > 0 ? comments.comments.map((pulledComment, idx) => {
+                                console.log(pulledComment)
                                 return (
-                                    <div className="comment-box" onClick={(e) => handleDeleteComment(e, pulledComment)}>
-                                        <div key={idx} className={idx === (comments.length - 1) ? "indiv-comment no-bottom" : "indiv-comment"}>
+                                    <div className="comment-box">
+                                        <div key={idx} className={idx === (comments.comments.length - 1) ? "indiv-comment no-bottom" : "indiv-comment"}>
                                             <p className="username">{pulledComment.username}</p>
-                                            <p>{pulledComment.description}</p>
+                                            <p>{pulledComment.textContent}</p>
                                         </div>
-                                        {user?._id === pulledComment.owner._id ? (
-                                            <p className="delete-comment">X</p>
-                                        ) : null}
+                                        {user?(user._id === pulledComment.owner ? (
+                                            <p className="delete-comment" id={idx} onClick={(e) => handleDeleteComment(e, pulledComment)} >X</p>
+                                        ) : null):null}
                                     </div>
                                 )
                             }) : (

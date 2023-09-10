@@ -2,9 +2,8 @@ import "./EditBattle.css"
 
 import { useState, useEffect, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { UserContext } from "../../data"
 import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
-import { deleteLikes } from "../../utilities/likes-services"
+import { deleteAllLikes } from "../../utilities/likes-services"
 import { deleteAllComments } from "../../utilities/comments-services"
 
 import Loading from "../../components/Loading/Loading"
@@ -50,7 +49,7 @@ export default function EditBattle({ setUpdatedSearch }) {
     async function handleDelete(e) {
         try {
             const deletedBattle = await deleteBattle(battle._id)
-            const deletedLikes = await deleteLikes(battle.likes)
+            const deletedLikes = await deleteAllLikes(battle.likes)
             const deletedComments = await deleteAllComments(battle.comments)
             console.log(deletedComments)
             navigate('/battles')

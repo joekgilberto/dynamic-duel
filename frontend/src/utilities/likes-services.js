@@ -9,7 +9,7 @@ export async function getLikes(id) {
     }
 }
 
-export async function deleteLikes(id) {
+export async function deleteAllLikes(id) {
     try {
         const deletedLikes = await likesApi.destroy(id);
         return deletedLikes;

@@ -1,34 +1,15 @@
 import * as commentsApi from './comments-api'
 
-export async function getAllComments(arr) {
+export async function getComments(id) {
     try {
-        const foundComments = []
-        for (let comment of arr){
-            let foundComment = await commentsApi.show(comment);
-            foundComments.push(foundComment)
-        }
+        const foundComments = await commentsApi.show(id);
         return foundComments;
     } catch (err) {
         throw err;
     }
 }
 
-export async function createComment(comment, user) {
-    try {
-        const newCommentData = {}
-        newCommentData.description = comment
-        newCommentData.username = user.username
-        newCommentData.owner = user._id
-
-        const data = await commentsApi.create(newCommentData)
-        // the promise from res.json()
-        return data._id
-    } catch (err) {
-        return err
-    }
-}
-
-export async function deleteComment(id) {
+export async function deleteAllComments(id) {
     try {
         const deletedComment = await commentsApi.destroy(id);
         return deletedComment;
@@ -37,15 +18,30 @@ export async function deleteComment(id) {
     }
 }
 
-export async function deleteAllComments(arr) {
+export async function addComment(commentData, newCommentData, user) {
     try {
-        const deletedComments = []
-        for (let comment of arr){
-            const deletedComment = await commentsApi.destroy(comment);
-            deletedComments.push(deletedComment)
+        console.log(user)
+        if (user) {
+            const newComment = { owner: user._id, username: user.username, textContent: newCommentData }
+            commentData.comments.push(newComment)
+            const data = await commentsApi.update(commentData._id, commentData)
+            return data
         }
-        return deletedComments;
+
     } catch (err) {
-        throw err;
+        return err
+    }
+}
+
+export async function removeComment(comments, commentIdx, user) {
+    try {
+        if (comments.comments[commentIdx].owner === user._id) {
+            comments.comments.splice(commentIdx, 1);
+            const data = await commentsApi.update(comments._id, comments)
+            return data
+        }
+
+    } catch (err) {
+        return err
     }
 }

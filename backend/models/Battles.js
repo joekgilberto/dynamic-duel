@@ -15,10 +15,14 @@ const BattleSchema = new Schema({
   superTwoImage: {type: String, required: true},
   winner: {type: String, required: true},
   details: String,
-  comments: {type: Array, default: []},
   likes: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Likes',
+  },
+  comments: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comments',
+    required: true
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

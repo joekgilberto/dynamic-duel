@@ -11,11 +11,11 @@ router.get("/", commentsCtrl.index);
 // show
 router.get("/:id", commentsCtrl.show);
 
-// create
-router.post("/", requireToken, commentsCtrl.create);
-
 // delete
 router.delete("/:id", requireToken, commentsCtrl.delete);
+
+// update
+router.put("/:id", requireToken, commentsCtrl.update);
 
 module.exports = router
 

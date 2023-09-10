@@ -2,15 +2,6 @@ import { getUserToken } from "./auth-token";
 
 const BASE_URL = `${process.env.REACT_APP_COMMENTS_URL}`;
 
-export async function index() {
-    const res = await fetch(BASE_URL, { method: "GET" });
-    if (res.ok) {
-        return res.json();
-    } else {
-        throw new Error("Invalid Request");
-    }
-}
-
 export async function show(id) {
     const url = `${BASE_URL}/${id}`;
     const res = await fetch(url, {
@@ -24,21 +15,22 @@ export async function show(id) {
     }
 }
 
-export async function create(data) {
-    const res = await fetch(BASE_URL, {
-        method: "POST",
+export async function update(id, updatedData) {
+    const url = `${BASE_URL}/${id}`;
+
+    const res = await fetch(url, {
+        method: "PUT",
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${getUserToken()}`
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(updatedData),
     });
 
     if (res.ok) {
         return res.json();
     } else {
-        console.log(res)
-        throw new Error("Invalid Request");
+        throw new Error("Invalid PUT Request");
     }
 }
 
