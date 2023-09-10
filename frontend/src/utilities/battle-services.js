@@ -19,6 +19,15 @@ export async function getBattle(id) {
     }
 }
 
+export async function getUserBattles(id) {
+    try {
+        const foundBattle = await battleApi.users(id);
+        return foundBattle;
+    } catch (err) {
+        throw err;
+    }
+}
+
 export async function createBattle(newBattleData) {
     try {
         const data = await battleApi.create(newBattleData)

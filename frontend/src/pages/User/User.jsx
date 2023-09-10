@@ -2,7 +2,7 @@ import "./User.css"
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../data";
 import { useNavigate } from "react-router";
-import { getAllBattles } from "../../utilities/battle-services";
+import { getUserBattles } from "../../utilities/battle-services";
 import { Link } from "react-router-dom";
 
 import BattleCard from "../../components/BattleCard/BattleCard";
@@ -18,7 +18,7 @@ export default function User({ setUpdatedSearch }) {
     }
 
     async function handleRequest() {
-        let battlesResponse = await getAllBattles();
+        let battlesResponse = await getUserBattles(user._id);
         if (battlesResponse) {
             setUsersBattles(battlesResponse);
         } else {
@@ -33,12 +33,15 @@ export default function User({ setUpdatedSearch }) {
 
     return (
         <section className="User">
+            <h1 className="headline">Welcome, {user.username}!</h1>
+            <div className="user-battles">
             {user && usersBattles ? usersBattles.map((battle, idx) =>
                 <Link key={idx} to={`/battles/${battle._id}`}>
                     <BattleCard battle={battle} />
                 </Link>
             ) :
                 <Loading />}
+            </div>
         </section>
     )
 }

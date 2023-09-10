@@ -21,6 +21,8 @@ const battlesRouter = require('./routes/battles')
 const likesRouter = require("./routes/likes.js");
 const commentsRouter = require("./routes/comments.js");
 const authRouter = require("./routes/auth.js");
+const userBattlesRouter = require("./routes/userBattles.js");
+
 
 const cors = require("cors")
 const morgan = require("morgan")
@@ -39,6 +41,7 @@ app.use('/battles', battlesRouter)
 app.use("/likes", likesRouter)
 app.use("/comments", commentsRouter)
 app.use("/auth", authRouter)
+app.use("/userbattles", userBattlesRouter)
 
 ///////////////////////////////
 // ROUTES

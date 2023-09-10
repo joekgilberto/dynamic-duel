@@ -34,13 +34,13 @@ async function create(req, res, next) {
     const owner = req.user._id
     req.body.owner = owner
 
-    const createdLikes = await Likes.create({likes:[]})
-    const createdComments = await Comments.create({comments:[]})
+    const createdLikes = await Likes.create({ likes: [] })
+    const createdComments = await Comments.create({ comments: [] })
 
     req.body.likes = createdLikes._id
-        req.body.likes = createdLikes._id
+    req.body.comments = createdComments._id
 
-        
+
     const newBattle = await Battles.create(req.body)
     res.status(201).json(newBattle);
   } catch (error) {
@@ -94,3 +94,4 @@ async function update(req, res, next) {
     res.status(400).json(error);
   }
 };
+
