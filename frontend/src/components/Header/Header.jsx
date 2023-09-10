@@ -29,7 +29,7 @@ export default function Header() {
                     </Link>
                     {user ? (
                         <>
-                            <Link to="/battles/new">
+                            <Link to="/battles/new/0">
                                 <h2>Pick A Fight</h2>
                             </Link>
                             {/* <Link to="/user">

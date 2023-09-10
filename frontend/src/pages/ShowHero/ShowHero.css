@@ -127,6 +127,25 @@
 
 }
 
+.start-a-fight{
+    width: 180px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding-top: 5px;
+    font-size: 30px;
+    line-height: 1;
+    background-color: #f25555ff;
+    border-radius: 15px;
+    box-shadow: 0px 2.5px 2.5px #00000040;
+    font-family: 'Koulen', cursive;
+    color: #fff;
+    border: none;
+    text-shadow: 0px 2.5px 2.5px #00000040;
+}
+
 @media only screen and (min-width: 900px) {
     .ShowHero>div {
         flex-direction: row;

@@ -1,5 +1,5 @@
 import "./NewBattle.css"
-import { useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react"
 import { createBattle } from "../../utilities/battle-services";
 
@@ -13,6 +13,9 @@ const initState = {
 export default function NewBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
+    const { id } = useParams()
+    const [theId, setTheId] = useState(id)
+    
 
     const [superOne, setSuperOne] = useState(null)
     const [superTwo, setSuperTwo] = useState(null)
@@ -52,7 +55,7 @@ export default function NewBattle({ setUpdatedSearch }) {
         <section className="NewBattle">
             <h1 className="headline">Pick A Fight!</h1>
             <div className="pick-a-fight">
-                <NewBattleForm whichOne={"first"} thisSuper={superOne} setThisSuper={setSuperOne} />
+                <NewBattleForm whichOne={"first"} thisSuper={superOne} setThisSuper={setSuperOne} id={theId} setId={setTheId} />
                 <form className="final-submit" onSubmit={handleSubmit}>
                     {superOne && superTwo ? (
                         <div className="battle-finalizations">

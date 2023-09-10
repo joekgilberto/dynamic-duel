@@ -31,7 +31,7 @@ export default function Main() {
                 <Route path="/heroes/search/:id" element={<SearchHero setUpdatedSearch={setUpdatedSearch} searched={searched} setSearched={setSearched} />} />
                 <Route path="/battles" element={<IndexBattle setUpdatedSearch={setUpdatedSearch} />} />
                 <Route
-                    path="/battles/new"
+                    path="/battles/new/:id"
                     element={
                         <PrivateRoute>
                             <NewBattle setUpdatedSearch={setUpdatedSearch} />

@@ -5,7 +5,7 @@ import { searchString } from "../../utilities/tools";
 
 import SelectSuper from "./SelectSuper";
 
-export default function NewBattleForm({ whichOne, thisSuper, setThisSuper }) {
+export default function NewBattleForm({ whichOne, thisSuper, setThisSuper, id, setId }) {
 
     const [superTyping, setSuperTyping] = useState('')
     const [superSearched, setSuperSearched] = useState('')
@@ -26,10 +26,14 @@ export default function NewBattleForm({ whichOne, thisSuper, setThisSuper }) {
     }
 
     async function handleReset(e){
-        setThisSuper(null)
-        setSuperTyping('')
-        setSuperSearched('')
-        setBattleSearched(false)
+        if((id >= 1 && id  <= 732)||!id){
+            setThisSuper(null)
+            setSuperTyping('')
+            setSuperSearched('')
+            setBattleSearched(false)
+        } else {
+            setId(0)
+        }
     }
 
     return (
@@ -40,7 +44,7 @@ export default function NewBattleForm({ whichOne, thisSuper, setThisSuper }) {
                     <button className="new-battle-search-button" type="submit">Find {whichOne} super</button>
                 </div>
             ) : null}
-            <SelectSuper superSearched={superSearched} setSuper={setThisSuper} battleSearched={battleSearched} setBattleSearched={setBattleSearched} setSuperTyping={setSuperTyping} thisSuper={thisSuper} />
+            <SelectSuper superSearched={superSearched} setSuper={setThisSuper} battleSearched={battleSearched} setBattleSearched={setBattleSearched} setSuperTyping={setSuperTyping} thisSuper={thisSuper} id={id} />
             {thisSuper? <button className="change-super" onClick={handleReset}>Change Super</button>:null}
         </form>
     )
