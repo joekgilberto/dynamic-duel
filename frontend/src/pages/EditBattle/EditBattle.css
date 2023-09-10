@@ -46,7 +46,7 @@
 }
 
 .edit-battle-details {
-    width: 80%;
+    width: 710px;
     text-align: left;
 }
 
@@ -124,4 +124,8 @@
     border-radius: 15px;
     border: none;
     box-shadow: 0px 2.5px 2.5px #00000040;
+}
+
+.edit-battle-delete:hover{
+    cursor: pointer;
 }

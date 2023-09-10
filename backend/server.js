@@ -18,6 +18,8 @@ const express = require("express");
 const app = express();
 
 const battlesRouter = require('./routes/battles')
+const likesRouter = require("./routes/likes.js");
+const commentsRouter = require("./routes/comments.js");
 const authRouter = require("./routes/auth.js");
 
 const cors = require("cors")
@@ -34,6 +36,8 @@ app.use(morgan("dev")); // logging for development
 
 // all requests for endpoints that begin with '/battles'
 app.use('/battles', battlesRouter)
+app.use("/likes", likesRouter)
+app.use("/comments", commentsRouter)
 app.use("/auth", authRouter)
 
 ///////////////////////////////

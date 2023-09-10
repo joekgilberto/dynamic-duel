@@ -2,8 +2,9 @@ import "./EditBattle.css"
 
 import { useState, useEffect, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { UserContext } from "../../data"
 import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
+import { deleteAllLikes } from "../../utilities/likes-services"
+import { deleteAllComments } from "../../utilities/comments-services"
 
 import Loading from "../../components/Loading/Loading"
 import BattleChampion from "../../components/BattleChampion/BattleChampion"
@@ -11,7 +12,6 @@ import BattleChampion from "../../components/BattleChampion/BattleChampion"
 export default function EditBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
-    const { user } = useContext(UserContext);
 
     const { id } = useParams()
 
@@ -24,7 +24,6 @@ export default function EditBattle({ setUpdatedSearch }) {
             const battleData = await getBattle(id)
             setBattle(battleData)
             setEditFormData({ ...battleData, winner: "Draw" })
-            console.log(battleData)
         } catch (err) {
             console.log(err)
         }
@@ -49,7 +48,10 @@ export default function EditBattle({ setUpdatedSearch }) {
 
     async function handleDelete(e) {
         try {
-            const deletedResp = await deleteBattle(battle._id)
+            const deletedBattle = await deleteBattle(battle._id)
+            const deletedLikes = await deleteAllLikes(battle.likes)
+            const deletedComments = await deleteAllComments(battle.comments)
+            console.log(deletedComments)
             navigate('/battles')
         } catch (err) {
             console.log(err)
@@ -91,8 +93,7 @@ export default function EditBattle({ setUpdatedSearch }) {
                     </div>
                     <div className="save-or-destroy">
                         <button type="submit" className="edit-battle-save">Save</button>
-                        <button className="edit-battle-delete" onClick={handleDelete}>Delete</button>
-
+                        <p className="edit-battle-delete" onClick={handleDelete}>Delete</p>
                     </div>
                 </form>
             ) :

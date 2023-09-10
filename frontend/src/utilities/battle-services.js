@@ -1,4 +1,5 @@
 import * as battleApi from './battle-api'
+import { createComment } from './comments-services'
 
 export async function getAllBattles() {
     try {
@@ -28,21 +29,37 @@ export async function createBattle(newBattleData) {
     }
 }
 
-export async function editBattle(id, editedBattleData){
+export async function editBattle(id, editedBattleData) {
     try {
         const data = await battleApi.update(id, editedBattleData)
         // the promise from res.json()
         return data
-    }catch(err){
+    } catch (err) {
         return err
     }
 }
 
-export async function deleteBattle(id) {
+export async function deleteBattleComment(battle,commentId) {
     try {
-      const deletedBattle = await battleApi.destroy(id);
-      return deletedBattle;
+        const foundComment = battle.comments.indexOf(commentId);
+
+        if (foundComment > -1) {
+            battle.comments.splice(foundComment, 1);
+        }
+
+        const data = await battleApi.update(battle._id, battle)
+        return data
     } catch (err) {
-      throw err;
+        return err
     }
-  }
+}
+
+
+export async function deleteBattle(battleId) {
+    try {
+        const deletedBattle = await battleApi.destroy(battleId);
+        return deletedBattle;
+    } catch (err) {
+        throw err;
+    }
+}

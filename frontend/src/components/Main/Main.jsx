@@ -2,6 +2,7 @@ import "./Main.css"
 
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from "react"
+import { getUserToken } from "../../utilities/auth-token"
 
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import SearchBar from "../SearchBar/SearchBar"
@@ -18,6 +19,7 @@ import Error from "../../pages/Error/Error"
 export default function Main() {
     const [updatedSearch, setUpdatedSearch] = useState('')
     const [searched, setSearched] = useState(false)
+    console.log('getUserToken()',getUserToken())
 
     return (
         <main>
