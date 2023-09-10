@@ -1,6 +1,6 @@
 import { getUserToken } from "./auth-token";
 
-const BASE_URL = `${process.env.REACT_APP_BATTLE_URL}`;
+const BASE_URL = `${process.env.REACT_APP_COMMENTS_URL}`;
 
 export async function index() {
     const res = await fetch(BASE_URL, { method: "GET" });
@@ -39,25 +39,6 @@ export async function create(data) {
     } else {
         console.log(res)
         throw new Error("Invalid Request");
-    }
-}
-
-export async function update(id, updatedData) {
-    const url = `${BASE_URL}/${id}`;
-
-    const res = await fetch(url, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${getUserToken()}`
-        },
-        body: JSON.stringify(updatedData),
-    });
-
-    if (res.ok) {
-        return res.json();
-    } else {
-        throw new Error("Invalid PUT Request");
     }
 }
 

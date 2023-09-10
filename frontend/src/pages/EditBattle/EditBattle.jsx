@@ -4,7 +4,8 @@ import { useState, useEffect, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { UserContext } from "../../data"
 import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
-import { deleteLikes, getLikes } from "../../utilities/likes-services"
+import { deleteLikes } from "../../utilities/likes-services"
+import { deleteAllComments } from "../../utilities/comments-services"
 
 import Loading from "../../components/Loading/Loading"
 import BattleChampion from "../../components/BattleChampion/BattleChampion"
@@ -12,12 +13,10 @@ import BattleChampion from "../../components/BattleChampion/BattleChampion"
 export default function EditBattle({ setUpdatedSearch }) {
 
     const navigate = useNavigate()
-    const { user } = useContext(UserContext);
 
     const { id } = useParams()
 
     const [battle, setBattle] = useState(null)
-    const [likes, setLikes] = useState(null)
     const [editFormData, setEditFormData] = useState(null);
 
 
@@ -26,8 +25,6 @@ export default function EditBattle({ setUpdatedSearch }) {
             const battleData = await getBattle(id)
             setBattle(battleData)
             setEditFormData({ ...battleData, winner: "Draw" })
-            const likesData = await getLikes(battleData.likes)
-            setLikes(likesData)
         } catch (err) {
             console.log(err)
         }
@@ -53,7 +50,9 @@ export default function EditBattle({ setUpdatedSearch }) {
     async function handleDelete(e) {
         try {
             const deletedBattle = await deleteBattle(battle._id)
-            const deletedLike = await deleteLikes(likes._id)
+            const deletedLikes = await deleteLikes(battle.likes)
+            const deletedComments = await deleteAllComments(battle.comments)
+            console.log(deletedComments)
             navigate('/battles')
         } catch (err) {
             console.log(err)
@@ -69,7 +68,7 @@ export default function EditBattle({ setUpdatedSearch }) {
 
     return (
         <section className="EditBattle">
-            {battle && likes ? (
+            {battle ? (
                 <form onSubmit={handleSubmit}>
                     <div className="edit-outcome">
                         <h2>Outcome</h2>

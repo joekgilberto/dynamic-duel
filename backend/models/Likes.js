@@ -6,6 +6,9 @@ const likeSchema = new mongoose.Schema(
             type: Array,
             required: true
         }
+    },
+    {
+        timestamps: true
     }
 );
 

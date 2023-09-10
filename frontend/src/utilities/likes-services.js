@@ -2,9 +2,7 @@ import * as likesApi from './likes-api'
 
 export async function getLikes(id) {
     try {
-        console.log(id)
         const foundLikes = await likesApi.show(id);
-        console.log(foundLikes)
         return foundLikes;
     } catch (err) {
         throw err;

@@ -1,5 +1,5 @@
 import * as battleApi from './battle-api'
-import { deleteLikes } from './likes-services'
+import { createComment } from './comments-services'
 
 export async function getAllBattles() {
     try {
@@ -39,7 +39,40 @@ export async function editBattle(id, editedBattleData) {
     }
 }
 
-export async function deleteBattle(battleId, likesId) {
+export async function addBattleComment(battle,commentData, user) {
+    try {
+        let data;
+        const id = battle._id
+        await createComment(commentData, user).then(async (comment)=>{
+            const battleData = battle
+            battleData.comments.push(comment)
+            data = await battleApi.update(id, battleData)
+
+        })
+        
+        return data
+    } catch (err) {
+        return err
+    }
+}
+
+export async function deleteBattleComment(battle,commentId) {
+    try {
+        const foundComment = battle.comments.indexOf(commentId);
+
+        if (foundComment > -1) {
+            battle.comments.splice(foundComment, 1);
+        }
+
+        const data = await battleApi.update(battle._id, battle)
+        return data
+    } catch (err) {
+        return err
+    }
+}
+
+
+export async function deleteBattle(battleId) {
     try {
         const deletedBattle = await battleApi.destroy(battleId);
         return deletedBattle;

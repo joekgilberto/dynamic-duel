@@ -16,9 +16,6 @@ export async function show(id) {
 }
 
 export async function update(id, updatedData) {
-    console.log(BASE_URL)
-    console.log(id)
-
     const url = `${BASE_URL}/${id}`;
 
     const res = await fetch(url, {
@@ -39,7 +36,6 @@ export async function update(id, updatedData) {
 
 export async function destroy(id) {
     const url = `${BASE_URL}/${id}`;
-    console.log("getUserToken()",getUserToken())
 
     const res = await fetch(url, {
         method: "DELETE",

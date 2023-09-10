@@ -10,13 +10,8 @@ export default function PrivateRoute({ children }) {
 
     function evalCurrentUser() {
         const userDecoded = decodeToken(token);
-        console.log("userDecoded",userDecoded);
-        console.log("user",user)
-        console.log(user?._id)
-        console.log(user?._id !== userDecoded.id)
 
         if (user?._id !== userDecoded.id) {
-            console.log("PrivateRoute")
             navigate("/auth");
         }
     }
@@ -26,7 +21,6 @@ export default function PrivateRoute({ children }) {
     }, []);
 
     if (!token) {
-        console.log("PrivateRoute")
         navigate("/auth");
     }
 
