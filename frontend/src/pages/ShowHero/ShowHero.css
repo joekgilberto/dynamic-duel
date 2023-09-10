@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.ShowHero>div {
+    margin-top: 20px;
+}
+
 .info-card,
 .stats-card {
     width: 350px;
@@ -154,10 +158,17 @@
 
     .info-card,
     .stats-card {
-        width: 35%;
+        width: 350px;
     }
 
     .info-card p {
         width: 200px;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .info-card,
+    .stats-card {
+        width: 450px;
     }
 }
