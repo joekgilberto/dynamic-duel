@@ -19,9 +19,18 @@ export default function Home({ setUpdatedSearch }) {
             console.log(superResponse);
             // context update for error handling might be called
         }
-
-
     };
+
+    async function handleClick(e) {
+        setHomeHeroes(null)
+        const superResponse = await getEightSupers();
+        if (superResponse) {
+            setHomeHeroes(superResponse);
+        } else {
+            console.log(superResponse);
+            // context update for error handling might be called
+        }
+    }
 
     useEffect(() => {
         setUpdatedSearch('')
@@ -39,6 +48,7 @@ export default function Home({ setUpdatedSearch }) {
                 ) :
                     <Loading />}
             </div>
+            {homeHeroes?<button className="more-supers" onClick={handleClick}>More Supers</button>:null}
         </section>
     )
 }
