@@ -98,6 +98,16 @@
     box-shadow: 0px 2.5px 2.5px #00000040;
 }
 
+.by{
+    margin: 10px 10px 0 10px;
+    color: #fff;
+    font-family: 'Koulen', cursive;
+    font-size: 26px;
+    text-shadow: 0px 2.5px 2.5px #00000040;
+    text-align: right;
+    border-top: 4px solid #ffc400ff;
+}
+
 .like-comment {
     display: flex;
     flex-direction: row;
@@ -135,6 +145,7 @@
     margin: 10px 5px;
     padding: 5px 25px;
     background-color: #ffc400ff;
+    border-radius: 10px;
 }
 
 .comment-box{
@@ -198,4 +209,31 @@
 
 .no-bottom {
     border-bottom: none !important;
+}
+
+.create-comments{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+}
+
+.create-comments input{
+    width: 100%;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+}
+
+.create-comments button{
+    color: #fff;
+    font-family: 'Koulen', cursive;
+    font-size: 30px;
+    line-height: 1.4;
+    background-color: #ffc400ff;
+    border: none;
+    text-shadow: 0px 2.5px 2.5px #00000040;
+    border-radius: 0 10px 10px 0;
+
 }

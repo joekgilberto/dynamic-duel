@@ -3,7 +3,7 @@ import "./ShowBattle.css"
 import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from "react-router-dom"
-import { getBattle, addBattleComment,deleteBattleComment } from "../../utilities/battle-services"
+import { getBattle, addBattleComment, deleteBattleComment } from "../../utilities/battle-services"
 import { addLike, getLikes, removeLike } from "../../utilities/likes-services"
 import { getAllComments, deleteComment } from "../../utilities/comments-services"
 import { UserContext } from "../../data"
@@ -69,7 +69,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
     async function handleDeleteComment(e, comment) {
         if (user) {
             try {
-                const deletedBattleComment = await deleteBattleComment(battle,comment._id)
+                const deletedBattleComment = await deleteBattleComment(battle, comment._id)
                 const deletedComment = await deleteComment(comment._id)
                 const commentsData = await getAllComments(battle.comments)
                 setComments(commentsData)
@@ -172,9 +172,15 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             )}
                         </div>
                         <form className="create-comments" onSubmit={handleComment}>
-                            <input type="text" onChange={handleChange} value={newCommentData} placeholder="Say something super!" />
+                            {user ? (
+                                <input type="text" onChange={handleChange} value={newCommentData} placeholder="Say something super!" />
+                            ) : (
+                                <input type="text" onChange={handleChange} value={newCommentData} placeholder="Login to say something super!" disabled />
+                            )}
                             <button type="submit">POST</button>
                         </form>
+                        <p className="by">Posted by {battle.owner.username}</p>
+
                     </div>
                     {
                         isOwner ? (
