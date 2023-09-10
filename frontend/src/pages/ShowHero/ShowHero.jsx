@@ -1,6 +1,6 @@
 import "./ShowHero.css"
 import { useState, useEffect } from "react"
-import { useParams } from "react-router"
+import { useParams,useNavigate } from "react-router"
 import { getSuper } from "../../utilities/super-services";
 import { upperCase } from "../../utilities/tools";
 
@@ -11,12 +11,17 @@ export default function ShowHero({setUpdatedSearch}) {
     const [showHero, setShowHero] = useState(null)
 
     const id = useParams().id
+    const navigate = useNavigate()
 
     async function handleRequest() {
         const superResponse = await getSuper(id);
 
         if (superResponse) {
-            setShowHero(superResponse);
+            if (superResponse.error){
+                navigate('/404')
+            } else {
+                setShowHero(superResponse);
+            }
         } else {
             console.log(superResponse);
             // context update for error handling might be called

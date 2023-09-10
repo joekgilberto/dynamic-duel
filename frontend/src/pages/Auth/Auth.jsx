@@ -64,7 +64,7 @@ export default function Auth() {
         <section className="Auth">
             {!returningUser ? (
                 <>
-                    <SignUpForm signUp={handleSignUpUser} />
+                    <SignUpForm signUp={handleSignUpUser} setReturningUser={setReturningUser} />
                     <button className="toggle-login-signup" onClick={toggleReturning}>Login</button>
                 </>
             ) : (

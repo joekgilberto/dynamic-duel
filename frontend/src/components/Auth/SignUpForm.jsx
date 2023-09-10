@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function SignUpForm({ signUp }) {
+export default function SignUpForm({ signUp, setReturningUser }) {
   const initialState = { username: "", password: "" };
   const [input, setInput] = useState(initialState);
   const navigate = useNavigate();
@@ -9,14 +9,17 @@ export default function SignUpForm({ signUp }) {
   async function handleSubmit(e) {
     e.preventDefault();
     const createdUserToken = await signUp(input);
-
-    if (createdUserToken.token) {
-      navigate("/");
+    if (createdUserToken) {
+      if (createdUserToken.token) {
+        navigate("/");
+      } else {
+        navigate("/auth");
+      }
+      setInput(initialState);
     } else {
-      navigate("/auth");
+      setReturningUser(true)
     }
-    setInput(initialState);
-  };
+  }
 
   function handleChange(e) {
     setInput({ ...input, [e.target.name]: e.target.value });

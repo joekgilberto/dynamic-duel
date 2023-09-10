@@ -47,7 +47,7 @@ export default function Main() {
                         </PrivateRoute>
                     }
                 />
-            <Route path="/*" element={<Error setUpdatedSearch={setUpdatedSearch} />} />
+            <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
         </Routes>
         </main >
     )

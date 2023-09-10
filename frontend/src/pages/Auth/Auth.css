@@ -132,3 +132,15 @@
     text-shadow: 0px 2.5px 2.5px #00000040;
     box-shadow: 0px 2.5px 2.5px #00000040;
 }
+
+.incorrect-div{
+    height: 38px;
+}
+
+.incorrect{
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    color: #a4810d;
+    font-family: 'Roboto', sans-serif;
+}

@@ -101,6 +101,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
             }
 
         } catch (err) {
+            navigate('/404')
             console.log(err)
         }
     }
