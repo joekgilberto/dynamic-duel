@@ -19,7 +19,6 @@ export default function User({ setUpdatedSearch }) {
 
     async function handleRequest() {
         let battlesResponse = await getUserBattles(user._id);
-        console.log(battlesResponse)
         if (battlesResponse) {
             setUsersBattles(battlesResponse);
         } else {

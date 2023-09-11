@@ -24,7 +24,6 @@ export default function Home({ setUpdatedSearch }) {
     async function handleClick(e) {
         setHomeHeroes(null)
         const superResponse = await getEightSupers();
-        console.log("superResponse",superResponse)
         if (superResponse) {
             setHomeHeroes(superResponse);
         } else {

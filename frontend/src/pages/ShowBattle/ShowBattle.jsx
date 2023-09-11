@@ -55,7 +55,6 @@ export default function ShowBattle({ setUpdatedSearch }) {
         if (user) {
             try {
                 const addedComment = await addComment(comments, newCommentData, user)
-                console.log('addedComment',addedComment)
                 setNewCommentData('')
                 const commentsData = await getComments(battle.comments)
                 setComments(commentsData)
@@ -68,7 +67,6 @@ export default function ShowBattle({ setUpdatedSearch }) {
     }
 
     async function handleDeleteComment(e, comment) {
-        console.log(user)
         if (user) {
             try {
 
@@ -92,7 +90,6 @@ export default function ShowBattle({ setUpdatedSearch }) {
 
             const commentsData = await getComments(battleData.comments)
             setComments(commentsData)
-            console.log(commentsData)
 
             if (user) {
                 if (likesData.likes.includes(user._id)) {
@@ -157,7 +154,6 @@ export default function ShowBattle({ setUpdatedSearch }) {
                         </div>
                         <div className="comments-section">
                             {comments.comments.length > 0 ? comments.comments.map((pulledComment, idx) => {
-                                console.log(pulledComment)
                                 return (
                                     <div className="comment-box">
                                         <div key={idx} className={idx === (comments.comments.length - 1) ? "indiv-comment no-bottom" : "indiv-comment"}>

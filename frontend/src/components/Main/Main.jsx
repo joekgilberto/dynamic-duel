@@ -20,7 +20,6 @@ import Error from "../../pages/Error/Error"
 export default function Main() {
     const [updatedSearch, setUpdatedSearch] = useState('')
     const [searched, setSearched] = useState(false)
-    console.log('getUserToken()',getUserToken())
 
     return (
         <main>

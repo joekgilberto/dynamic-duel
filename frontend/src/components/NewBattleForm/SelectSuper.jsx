@@ -11,7 +11,6 @@ export default function SelectSuper({ superSearched, setSuper, battleSearched, s
     async function handleRequest() {
         if (id >= 1 && id  <= 732) {
             const autoHero = await getSuper(id)
-            console.log(autoHero)
             setSuper(autoHero)
             setBattleSearched(false)
 

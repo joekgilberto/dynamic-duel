@@ -6,7 +6,6 @@ const Battles = require('../models/Battles')
 async function clearLikes(){
     try {
         const updatedBattles = await Battles.updateMany({}, {likes: []})
-        console.log(updatedBattles)
     }catch(err){
         console.log(err)
     }finally{

@@ -37,7 +37,6 @@ export default function EditBattle({ setUpdatedSearch }) {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            console.log(editFormData)
             const battleData = await editBattle(battle._id, editFormData)
             navigate(`/battles/${battle._id}`)
         } catch (error) {
@@ -51,7 +50,6 @@ export default function EditBattle({ setUpdatedSearch }) {
             const deletedBattle = await deleteBattle(battle._id)
             const deletedLikes = await deleteAllLikes(battle.likes)
             const deletedComments = await deleteAllComments(battle.comments)
-            console.log(deletedComments)
             navigate('/battles')
         } catch (err) {
             console.log(err)

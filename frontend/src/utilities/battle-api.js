@@ -14,7 +14,6 @@ export async function index() {
 
 export async function users(id) {
     const url = `${USER_BATTLES_URL}/${id}`;
-    console.log(url)
     const res = await fetch(url, { method: "GET" });
     if (res.ok) {
         return res.json();

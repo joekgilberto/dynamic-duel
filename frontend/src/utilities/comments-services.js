@@ -20,7 +20,6 @@ export async function deleteAllComments(id) {
 
 export async function addComment(commentData, newCommentData, user) {
     try {
-        console.log(user)
         if (user) {
             const newComment = { owner: user._id, username: user.username, textContent: newCommentData }
             commentData.comments.push(newComment)
