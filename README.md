@@ -46,7 +46,6 @@ Find a link to the deployed app [here](https://dapper-sopapillas-608b1f.netlify.
 - [File not found image for heroes without working image links](https://commons.wikimedia.org/wiki/File:File-fav-dynamic-color.png)
 - [Maginifying glass icon used in the search bar](https://commons.wikimedia.org/wiki/File:Search-icon.png)
 - [Stack overflow resource for using onerror in images](https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
-- [Trello Planning Board](https://trello.com/b/e1IHm99d/project-3-dynamicduel)
 
 ## Getting Started
 Explore the app [here](https://dapper-sopapillas-608b1f.netlify.app/).
