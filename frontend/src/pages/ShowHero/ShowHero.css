@@ -20,7 +20,7 @@
 }
 
 .show-hero-fav p{
-    width: auto !important;
+    width: 100% !important;
     font-family: 'Koulen', cursive !important;
     font-size: 28px !important;
 }

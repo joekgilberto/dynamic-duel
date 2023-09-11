@@ -44,30 +44,27 @@ export default function User({ setUpdatedSearch }) {
 
     return (
         <section className="User">
-            {user ? (
+            {user && userFavorites && usersBattles ? (
                 <>
                     <h1 className="headline">Welcome, {user.username}!</h1>
                     <h2 className="your-heroes-headline">Your Favorite Supers</h2>
 
-                    {userFavorites ? (
+                    
                         <div className="user-favorties">
                             {userFavorites.map((fav, idx) =>
                                 <Link key={idx} to={`/heroes/${fav.id}`}>
                                     <HeroCard hero={fav} fav={true} />
                                 </Link>)}
                         </div>
-                    ) : <Loading />}
                     <h2 className="your-battles-headline">Your Battles</h2>
                     <div className="user-battles">
-                        {usersBattles ? (usersBattles.length ? usersBattles.map((battle, idx) =>
+                        {usersBattles.length ? usersBattles.map((battle, idx) =>
                             <Link key={idx} to={`/battles/${battle._id}`}>
                                 <BattleCard battle={battle} />
-                            </Link>) : <h1 className="no-battles-yet">No battles yet, go pick some fights!</h1>
-                        ) :
-                            <Loading />}
+                            </Link>) : <h1 className="no-battles-yet">No battles yet, go pick some fights!</h1>}
                     </div>
                 </>
-            ) : null}
+            ) : <Loading />}
         </section>
     )
 }

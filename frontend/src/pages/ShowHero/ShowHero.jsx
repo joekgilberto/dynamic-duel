@@ -75,8 +75,8 @@ export default function ShowHero({ setUpdatedSearch }) {
                         />
                         <h2>{showHero.name}</h2>
                         {user ?
-                            <div className="show-hero-fav">
-                                <img className="star" src={favorite} alt="favorite" onClick={handleFavorite} />
+                            <div className="show-hero-fav" onClick={handleFavorite}>
+                                <img className="star" src={favorite} alt="favorite" />
                                 <p>Favorite</p>
                             </div>
                             : null}
