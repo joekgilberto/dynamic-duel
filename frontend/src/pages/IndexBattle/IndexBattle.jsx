@@ -15,6 +15,7 @@ export default function IndexBattle({setUpdatedSearch}){
         const battlesResponse = await getAllBattles();
 
         if (battlesResponse) {
+            battlesResponse.reverse()
             setIndexBattles(battlesResponse);
         } else {
             console.log(battlesResponse);
