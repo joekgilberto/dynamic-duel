@@ -49,7 +49,7 @@ Find a link to the deployed app [here](https://dapper-sopapillas-608b1f.netlify.
 - [Trello Planning Board](https://trello.com/b/e1IHm99d/project-3-dynamicduel)
 
 ## Getting Started
-Explore the app [here](https://dapper-sopapillas-608b1f.netlify.app/)
+Explore the app [here](https://dapper-sopapillas-608b1f.netlify.app/).
 
 Use the searchbar at the top to browse our superheroes on file.  Click their cards to learn more about each hero.  Login (or sign up) to pick fights, pitting super against super!  Determine the outcome, fill in the battle's details, and post.  From there you can browse battles, like your favorites, and post your comments.
 
