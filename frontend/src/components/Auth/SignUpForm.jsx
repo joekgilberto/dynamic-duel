@@ -40,10 +40,9 @@ export default function SignUpForm({ signUp, setReturningUser }) {
             required
           />
         </div>
-        <div className="new-password">
           <div className="auth-label-input">
 
-            <label htmlFor="password">Password: </label>
+            <label className="signup-password" htmlFor="password">Password: </label>
             <input
               type="password"
               id="password"
@@ -53,9 +52,11 @@ export default function SignUpForm({ signUp, setReturningUser }) {
               minlength="8"
               required
             />
+
+
           </div>
-          <p>Minimum of eight (8) characters.</p>
-        </div>
+          <p className="new-password">Password must have a minimum of eight (8) characters.</p>
+
         <button className="login-signup-submit" type="submit">Submit</button>
       </form>
     </div>

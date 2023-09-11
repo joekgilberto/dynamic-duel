@@ -68,11 +68,6 @@
 }
 
 .new-password{
-    margin-top: 20px;
-}
-
-.new-password p{
-    text-align: center;
     color: #9c7804;
     font-family: 'Roboto', sans-serif;
 }
