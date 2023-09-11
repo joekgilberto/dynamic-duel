@@ -16,6 +16,7 @@ export default function User({ setUpdatedSearch }) {
     async function handleRequest() {
         let battlesResponse = await getUserBattles(user._id);
         if (battlesResponse) {
+            battlesResponse.reverse()
             setUsersBattles(battlesResponse);
         } else {
             console.log(battlesResponse);

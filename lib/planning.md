@@ -7,23 +7,23 @@ A full-stack application that allows users to read up on their favorite superher
 
 ## Wireframes
 ### Index
-![Index](./assets/index.png)
+![Index](./assets/planning/index.png)
 
 ### Index Mobile
-![Index Mobile](./assets/index-mobile.png)
+![Index Mobile](./assets/planning/index-mobile.png)
 
 ### Show
-![Show](./assets/show.png)
+![Show](./assets/planning/planning/show.png)
 
 ### Battles (Icebox)
-![Battles](./assets/battles.png)
+![Battles](./assets/planning/battles.png)
 
 ## Component Trees
 ### MVP Tree
-![MVP Component Tree](./assets/mvp-tree.png)
+![MVP Component Tree](./assets/planning/mvp-tree.png)
 
 ### Icebox Tree
-![Icebox Component Tree](./assets/icebox-tree.png)
+![Icebox Component Tree](./assets/planning/icebox-tree.png)
 
 ## Models
 ### MVP
@@ -62,10 +62,10 @@ A full-stack application that allows users to read up on their favorite superher
 
 ## ERD
 ### Icebox
-![ERD](./assets/icebox-erd.png)
+![ERD](./assets/planning/icebox-erd.png)
 
 ## JSON Example
-![JSON Example](./assets/json-example.png)
+![JSON Example](./assets/planning/json-example.png)
 
 ## User Stories
 ### MVP
