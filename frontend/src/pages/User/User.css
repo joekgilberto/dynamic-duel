@@ -10,6 +10,12 @@
     color: #fff;
 }
 
+.no-battles-yet{
+    margin-top: 20px;
+    color: #ffd500ff;
+    font-size: 30px;
+}
+
 @media only screen and (min-width: 900px) {
     .user-battles{
         flex-direction: row;

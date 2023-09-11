@@ -19,6 +19,7 @@ export default function User({ setUpdatedSearch }) {
 
     async function handleRequest() {
         let battlesResponse = await getUserBattles(user._id);
+        console.log(battlesResponse)
         if (battlesResponse) {
             setUsersBattles(battlesResponse);
         } else {
@@ -35,10 +36,10 @@ export default function User({ setUpdatedSearch }) {
         <section className="User">
             <h1 className="headline">Welcome, {user.username}!</h1>
             <div className="user-battles">
-            {user && usersBattles ? usersBattles.map((battle, idx) =>
+            {user && usersBattles ? (usersBattles.length?usersBattles.map((battle, idx) =>
                 <Link key={idx} to={`/battles/${battle._id}`}>
                     <BattleCard battle={battle} />
-                </Link>
+                </Link>):<h1 className="no-battles-yet">No battles yet, go pick some fights!</h1>
             ) :
                 <Loading />}
             </div>
