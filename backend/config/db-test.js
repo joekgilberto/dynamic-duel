@@ -1,7 +1,7 @@
-require('../dotenv').config()
+require('../node_modules/dotenv').config()
 require('./database')
 
-const Battles = require('../models/Battles')
+const { Battles, User } = require('../models')
 
 async function clearLikes(){
     try {
@@ -13,4 +13,14 @@ async function clearLikes(){
     }
 }
 
-clearLikes()
+async function addFavoritesArr(){
+    try {
+        const updatedBattles = await User.updateMany({}, {favorites: []})
+    }catch(err){
+        console.log(err)
+    }finally{
+        process.exit()
+    }
+}
+
+// addFavoritesArr()

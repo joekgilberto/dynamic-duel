@@ -33,7 +33,7 @@ export default function SearchHero({setUpdatedSearch,searched,setSearched}){
                 </Link>
 
             ) : searched?
-                <Loading />:<h2 className="none-found">No supers found</h2>}
+                <Loading />:<h2 className="none-found">No supers found for "{id}"</h2>}
         </section>
             
         </section>
