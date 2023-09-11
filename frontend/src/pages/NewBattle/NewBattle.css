@@ -91,7 +91,12 @@
     text-align: left;
 
     border: none;
-    border-radius: 0 0 5px 5px;}
+    border-radius: 0 0 5px 5px;
+}
+
+.details textarea:focus{
+    outline: none;
+}
 
 .post{
     width: 170px;
