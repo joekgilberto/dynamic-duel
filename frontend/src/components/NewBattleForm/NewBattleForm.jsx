@@ -31,6 +31,7 @@ export default function NewBattleForm({ whichOne, thisSuper, setThisSuper, id, s
             setSuperTyping('')
             setSuperSearched('')
             setBattleSearched(false)
+            setId(0)
         } else {
             setId(0)
         }
