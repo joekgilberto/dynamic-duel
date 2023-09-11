@@ -27,7 +27,7 @@ export default function User({ setUpdatedSearch }) {
         }
 
         let favoritesResponse = []
-        for (let fav of user.favorites){
+        for (let fav of user.favorites) {
             const foundFav = await getSuper(fav)
             favoritesResponse.push(foundFav)
         }
@@ -47,15 +47,17 @@ export default function User({ setUpdatedSearch }) {
             {user ? (
                 <>
                     <h1 className="headline">Welcome, {user.username}!</h1>
-                    {userFavorites?(
-                        <div>
-                            {console.log(userFavorites)}
-                           {userFavorites.map((fav, idx) =>
-                            <Link key={idx} to={`/heroes/${fav.id}`}>
-                                <HeroCard hero={fav} />
-                            </Link>)}
+                    <h2 className="your-heroes-headline">Your Favorite Supers</h2>
+
+                    {userFavorites ? (
+                        <div className="user-favorties">
+                            {userFavorites.map((fav, idx) =>
+                                <Link key={idx} to={`/heroes/${fav.id}`}>
+                                    <HeroCard hero={fav} fav={true} />
+                                </Link>)}
                         </div>
-                    ):<Loading />}
+                    ) : <Loading />}
+                    <h2 className="your-battles-headline">Your Battles</h2>
                     <div className="user-battles">
                         {usersBattles ? (usersBattles.length ? usersBattles.map((battle, idx) =>
                             <Link key={idx} to={`/battles/${battle._id}`}>

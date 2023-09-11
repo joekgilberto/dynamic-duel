@@ -1,4 +1,30 @@
-.user-battles{
+.User{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.User a{
+    color: #fff;
+}
+
+.your-heroes-headline,
+.your-battles-headline{
+    font-size: 36px;
+    margin: 25px 0 0 0;
+    text-decoration: underline;
+}
+
+.your-heroes-headline{
+    color: #ffc400;
+}
+
+.your-battles-headline{
+    color: #4a86e8ff;
+}
+
+.user-favorties{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,8 +32,13 @@
     align-items: center;
 }
 
-.User a{
-    color: #fff;
+
+.user-battles{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .no-battles-yet{
@@ -17,6 +48,12 @@
 }
 
 @media only screen and (min-width: 900px) {
+
+    .user-favorties{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .user-battles{
         flex-direction: row;
         flex-wrap: wrap;
