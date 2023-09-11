@@ -13,10 +13,6 @@ export default function User({ setUpdatedSearch }) {
     const navigate = useNavigate()
     const [usersBattles, setUsersBattles] = useState(null)
 
-    if (!user) {
-        navigate('/auth')
-    }
-
     async function handleRequest() {
         let battlesResponse = await getUserBattles(user._id);
         if (battlesResponse) {
@@ -28,20 +24,28 @@ export default function User({ setUpdatedSearch }) {
     }
 
     useEffect(() => {
-        handleRequest()
+        if (!user) {
+            navigate('/auth')
+        } else {
+            handleRequest()
+        }
     }, [])
 
     return (
         <section className="User">
-            <h1 className="headline">Welcome, {user.username}!</h1>
-            <div className="user-battles">
-            {user && usersBattles ? (usersBattles.length?usersBattles.map((battle, idx) =>
-                <Link key={idx} to={`/battles/${battle._id}`}>
-                    <BattleCard battle={battle} />
-                </Link>):<h1 className="no-battles-yet">No battles yet, go pick some fights!</h1>
-            ) :
-                <Loading />}
-            </div>
+            {user ? (
+                <>
+                    <h1 className="headline">Welcome, {user.username}!</h1>
+                    <div className="user-battles">
+                        {usersBattles ? (usersBattles.length ? usersBattles.map((battle, idx) =>
+                            <Link key={idx} to={`/battles/${battle._id}`}>
+                                <BattleCard battle={battle} />
+                            </Link>) : <h1 className="no-battles-yet">No battles yet, go pick some fights!</h1>
+                        ) :
+                            <Loading />}
+                    </div>
+                </>
+            ) : null}
         </section>
     )
 }
