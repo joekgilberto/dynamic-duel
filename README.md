@@ -3,31 +3,31 @@ A full-stack application that allows users to read up on their favorite superher
 
 ## Screenshots
 ### Home
-![Index](lib/assets/README/home.png)
+![Home](lib/assets/README/home.png)
 
 ### Show Hero
-![Index](lib/assets/README/show-hero.png)
+![Show hero](lib/assets/README/show-hero.png)
 
 ### Battle Index
-![Index](lib/assets/README/battle-index.png)
+![Battle index](lib/assets/README/battle-index.png)
 
 ### Create Battle
-![Index](lib/assets/README/create-battle.png)
+![Create battle](lib/assets/README/create-battle.png)
 
 ### Show Battle
-![Index](lib/assets/README/show-battle.png)
+![Show battle](lib/assets/README/show-battle.png)
 
 ### Edit Battle
-![Index](lib/assets/README/edit-battle.png)
+![Edit battle](lib/assets/README/edit-battle.png)
 
 ### Profile
-![Index](lib/assets/README/profile.png)
+![Profile](lib/assets/README/profile.png)
 
 ### Login
-![Index](lib/assets/README/login.png)
+![Login](lib/assets/README/login.png)
 
 ### Sign Up
-![Index](lib/assets/README/sign-up.png)
+![Sign Up](lib/assets/README/sign-up.png)
 
 ## Technologies Used
 - MERN Stack
