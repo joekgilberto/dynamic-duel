@@ -28,6 +28,15 @@ export async function getUserBattles(id) {
     }
 }
 
+export async function getOtherUserBattles(id) {
+    try {
+        const foundBattle = await battleApi.otherUsers(id);
+        return foundBattle;
+    } catch (err) {
+        throw err;
+    }
+}
+
 export async function createBattle(newBattleData) {
     try {
         const data = await battleApi.create(newBattleData)

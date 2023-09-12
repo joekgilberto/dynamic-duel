@@ -1,8 +1,7 @@
 import "./Main.css"
 
 import { Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from "react"
-import { getUserToken } from "../../utilities/auth/auth-token"
+import { useState } from "react"
 
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import SearchBar from "../SearchBar/SearchBar"

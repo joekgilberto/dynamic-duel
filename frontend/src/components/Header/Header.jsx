@@ -17,7 +17,7 @@ export default function Header() {
         <header>
             <nav>
                 <Link to="/">
-                    <img className="logo" src={require("../../assets/logo.png")} />
+                    <img className="logo" src={require("../../assets/logo.png")} alt="Dynamic Duel logo" />
                 </Link>
 
                 <div className="nav-buttons">

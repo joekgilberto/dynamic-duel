@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { getSuper } from "../../utilities/super/super-services";
 import { getUser } from "../../utilities/auth/auth-services";
-import { getUserBattles } from "../../utilities/battle/battle-services";
+import { getOtherUserBattles } from "../../utilities/battle/battle-services";
 
 import FavCard from "../../components/FavCard/FavCard";
 import BattleCard from "../../components/BattleCard/BattleCard";
@@ -22,23 +22,23 @@ export default function User({ setUpdatedSearch }) {
 
     async function handleRequest() {
         let otherUserResponse = await getUser(id)
-        if (otherUserResponse[0]) {
-            setOtherUser(otherUserResponse[0]);
+        if (otherUserResponse) {
+            setOtherUser(otherUserResponse);
         } else {
             console.log(otherUserResponse);
         }
 
-        if (!otherUserResponse[0]) {
+        if (!otherUserResponse) {
             navigate("/404")
         } else {
 
             if (user) {
-                if (user._id === otherUserResponse[0]._id) {
+                if (user.username === otherUserResponse.username) {
                     navigate("/user")
                 }
             }
 
-            let battlesResponse = await getUserBattles(otherUserResponse[0]._id);
+            let battlesResponse = await getOtherUserBattles(otherUserResponse.username);
             if (battlesResponse) {
                 battlesResponse.reverse()
                 setOtherUsersBattles(battlesResponse);
@@ -47,7 +47,7 @@ export default function User({ setUpdatedSearch }) {
             }
 
             let favoritesResponse = []
-            for (let fav of otherUserResponse[0].favorites) {
+            for (let fav of otherUserResponse.favorites) {
                 const foundFav = await getSuper(fav)
                 favoritesResponse.push(foundFav)
             }

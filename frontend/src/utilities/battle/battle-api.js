@@ -2,6 +2,7 @@ import { getUserToken } from "../auth/auth-token";
 
 const BASE_URL = `${process.env.REACT_APP_BATTLE_URL}`;
 const USER_BATTLES_URL = `${process.env.REACT_APP_USER_BATTLES_URL}`;
+const OTHER_USER_BATTLES_URL = `${process.env.REACT_APP_OTHER_USERS_BATTLES_URL}`;
 
 export async function index() {
     const res = await fetch(BASE_URL, { method: "GET" });
@@ -14,6 +15,16 @@ export async function index() {
 
 export async function users(id) {
     const url = `${USER_BATTLES_URL}/${id}`;
+    const res = await fetch(url, { method: "GET" });
+    if (res.ok) {
+        return res.json();
+    } else {
+        throw new Error("Invalid Request");
+    }
+}
+
+export async function otherUsers(id) {
+    const url = `${OTHER_USER_BATTLES_URL}/${id}`;
     const res = await fetch(url, { method: "GET" });
     if (res.ok) {
         return res.json();

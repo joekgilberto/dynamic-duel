@@ -76,8 +76,9 @@ async function update(req, res, next) {
 
 async function show(req, res, next) {
     try {
-      const foundUser = await User.find({username: req.params.id})
-      delete foundUser.password
+      const foundUsersArr = await User.find({username: req.params.id})
+      const foundUser = {username: foundUsersArr[0].username, favorites: foundUsersArr[0].favorites}
+      console.log(foundUser)
       res.status(200).json(foundUser);
     } catch (error) {
       res.status(400).json(error);

@@ -11,9 +11,9 @@ export default function SuperCard({ superhero }) {
                 }}
                 alt={superhero.name} />
             <div className="fav-name">
-                <img className="star" src={require('../../assets/favorite.png')} />
+                <img className="star" src={require('../../assets/favorite.png')} alt="star" />
                 <p>{superhero.name}</p>
-                <img className="star" src={require('../../assets/favorite.png')} />
+                <img className="star" src={require('../../assets/favorite.png')} alt="star" />
             </div>
         </section>
     )

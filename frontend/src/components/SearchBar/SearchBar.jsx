@@ -1,6 +1,5 @@
 import "./SearchBar.css"
 
-import { useState } from "react";
 import { useNavigate } from "react-router";
 import { searchString } from "../../utilities/tools";
 
@@ -27,7 +26,7 @@ export default function SearchBar({updatedSearch, setUpdatedSearch,setSearched})
     return(
         <form className="SearchBar" onSubmit={handleSubmit}>
               <input className="search-input" type="text" placeholder="Search a super.." onChange={handleChange} value={updatedSearch} />
-              <button className="search-button" type="submit"><img className="magnifying-glass" src={require("../../assets/search.png")} /></button>
+              <button className="search-button" type="submit"><img className="magnifying-glass" src={require("../../assets/search.png")} alt="maginifying glass" /></button>
         </form>
     )
 }
