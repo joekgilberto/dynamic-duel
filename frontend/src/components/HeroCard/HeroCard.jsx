@@ -1,7 +1,5 @@
 import "./HeroCard.css"
 
-import * as tools from "../../utilities/tools"
-
 export default function HeroCard({ hero }) {
     
     return (

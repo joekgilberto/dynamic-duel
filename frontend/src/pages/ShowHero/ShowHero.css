@@ -11,6 +11,33 @@
     margin-top: 20px;
 }
 
+.show-hero-fav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 5px 0;
+    gap: 10px;
+}
+
+.show-hero-fav p{
+    width: 100% !important;
+    font-family: 'Koulen', cursive !important;
+    font-size: 28px !important;
+}
+
+.star{
+    width: 40px;
+    height: 40px;
+}
+
+.fav-error{
+    width: 90% !important;
+    color: #a4810d !important;
+    font-size: 16px !important;
+    text-align: center;
+    text-shadow: none !important;
+}
+
 .info-card,
 .stats-card {
     width: 350px;
@@ -131,6 +158,13 @@
     box-shadow: 0px 2.5px 0 #406bb0;
 
 
+}
+
+.stats-fight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .start-a-fight{

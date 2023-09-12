@@ -61,9 +61,40 @@ async function logout(req, res, next) {
     }
 };
 
+async function update(req, res, next) {
+    try {
+        if (req.user._id.equals(req.body._id)) {
+            const updatedUser = await User.findByIdAndUpdate(
+                req.params.id,
+                req.body,
+                { new: true }
+            )
+            res.status(200).json(updatedUser)
+        }
+
+    } catch (error) {
+        //send error
+        res.status(400).json(error);
+    }
+};
+
+async function show(req, res, next) {
+    try {
+      const foundUser = await User.find({username: req.params.id})
+      // send one battle
+      delete foundUser.password
+      res.status(200).json(foundUser);
+    } catch (error) {
+      //send error
+      res.status(400).json(error);
+    }
+  };
+
 module.exports = {
     signUp,
     login,
-    logout
+    logout,
+    update,
+    show
 }
 

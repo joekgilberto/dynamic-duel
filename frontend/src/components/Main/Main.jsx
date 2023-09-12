@@ -15,6 +15,7 @@ import NewBattle from "../../pages/NewBattle/NewBattle"
 import ShowBattle from "../../pages/ShowBattle/ShowBattle"
 import EditBattle from "../../pages/EditBattle/EditBattle"
 import User from "../../pages/User/User"
+import OtherUser from "../../pages/OtherUser/OtherUser"
 import Error from "../../pages/Error/Error"
 
 export default function Main() {
@@ -55,8 +56,10 @@ export default function Main() {
                         </PrivateRoute>
                     }
                 />
-            <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
-        </Routes>
+
+                <Route path="/user/:id" element={<OtherUser setUpdatedSearch={setUpdatedSearch} />} />
+                <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
+            </Routes>
         </main >
     )
 }

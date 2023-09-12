@@ -157,12 +157,14 @@ export default function ShowBattle({ setUpdatedSearch }) {
                                 return (
                                     <div className="comment-box">
                                         <div key={idx} className={idx === (comments.comments.length - 1) ? "indiv-comment no-bottom" : "indiv-comment"}>
-                                            <p className="username">{pulledComment.username}</p>
+                                            <Link to={`/user/${pulledComment.username}`}>
+                                                <p className="username">{pulledComment.username}</p>
+                                            </Link>
                                             <p>{pulledComment.textContent}</p>
                                         </div>
-                                        {user?(user._id === pulledComment.owner ? (
+                                        {user ? (user._id === pulledComment.owner ? (
                                             <p className="delete-comment" id={idx} onClick={(e) => handleDeleteComment(e, pulledComment)} >X</p>
-                                        ) : null):null}
+                                        ) : null) : null}
                                     </div>
                                 )
                             }) : (
@@ -179,7 +181,9 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             )}
                             <button type="submit">POST</button>
                         </form>
-                        <p className="by">Posted by {battle.owner.username}</p>
+                        <Link to={`/user/${battle.owner.username}`}>
+                            <p className="by">Posted by {battle.owner.username}</p>
+                        </Link>
 
                     </div>
                     {

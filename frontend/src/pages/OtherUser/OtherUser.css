@@ -1,0 +1,23 @@
+.OtherUser{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.OtherUser a{
+    color: #fff;
+}
+
+.none-yet{
+    text-align: center;
+    font-size: 30px;
+}
+
+.dark-yellow{
+    color: #ffc400;
+}
+
+.dark-blue{
+    color: #406bb0;
+}
