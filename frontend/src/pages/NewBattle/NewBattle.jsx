@@ -1,7 +1,7 @@
 import "./NewBattle.css"
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react"
-import { createBattle } from "../../utilities/battle-services";
+import { createBattle } from "../../utilities/battle/battle-services";
 
 import NewBattleForm from "../../components/NewBattleForm/NewBattleForm";
 

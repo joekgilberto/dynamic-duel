@@ -2,9 +2,9 @@ import "./EditBattle.css"
 
 import { useState, useEffect, useContext } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import { getBattle, editBattle, deleteBattle } from "../../utilities/battle-services"
-import { deleteAllLikes } from "../../utilities/likes-services"
-import { deleteAllComments } from "../../utilities/comments-services"
+import { getBattle, editBattle, deleteBattle } from "../../utilities/battle/battle-services"
+import { deleteAllLikes } from "../../utilities/likes/likes-services"
+import { deleteAllComments } from "../../utilities/comments/comments-services"
 
 import Loading from "../../components/Loading/Loading"
 import BattleChampion from "../../components/BattleChampion/BattleChampion"

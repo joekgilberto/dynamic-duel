@@ -16,7 +16,7 @@ export default function SearchBar({updatedSearch, setUpdatedSearch,setSearched})
         e.preventDefault()
         try {
             setSearched(true)
-            navigate(`/heroes/search/${searchString(updatedSearch)}`)
+            navigate(`/supers/search/${searchString(updatedSearch)}`)
             setUpdatedSearch('')
         } catch (error) {
             navigate(`/`)

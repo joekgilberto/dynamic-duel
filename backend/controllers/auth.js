@@ -3,17 +3,14 @@ const bcrypt = require("bcrypt");
 const { createUserToken } = require("../middleware/auth");
 
 async function signUp(req, res, next) {
-    //   has the password before storing the user info in the database
     try {
 
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(req.body.password, salt);
 
         const cachedPW = req.body.password;
-        // we store this temporarily so the origin plain text password can be parsed by the createUserToken();
 
         req.body.password = passwordHash;
-        // modify req.body (for storing hash in db)
 
         const newUser = await User.create(req.body);
 
@@ -73,7 +70,6 @@ async function update(req, res, next) {
         }
 
     } catch (error) {
-        //send error
         res.status(400).json(error);
     }
 };
@@ -81,11 +77,9 @@ async function update(req, res, next) {
 async function show(req, res, next) {
     try {
       const foundUser = await User.find({username: req.params.id})
-      // send one battle
       delete foundUser.password
       res.status(200).json(foundUser);
     } catch (error) {
-      //send error
       res.status(400).json(error);
     }
   };

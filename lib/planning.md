@@ -69,14 +69,14 @@ A full-stack application that allows users to read up on their favorite superher
 
 ## User Stories
 ### MVP
-- As a user I want to access superhero data so I can learn more about superheroes.
+- As a user I want to access supersuper data so I can learn more about supers.
 - As a user, I want to access a home page that shows me 6 random supers so I can discover new supers.
 - As a user, I want to access a super show page that shows me specific details of supers so I can learn more.
 - As a user, I want to search for supers by name, taking me to a search page, to help me find supers more easily.
 - As a user, I want to be able to search for more supers when on the search page.
 - As a user, I want to see a loading component when waiting for data to load so I know I'm waiting for data to be displayed.
 - As a user I want to be able to login to the application with Google to save data specific to me.
-- As a user, I want to be able to save my favorite superheroes.
+- As a user, I want to be able to save my favorite supers.
 - As a user, I want to be able to use the website on mobile.
 
 ### Icebox

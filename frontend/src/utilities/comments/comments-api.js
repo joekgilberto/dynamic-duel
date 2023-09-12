@@ -1,6 +1,6 @@
-import { getUserToken } from "./auth-token";
+import { getUserToken } from "../auth/auth-token";
 
-const BASE_URL = `${process.env.REACT_APP_LIKES_URL}`;
+const BASE_URL = `${process.env.REACT_APP_COMMENTS_URL}`;
 
 export async function show(id) {
     const url = `${BASE_URL}/${id}`;

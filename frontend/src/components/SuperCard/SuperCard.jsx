@@ -1,16 +1,16 @@
-import "./HeroCard.css"
+import "./SuperCard.css"
 
-export default function HeroCard({ hero }) {
+export default function SuperCard({ superhero }) {
     
     return (
-        <section className="HeroCard">
-            <img src={hero.image.url}
+        <section className="SuperCard">
+            <img src={superhero.image.url}
             onError={({ currentTarget }) => {
                 currentTarget.onerror = null; // prevents looping
                 currentTarget.src=require("../../assets/image-not-found.png");
               }}
-            alt={hero.name} />
-            <p>{hero.name}</p>
+            alt={superhero.name} />
+            <p>{superhero.name}</p>
         </section>
     )
 }

@@ -1,21 +1,21 @@
-import "./SearchHero.css"
+import "./SearchSuper.css"
 
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import { searchSuper } from "../../utilities/super-services"
+import { searchSuper } from "../../utilities/super/super-services"
 
 import Loading from "../../components/Loading/Loading";
-import HeroCard from "../../components/HeroCard/HeroCard"
+import SuperCard from "../../components/SuperCard/SuperCard"
 
-export default function SearchHero({ setUpdatedSearch, searched, setSearched }) {
+export default function SearchSuper({ setUpdatedSearch, searched, setSearched }) {
 
     const id = useParams().id
-    const [foundHeroes, setFoundHeroes] = useState(null)
+    const [foundSupers, setFoundSupers] = useState(null)
 
     async function handleRequest() {
         const searchResults = await searchSuper(id)
-        setFoundHeroes(searchResults.results)
+        setFoundSupers(searchResults.results)
         setSearched(false)
     }
 
@@ -25,11 +25,11 @@ export default function SearchHero({ setUpdatedSearch, searched, setSearched }) 
     }, [searched])
 
     return (
-        <section className="SearchHero">
-            <div className="hero-results">
-                {foundHeroes ? foundHeroes.map((hero, idx) =>
-                    <Link key={idx} to={`/heroes/${hero.id}`}>
-                        <HeroCard hero={hero} />
+        <section className="SearchSuper">
+            <div className="super-results">
+                {foundSupers ? foundSupers.map((superhero, idx) =>
+                    <Link key={idx} to={`/supers/${superhero.id}`}>
+                        <SuperCard superhero={superhero} />
                     </Link>
 
                 ) : searched ?

@@ -1,22 +1,22 @@
 import "./SelectSuper.css"
 
 import { useState, useEffect } from "react"
-import { searchSuper, getSuper } from "../../utilities/super-services"
-import HeroCard from "../HeroCard/HeroCard"
+import { searchSuper, getSuper } from "../../utilities/super/super-services"
+import SuperCard from "../SuperCard/SuperCard"
 
 export default function SelectSuper({ superSearched, setSuper, battleSearched, setBattleSearched, setSuperTyping, thisSuper, id }) {
 
-    const [foundHeroes, setFoundHeroes] = useState(null)
+    const [foundSupers, setFoundSupers] = useState(null)
 
     async function handleRequest() {
         if (id >= 1 && id  <= 732) {
-            const autoHero = await getSuper(id)
-            setSuper(autoHero)
+            const autoSuper = await getSuper(id)
+            setSuper(autoSuper)
             setBattleSearched(false)
 
         } else {
             const searchResults = await searchSuper(superSearched)
-            setFoundHeroes(searchResults.results)
+            setFoundSupers(searchResults.results)
         }
 
     }
@@ -27,16 +27,16 @@ export default function SelectSuper({ superSearched, setSuper, battleSearched, s
         setBattleSearched(false)
     }, [battleSearched])
 
-    function handleClick(e, hero) {
-        setSuper(hero)
+    function handleClick(e, superhero) {
+        setSuper(superhero)
     }
 
     return (
         <section className="SelectSuper">
-            {thisSuper ? <HeroCard hero={thisSuper} /> : (
-                foundHeroes ? foundHeroes.map((hero, idx) =>
-                    <div key={idx} onClick={(e) => { handleClick(e, hero) }}>
-                        <HeroCard hero={hero} />
+            {thisSuper ? <SuperCard superhero={thisSuper} /> : (
+                foundSupers ? foundSupers.map((superhero, idx) =>
+                    <div key={idx} onClick={(e) => { handleClick(e, superhero) }}>
+                        <SuperCard superhero={superhero} />
                     </div>
 
                 ) : null

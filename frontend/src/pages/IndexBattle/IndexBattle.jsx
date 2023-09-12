@@ -2,7 +2,7 @@ import "./IndexBattle.css"
 
 import { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getAllBattles } from "../../utilities/battle-services";
+import { getAllBattles } from "../../utilities/battle/battle-services";
 
 import Loading from "../../components/Loading/Loading";
 import BattleCard from "../../components/BattleCard/BattleCard";
@@ -19,7 +19,6 @@ export default function IndexBattle({setUpdatedSearch}){
             setIndexBattles(battlesResponse);
         } else {
             console.log(battlesResponse);
-            // context update for error handling might be called
         }
 
 

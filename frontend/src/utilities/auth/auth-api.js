@@ -1,6 +1,5 @@
-import { getUserToken } from "./auth-token";
+import { getUserToken } from "../auth/auth-token";
 
-// src/utilities/auth-api.js
 const BASE_URL = `${process.env.REACT_APP_AUTH_URL}`
 
 export async function signUpUser(data){

@@ -3,9 +3,9 @@ import { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../data";
 import { useParams, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { getSuper } from "../../utilities/super-services";
-import { getUser } from "../../utilities/auth-services";
-import { getUserBattles } from "../../utilities/battle-services";
+import { getSuper } from "../../utilities/super/super-services";
+import { getUser } from "../../utilities/auth/auth-services";
+import { getUserBattles } from "../../utilities/battle/battle-services";
 
 import FavCard from "../../components/FavCard/FavCard";
 import BattleCard from "../../components/BattleCard/BattleCard";
@@ -26,7 +26,6 @@ export default function User({ setUpdatedSearch }) {
             setOtherUser(otherUserResponse[0]);
         } else {
             console.log(otherUserResponse);
-            // context update for error handling might be called
         }
 
         if (!otherUserResponse[0]) {
@@ -45,7 +44,6 @@ export default function User({ setUpdatedSearch }) {
                 setOtherUsersBattles(battlesResponse);
             } else {
                 console.log(battlesResponse);
-                // context update for error handling might be called
             }
 
             let favoritesResponse = []
@@ -67,13 +65,13 @@ export default function User({ setUpdatedSearch }) {
             {otherUser && otherUsersFavorites && otherUsersBattles ? (
                 <>
                     <h1 className="headline">Meet, {otherUser.username}!</h1>
-                    <h2 className="your-heroes-headline">{otherUser.username}'s' Favorite Supers</h2>
+                    <h2 className="your-supers-headline">{otherUser.username}'s' Favorite Supers</h2>
 
                     {otherUsersFavorites.length ? (
                         <div className="user-favorties">
                             {otherUsersFavorites.map((fav, idx) =>
-                                <Link key={idx} to={`/heroes/${fav.id}`}>
-                                    <FavCard hero={fav} />
+                                <Link key={idx} to={`/supers/${fav.id}`}>
+                                    <FavCard superhero={fav} />
                                 </Link>)}
                         </div>
                     ) : (

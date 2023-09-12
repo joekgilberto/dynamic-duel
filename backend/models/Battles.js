@@ -1,11 +1,6 @@
-///////////////////////////////
-// DEPENDENCIES
-////////////////////////////////
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
-///////////////////////////////
-// MODELS
-////////////////////////////////
+
 const BattleSchema = new Schema({
   superOneId: {type: String, required: true},
   superTwoId: {type: String, required: true},

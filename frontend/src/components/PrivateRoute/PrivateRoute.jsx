@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../data";
-import { getUserToken, decodeToken } from "../../utilities/auth-token";
+import { getUserToken, decodeToken } from "../../utilities/auth/auth-token";
 
 export default function PrivateRoute({ children }) {
     const navigate = useNavigate();

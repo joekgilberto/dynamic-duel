@@ -1,5 +1,5 @@
 import * as battleApi from './battle-api'
-import { createComment } from './comments-services'
+import { createComment } from '../comments/comments-services'
 
 export async function getAllBattles() {
     try {
@@ -31,7 +31,6 @@ export async function getUserBattles(id) {
 export async function createBattle(newBattleData) {
     try {
         const data = await battleApi.create(newBattleData)
-        // the promise from res.json()
         return data
     } catch (err) {
         return err
@@ -41,7 +40,6 @@ export async function createBattle(newBattleData) {
 export async function editBattle(id, editedBattleData) {
     try {
         const data = await battleApi.update(id, editedBattleData)
-        // the promise from res.json()
         return data
     } catch (err) {
         return err

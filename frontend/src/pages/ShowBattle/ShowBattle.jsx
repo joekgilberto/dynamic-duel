@@ -3,9 +3,9 @@ import "./ShowBattle.css"
 import { useState, useEffect, useContext } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { Link } from "react-router-dom"
-import { getBattle } from "../../utilities/battle-services"
-import { addLike, getLikes, removeLike } from "../../utilities/likes-services"
-import { getComments, addComment, removeComment } from "../../utilities/comments-services"
+import { getBattle } from "../../utilities/battle/battle-services"
+import { addLike, getLikes, removeLike } from "../../utilities/likes/likes-services"
+import { getComments, addComment, removeComment } from "../../utilities/comments/comments-services"
 import { UserContext } from "../../data"
 
 import Loading from "../../components/Loading/Loading"
@@ -123,7 +123,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
                         </div>
                     )}
                     <div className="whole-battle">
-                        <Link to={`/heroes/${battle.superOneId}`}>
+                        <Link to={`/supers/${battle.superOneId}`}>
                             <BattleChampion image={battle.superOneImage} name={battle.superOneName} />
                         </Link>
 
@@ -131,7 +131,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             <h2 className="vs">VS</h2>
                         </div>
 
-                        <Link to={`/heroes/${battle.superTwoId}`}>
+                        <Link to={`/supers/${battle.superTwoId}`}>
                             <BattleChampion image={battle.superTwoImage} name={battle.superTwoName} />
                         </Link>
 

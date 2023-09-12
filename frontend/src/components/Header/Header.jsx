@@ -2,7 +2,7 @@ import "./Header.css"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../data";
-import { clearUserToken } from "../../utilities/auth-token";
+import { clearUserToken } from "../../utilities/auth/auth-token";
 
 export default function Header() {
     const { setAuth, setUser, user } = useContext(UserContext);

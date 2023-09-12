@@ -2,14 +2,14 @@ import "./Main.css"
 
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from "react"
-import { getUserToken } from "../../utilities/auth-token"
+import { getUserToken } from "../../utilities/auth/auth-token"
 
 import PrivateRoute from "../PrivateRoute/PrivateRoute"
 import SearchBar from "../SearchBar/SearchBar"
 import Home from "../../pages/Home/Home"
 import Auth from "../../pages/Auth/Auth"
-import ShowHero from "../../pages/ShowHero/ShowHero"
-import SearchHero from "../../pages/SearchHero/SearchHero"
+import ShowSuper from "../../pages/ShowSuper/ShowSuper"
+import SearchSuper from "../../pages/SearchSuper/SearchSuper"
 import IndexBattle from "../../pages/IndexBattle/IndexBattle"
 import NewBattle from "../../pages/NewBattle/NewBattle"
 import ShowBattle from "../../pages/ShowBattle/ShowBattle"
@@ -28,8 +28,8 @@ export default function Main() {
             <Routes>
                 <Route path="/" element={<Home setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path="/auth" element={<Auth />} />
-                <Route path="/heroes/:id" element={<ShowHero setUpdatedSearch={setUpdatedSearch} />} />
-                <Route path="/heroes/search/:id" element={<SearchHero setUpdatedSearch={setUpdatedSearch} searched={searched} setSearched={setSearched} />} />
+                <Route path="/supers/:id" element={<ShowSuper setUpdatedSearch={setUpdatedSearch} />} />
+                <Route path="/supers/search/:id" element={<SearchSuper setUpdatedSearch={setUpdatedSearch} searched={searched} setSearched={setSearched} />} />
                 <Route path="/battles" element={<IndexBattle setUpdatedSearch={setUpdatedSearch} />} />
                 <Route
                     path="/battles/new/:id"

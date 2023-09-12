@@ -1,4 +1,4 @@
-.HeroCard{
+.SuperCard{
     width: 300px;
     height: 375px;
     display: flex;
@@ -12,7 +12,7 @@
     box-shadow: 0px 2.5px 0 #406bb0;
 }
 
-.HeroCard>img{
+.SuperCard>img{
     width: 275px;
     height: 275px;
     object-fit: cover;
@@ -20,17 +20,17 @@
     background-color: #69a0f9;
 }
 
-.HeroCard.favorite-hero{
+.SuperCard.favorite-super{
     background-color: #ffd500ff;
     box-shadow: 0px 2.5px 0 #ffc400;
 
 }
 
-.HeroCard.favorite-hero>img{
+.SuperCard.favorite-super>img{
     background-color: #ffc400;
 }
 
-.HeroCard p{
+.SuperCard p{
     height: 100%;
     display: flex;
     justify-content: center;
@@ -45,7 +45,7 @@
     text-shadow: 0px 2.5px 0 #00000040;
 }
 
-.hero-card-fav{
+.super-card-fav{
     display: flex;
     justify-content: center;
     align-items: center;

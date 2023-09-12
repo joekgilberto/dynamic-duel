@@ -2,8 +2,8 @@ import "./User.css"
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../data";
 import { useNavigate } from "react-router";
-import { getUserBattles } from "../../utilities/battle-services";
-import { getSuper } from "../../utilities/super-services";
+import { getUserBattles } from "../../utilities/battle/battle-services";
+import { getSuper } from "../../utilities/super/super-services";
 import { Link } from "react-router-dom";
 
 import FavCard from "../../components/FavCard/FavCard";
@@ -23,7 +23,6 @@ export default function User({ setUpdatedSearch }) {
             setUsersBattles(battlesResponse);
         } else {
             console.log(battlesResponse);
-            // context update for error handling might be called
         }
 
         let favoritesResponse = []
@@ -47,13 +46,13 @@ export default function User({ setUpdatedSearch }) {
             {user && userFavorites && usersBattles ? (
                 <>
                     <h1 className="headline">Welcome, {user.username}!</h1>
-                    <h2 className="your-heroes-headline">Your Favorite Supers</h2>
+                    <h2 className="your-supers-headline">Your Favorite Supers</h2>
 
                     
                         <div className="user-favorties">
                             {userFavorites.map((fav, idx) =>
-                                <Link key={idx} to={`/heroes/${fav.id}`}>
-                                    <FavCard hero={fav} />
+                                <Link key={idx} to={`/supers/${fav.id}`}>
+                                    <FavCard superhero={fav} />
                                 </Link>)}
                         </div>
                     <h2 className="your-battles-headline">Your Battles</h2>
