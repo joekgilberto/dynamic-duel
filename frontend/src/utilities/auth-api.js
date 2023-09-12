@@ -41,6 +41,19 @@ export async function loginUser(data){
 
 }
 
+export async function show(id) {
+    const url = `${BASE_URL}/${id}`;
+    const res = await fetch(url, {
+        method: "GET",
+    });
+    if (res.ok) {
+        return res.json();
+    } else {
+        console.log(res);
+        throw new Error(res.statusText);
+    }
+}
+
 export async function update(id,updatedData){
     const url = `${BASE_URL}/${id}`
     const options = {

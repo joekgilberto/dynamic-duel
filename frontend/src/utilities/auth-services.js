@@ -2,8 +2,8 @@ import * as authApi from "./auth-api"
 
 export async function signUp(data) {
     try {
-        const apiRegResp = await authApi.signUpUser(data)
-        return apiRegResp
+        const apiRegResponse = await authApi.signUpUser(data)
+        return apiRegResponse
     } catch (err) {
         throw err
     }
@@ -12,8 +12,17 @@ export async function signUp(data) {
 
 export async function login(data) {
     try {
-        const apiLoginResp = await authApi.loginUser(data)
-        return apiLoginResp
+        const apiLoginResponse = await authApi.loginUser(data)
+        return apiLoginResponse
+    } catch (err) {
+        throw err
+    }
+}
+
+export async function getUser(username) {
+    try {
+        const apiUserResponse = await authApi.show(username)
+        return apiUserResponse
     } catch (err) {
         throw err
     }

@@ -13,6 +13,8 @@ router.post("/login", authCtrl.login);
 
 router.get("/logout", authCtrl.logout);
 
+router.get("/:id", authCtrl.show);
+
 router.put("/:id", requireToken, authCtrl.update);
 
 
