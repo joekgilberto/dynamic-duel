@@ -11,17 +11,27 @@
 
 .your-heroes-headline,
 .your-battles-headline{
-    font-size: 36px;
-    margin: 25px 0 0 0;
-    text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-shadow: 0px 2.5px 0 #00000040;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
 }
 
 .your-heroes-headline{
-    color: #ffc400;
+    background-color: #ffd500ff;
+    box-shadow: 0px 2.5px 0 #ffc400;
 }
 
 .your-battles-headline{
-    color: #4a86e8ff;
+    background-color: #4a86e8ff;
+    box-shadow: 0px 2.5px 0 #406bb0;
 }
 
 .user-favorties{

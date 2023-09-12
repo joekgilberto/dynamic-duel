@@ -6,7 +6,7 @@ import { getUserBattles } from "../../utilities/battle-services";
 import { getSuper } from "../../utilities/super-services";
 import { Link } from "react-router-dom";
 
-import HeroCard from "../../components/HeroCard/HeroCard";
+import FavCard from "../../components/FavCard/FavCard";
 import BattleCard from "../../components/BattleCard/BattleCard";
 import Loading from "../../components/Loading/Loading";
 
@@ -53,7 +53,7 @@ export default function User({ setUpdatedSearch }) {
                         <div className="user-favorties">
                             {userFavorites.map((fav, idx) =>
                                 <Link key={idx} to={`/heroes/${fav.id}`}>
-                                    <HeroCard hero={fav} fav={true} />
+                                    <FavCard hero={fav} />
                                 </Link>)}
                         </div>
                     <h2 className="your-battles-headline">Your Battles</h2>
