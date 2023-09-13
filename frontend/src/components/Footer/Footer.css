@@ -1,0 +1,13 @@
+footer{
+    margin-top: 20px;
+}
+
+footer p{
+    font-family: "Roboto", sans-serif;
+    color: #a4810d;
+}
+
+footer a{
+    color: #a4810d;
+    text-decoration: underline !important;
+}

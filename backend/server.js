@@ -34,7 +34,7 @@ app.use("/userbattles", userBattlesRouter)
 app.use("/otherusersbattles", otherUsersBattlesRouter)
 
 app.get("/", (req, res) => {
-    res.send("hello world");
+    res.send("Dynamic Duel");
 });
 
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));

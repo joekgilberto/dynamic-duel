@@ -16,6 +16,7 @@ import EditBattle from "../../pages/EditBattle/EditBattle"
 import User from "../../pages/User/User"
 import OtherUser from "../../pages/OtherUser/OtherUser"
 import Error from "../../pages/Error/Error"
+import Footer from "../Footer/Footer"
 
 export default function Main() {
     const [updatedSearch, setUpdatedSearch] = useState('')
@@ -59,6 +60,7 @@ export default function Main() {
                 <Route path="/user/:id" element={<OtherUser setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
             </Routes>
+            <Footer />
         </main >
     )
 }
