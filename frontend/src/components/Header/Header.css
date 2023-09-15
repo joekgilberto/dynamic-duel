@@ -1,4 +1,4 @@
-header{
+header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -6,91 +6,105 @@ header{
     z-index: 100;
 }
 
-nav{
+nav {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-size: 24px;
     background-color: #ffd500ff;
     text-shadow: 0px 2.5px 0 #00000040;
     box-shadow: 0px 2.5px 2.5px #00000040;
     margin-bottom: 20px;
 }
 
-.logo{
+.logo {
+    display: none;
     width: auto;
     height: 70px;
     margin: 10px 0 10px 10px;
 }
 
-.nav-buttons{
+.nav-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 nav h2,
-button.login-button{
-    width: 80px;
-    height: 70px;
+button.login-button {
+    width: 65px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5px;
     padding-top: 5px;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 1;
     background-color: #f25555ff;
     border-radius: 15px;
     box-shadow: 0px 2.5px 0 #ba3535;
 }
 
-nav a{
+nav a {
     text-align: center;
     color: #fff;
 }
 
-.login-button{
+.login-button {
     background-color: #4a86e8ff !important;
     box-shadow: 0px 2.5px 0 #406bb0 !important;
 
 }
 
-button.login-button{
+button.login-button {
     font-family: 'Koulen', cursive;
     color: #fff;
     border: none;
 }
 
+@media only screen and (min-width: 575px) {
+    .logo {
+        display: block;
+    }
+
+    nav h2,
+    button.login-button {
+        width: 80px;
+        height: 70px;
+        font-size: 24px;
+    }
+}
+
 @media only screen and (min-width: 900px) {
 
-    header{
+    header {
         width: auto;
         height: 100vh;
     }
 
-    nav{
+    nav {
         height: 100%;
         flex-direction: column;
+        justify-content: space-between;
     }
 
-    .nav-buttons{
+    .nav-buttons {
         flex-direction: column;
-        margin: 0;
+        margin-right: 10px;
     }
 
     nav h2,
-    button.login-button{
+    button.login-button {
         width: 120px;
         height: 90px;
         margin: 10px;
         font-size: 34px;
     }
-    
-    .logo{
+
+    .logo {
         height: 100px;
         margin: 10px 0;
-    } 
+    }
 }
