@@ -55,4 +55,4 @@ Use the searchbar at the top to browse our supers on file.  Click their cards to
 
 
 ## Next Steps
-Future features include raking the top three supers on your user page.  Another is creating ad edit favorites page to search and save supers from a user page.
+Future features include raking the top three supers on your user page.  Another is creating a page specifically to edit a user's own favorites, utilizing a search funciton and the ability to save results.

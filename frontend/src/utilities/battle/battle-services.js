@@ -1,5 +1,4 @@
 import * as battleApi from './battle-api'
-import { createComment } from '../comments/comments-services'
 
 export async function getAllBattles() {
     try {
