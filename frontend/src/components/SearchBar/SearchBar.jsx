@@ -25,7 +25,7 @@ export default function SearchBar({updatedSearch, setUpdatedSearch,setSearched})
 
     return(
         <form className="SearchBar" onSubmit={handleSubmit}>
-              <input className="search-input" type="text" placeholder="Search a super.." onChange={handleChange} value={updatedSearch} />
+              <input className="search-input" type="text" placeholder="Search a super..." onChange={handleChange} value={updatedSearch} />
               <button className="search-button" type="submit"><img className="magnifying-glass" src={require("../../assets/search.png")} alt="maginifying glass" /></button>
         </form>
     )
