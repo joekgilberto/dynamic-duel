@@ -32,7 +32,7 @@ nav {
 }
 
 nav button,
-button.login-button {
+button.auth-button {
     width: 65px;
     height: 50px;
     display: flex;
@@ -42,8 +42,11 @@ button.login-button {
     padding-top: 5px;
     font-size: 20px;
     line-height: 1;
-    background-color: #f25555ff;
     border-radius: 15px;
+}
+
+nav button {
+    background-color: #f25555ff;
     box-shadow: 0px 5px 0 #ba3535;
 }
 
@@ -52,9 +55,9 @@ nav a {
     color: #fff;
 }
 
-.login-button {
-    background-color: #4a86e8ff !important;
-    box-shadow: 0px 5px 0 #406bb0 !important;
+.auth-button {
+    background-color: #4a86e8ff;
+    box-shadow: 0px 5px 0 #406bb0;
 
 }
 
@@ -71,7 +74,7 @@ nav button {
     }
 
     nav button,
-    button.login-button {
+    button.auth-button {
         width: 80px;
         height: 70px;
         font-size: 24px;
@@ -97,7 +100,7 @@ nav button {
     }
 
     nav button,
-    button.login-button {
+    button.auth-button {
         width: 120px;
         height: 90px;
         margin: 10px;
@@ -111,16 +114,49 @@ nav button {
 }
 
 @keyframes bump {
-    0%{
+    0% {
         transform: translateY(0);
+        box-shadow: 0px 5px 0 #ba3535;
     }
-    33%{
-        transform: translateY(-10px);
-    }
-    66%{
+
+    33% {
         transform: translateY(5px);
+        box-shadow: 0px 0px 0 #ba3535;
+
     }
-    100%{
+
+    66% {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 0 #ba3535;
+
+    }
+
+    100% {
         transform: translateY(0);
+        box-shadow: 0px 5px 0 #ba3535;
+    }
+}
+
+@keyframes blue-bump {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0px 5px 0 #406bb0;
+    }
+
+    33% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0 #406bb0;
+
+    }
+
+    66% {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 0 #406bb0;
+
+    }
+
+    100% {
+        transform: translateY(0);
+        box-shadow: 0px 5px 0 #406bb0;
     }
 }

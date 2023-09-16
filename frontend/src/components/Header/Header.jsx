@@ -30,7 +30,7 @@ export default function Header() {
                                 <button key={1} style={{ animation: 'bump .5s forwards .25s' }}>Battles</button>
                             </Link>
                             <Link to="/auth">
-                                <button key={0} className="login-button" style={{ animation: 'bump .5s forwards' }}>Login</button>
+                                <button key={0} className="auth-button" style={{ animation: 'blue-bump .5s forwards' }}>Login</button>
                             </Link>
                         </>
                     ) : (
@@ -45,10 +45,10 @@ export default function Header() {
                                 <button key={2} style={{ animation: 'bump .5s forwards .75s' }}>Pick A Fight</button>
                             </Link>
                             <Link to="/user">
-                                <button key={1} className="login-button" style={{ animation: 'bump .5s forwards .5s' }}>Profile</button>
+                                <button key={1} className="auth-button" style={{ animation: 'blue-bump .5s forwards .5s' }}>Profile</button>
                             </Link>
                             <Link to="/" onClick={handleLogout}>
-                                <button key={0} className="login-button" style={{ animation: 'bump .5s forwards .25s' }}>Logout</button>
+                                <button key={0} className="auth-button" style={{ animation: 'blue-bump .5s forwards .25s' }}>Logout</button>
                             </Link>
                         </>
                     )}
