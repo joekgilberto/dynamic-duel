@@ -21,28 +21,36 @@ export default function Header() {
                 </Link>
 
                 <div className="nav-buttons">
-                    <Link to="/">
-                        <h2>Home</h2>
-                    </Link>
-                    <Link to="/battles">
-                        <h2>Battles</h2>
-                    </Link>
-                    {user ? (
+                    {!user ? (
                         <>
-                            <Link to="/battles/new/0">
-                                <h2>Pick A Fight</h2>
+                            <Link to="/">
+                                <button key={2} style={{ animation: 'bump .5s forwards .5s' }}>Home</button>
                             </Link>
-                            <Link to="/user">
-                                <h2 className="login-button">Profile</h2>
+                            <Link to="/battles">
+                                <button key={1} style={{ animation: 'bump .5s forwards .25s' }}>Battles</button>
                             </Link>
-                            <Link to="/" onClick={handleLogout}>
-                                <h2 className="login-button">Logout</h2>
+                            <Link to="/auth">
+                                <button key={0} className="login-button" style={{ animation: 'bump .5s forwards' }}>Login</button>
                             </Link>
                         </>
                     ) : (
-                        <Link to="/auth">
-                            <h2 className="login-button">Login</h2>
-                        </Link>
+                        <>
+                            <Link to="/">
+                                <button key={4} style={{ animation: 'bump .5s forwards 1.25s' }}>Home</button>
+                            </Link>
+                            <Link to="/battles">
+                                <button key={3} style={{ animation: 'bump .5s forwards 1s' }}>Battles</button>
+                            </Link>
+                            <Link to="/battles/new/0">
+                                <button key={2} style={{ animation: 'bump .5s forwards .75s' }}>Pick A Fight</button>
+                            </Link>
+                            <Link to="/user">
+                                <button key={1} className="login-button" style={{ animation: 'bump .5s forwards .5s' }}>Profile</button>
+                            </Link>
+                            <Link to="/" onClick={handleLogout}>
+                                <button key={0} className="login-button" style={{ animation: 'bump .5s forwards .25s' }}>Logout</button>
+                            </Link>
+                        </>
                     )}
                 </div>
             </nav>

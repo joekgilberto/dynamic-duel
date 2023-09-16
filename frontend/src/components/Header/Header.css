@@ -31,7 +31,7 @@ nav {
     margin-right: 0px;
 }
 
-nav h2,
+nav button,
 button.login-button {
     width: 65px;
     height: 50px;
@@ -44,7 +44,7 @@ button.login-button {
     line-height: 1;
     background-color: #f25555ff;
     border-radius: 15px;
-    box-shadow: 0px 2.5px 0 #ba3535;
+    box-shadow: 0px 5px 0 #ba3535;
 }
 
 nav a {
@@ -54,14 +54,15 @@ nav a {
 
 .login-button {
     background-color: #4a86e8ff !important;
-    box-shadow: 0px 2.5px 0 #406bb0 !important;
+    box-shadow: 0px 5px 0 #406bb0 !important;
 
 }
 
-button.login-button {
+nav button {
     font-family: 'Koulen', cursive;
     color: #fff;
     border: none;
+    /* animation: bump .5s forwards; */
 }
 
 @media only screen and (min-width: 575px) {
@@ -69,7 +70,7 @@ button.login-button {
         display: block;
     }
 
-    nav h2,
+    nav button,
     button.login-button {
         width: 80px;
         height: 70px;
@@ -95,7 +96,7 @@ button.login-button {
         margin-right: 10px;
     }
 
-    nav h2,
+    nav button,
     button.login-button {
         width: 120px;
         height: 90px;
@@ -106,5 +107,20 @@ button.login-button {
     .logo {
         height: 100px;
         margin: 10px 0;
+    }
+}
+
+@keyframes bump {
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(-20px);
+    }
+    66%{
+        transform: translateY(-10);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
