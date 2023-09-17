@@ -14,28 +14,26 @@ nav {
     background-color: #ffd500ff;
     text-shadow: 0px 2.5px 0 #00000040;
     box-shadow: 0px 2.5px 2.5px #00000040;
-    margin-bottom: 20px;
 }
 
 .logo {
     display: none;
     width: auto;
     height: 70px;
-    margin: 10px 0 10px 10px;
+    margin: 0 0 5px 0;
 }
 
 .nav-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0px;
-    margin-bottom: 20px;
+    margin: 0 0 5px 0;
 }
 
 nav button,
 button.auth-button {
     width: 65px;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +86,7 @@ nav button {
 
     .nav-buttons {
         flex-direction: column;
-        margin-right: 10px;
+        margin-bottom: 20px;
     }
 
     nav button,
