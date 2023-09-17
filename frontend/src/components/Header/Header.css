@@ -58,6 +58,11 @@ nav button {
 
 }
 
+nav button:active{
+    transform: translateY(5px) !important;
+    box-shadow: none !important;
+}
+
 @media only screen and (min-width: 575px) {
     .logo {
         display: block;
