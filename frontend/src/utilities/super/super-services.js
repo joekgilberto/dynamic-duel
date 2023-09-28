@@ -1,5 +1,4 @@
 import * as superApi from './super-api'
-import * as tools from "../tools"
 
 export async function getEightSupers(){
     try {
