@@ -1,7 +1,7 @@
 # Dynamic Duel
 A full-stack application that allows users to read up on their favorite superheroes and supervillains, login, and pit them against each other in battle.
 
-Find a link to the deployed app [here](https://dynamic-duel.netlify.app/).
+Find a link to the deployed app here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
 
 ## Screenshots
 ### Home
@@ -48,7 +48,7 @@ Find a link to the deployed app [here](https://dynamic-duel.netlify.app/).
 - [Stack overflow resource for using onerror in images](https://stackoverflow.com/questions/34097560/react-js-replace-img-src-onerror)
 
 ## Getting Started
-Explore the app [here](https://dynamic-duel.netlify.app/).
+Explore the app here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
 
 Use the searchbar at the top to browse our supers on file.  Click their cards to learn more about each super.  Login (or sign up) to pick fights, pitting super against super!  Determine the outcome, fill in the battle's details, and post.  From there you can browse battles, like your favorites, and post your comments.  You even have personal user pages to see your top three supers and the battles you've created- and the user pages of others!
 
