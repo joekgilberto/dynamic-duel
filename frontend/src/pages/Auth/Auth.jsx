@@ -2,7 +2,7 @@ import "./Auth.css"
 
 import { useState, useContext } from "react";
 import { UserContext } from "../../data";
-import { setUserToken, clearUserToken, setUser, clearUser } from "../../utilities/auth/auth-token";
+import { setUserToken, clearUserToken, setUser, clearUser, getUser } from "../../utilities/auth/auth-token";
 import { login, signUp } from "../../utilities/auth/auth-services";
 
 import SignUpForm from "../../components/Auth/SignUpForm";
@@ -43,9 +43,10 @@ export default function Auth() {
             const parsedUser = await login(data);
             if (parsedUser.token) {
                 setUserToken(parsedUser.token);
-                setUser(parsedUser.user);
+                setUser(JSON.stringify(parsedUser.user));
                 setCurrentUser(parsedUser.user)
                 setAuth(parsedUser.isLoggedIn);
+
             } else {
                 throw `Server Error: ${parsedUser.err}`;
             }

@@ -13,7 +13,7 @@ export function clearUserToken(){
 };
 
 export function getUser(){
-    return localStorage.getItem("user");
+    return JSON.parse(localStorage.getItem("user"));
 };
 
 export function setUser(user){
