@@ -12,6 +12,10 @@
     box-shadow: 0px 2.5px 0 #406bb0;
 }
 
+.SuperCard:hover{
+    animation: rise .5s forwards;
+}
+
 .SuperCard>img{
     width: 275px;
     height: 275px;
