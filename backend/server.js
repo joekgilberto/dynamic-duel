@@ -37,5 +37,7 @@ app.get("/", (req, res) => {
     res.send("Dynamic Duel");
 });
 
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => console.log(`listening on PORT ${PORT}`));
 
