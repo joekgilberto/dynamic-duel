@@ -18,8 +18,8 @@
 }
 
 .login-signup-form{
-    width: 450px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -40,7 +40,7 @@
 }
 
 .auth-label-input label{
-    width: 120px;
+    width: 220px;
     height: 100%;
     margin: 0;
     padding: 9px;
@@ -70,6 +70,7 @@
 .new-password{
     color: #9c7804;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .toggle-login-signup {
@@ -130,13 +131,13 @@
 }
 
 .incorrect-div{
-    height: 38px;
+    height: 20px;
 }
 
 .incorrect{
     margin: 0;
     padding: 0 10px;
     text-align: center;
-    color: #a4810d;
+    color: #ba3535;
     font-family: 'Roboto', sans-serif;
 }
