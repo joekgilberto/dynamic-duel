@@ -13,7 +13,7 @@
 }
 
 .SuperCard:hover{
-    animation: rise .5s forwards;
+    animation: rise .25s forwards;
 }
 
 .SuperCard>img{

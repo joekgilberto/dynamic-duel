@@ -24,6 +24,7 @@ export default function Main() {
 
     return (
         <main>
+            <div className="main-content">
             <SearchBar updatedSearch={updatedSearch} setUpdatedSearch={setUpdatedSearch} setSearched={setSearched} />
             <Routes>
                 <Route path="/" element={<Home setUpdatedSearch={setUpdatedSearch} />} />
@@ -60,6 +61,7 @@ export default function Main() {
                 <Route path="/user/:id" element={<OtherUser setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
             </Routes>
+            </div>
             <Footer />
         </main >
     )

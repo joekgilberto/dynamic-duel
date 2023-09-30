@@ -108,8 +108,6 @@ REACT_APP_AUTH_URL=http://localhost:<PORT>/auth
 REACT_APP_BATTLE_URL=http://localhost:<PORT>/battles
 REACT_APP_LIKES_URL=http://localhost:<PORT>/likes
 REACT_APP_COMMENTS_URL=http://localhost:<PORT>/comments
-REACT_APP_USER_BATTLES_URL=http://localhost:<PORT>/userbattles
-REACT_APP_OTHER_USERS_BATTLES_URL=http://localhost:<PORT>/otherusersbattles
 ```
 
 ### Spin up your frontend server

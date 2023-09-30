@@ -1,4 +1,11 @@
 .SearchBar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form{
     width: 80%;
     display: flex;
     justify-content: space-between;

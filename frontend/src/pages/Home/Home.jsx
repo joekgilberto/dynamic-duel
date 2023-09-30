@@ -41,7 +41,7 @@ export default function Home({ setUpdatedSearch }) {
             <h1 className="headline">Dynamic Duel</h1>
             <div className="intro">
                 <p>
-                This full-stack MERN application is your gateway to the extraordinary world of superheroes and supervillains! It's your own personal superhero encyclopedia, available whenever you need it. We encourage you to join our vibrant community of fans, where you can share your thoughts on epic super battles, and like and comment on others' posts.
+                This full-stack MERN application is your gateway to the extraordinary world of superheroes and supervillains! It's your own personal super encyclopedia, available whenever you need it. We encourage you to join our vibrant community of fans, where you can share your thoughts on epic super battles, and like and comment on others' posts.
                 </p>
             </div>
             <div className="super-results">
