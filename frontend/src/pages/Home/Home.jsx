@@ -37,7 +37,13 @@ export default function Home({ setUpdatedSearch }) {
 
     return (
         <section className="Home">
-            <h1 className="headline">Welcome to Dynamic Duel</h1>
+            <h2>It's a bird! It's a plane! It's...</h2>
+            <h1 className="headline">Dynamic Duel</h1>
+            <div className="intro">
+                <p>
+                This full-stack MERN application is your gateway to the extraordinary world of superheroes and supervillains! It's your own personal superhero encyclopedia, available whenever you need it. We encourage you to join our vibrant community of fans, where you can share your thoughts on epic super battles, and like and comment on others'.<br/><br/>Whether you're a DC devotee, a Marvel maniac, or a fan of any other comic book universe, Dynamic Duel welcomes all fans to come together, celebrate the legends, and become part of an ever-expanding community of enthusiasts.
+                </p>
+            </div>
             <div className="super-results">
                 {homeSupers ? homeSupers.map((superhero, idx) =>
                     <Link key={idx} to={`/supers/${superhero.id}`}>

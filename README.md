@@ -1,7 +1,8 @@
 # Dynamic Duel
-A full-stack application that allows users to read up on their favorite superheroes and supervillains, login, and pit them against each other in battle.
+A full-stack MERN application that allows users to read up on their favorite superheroes and supervillains and make posts about them.  Utilizes a React frontend with AJAX API calls to the Superhero API deployed on Netlify, and an Express.js and Node.js backend deployed on Heroku interacting with a MongoDB database through Mongoose schemas.  Built by [Joe Gilberto](https://joekgilberto.com/).
 
-Find a link to the deployed app here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
+## Deployment
+Find the app deployed on Netlify, here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
 
 ## Screenshots
 ### Home
