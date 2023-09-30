@@ -7,9 +7,11 @@ Find the app deployed on Netlify, here: [https://dynamic-duel.netlify.app/](http
 ## Screenshots
 ### Home
 ![Home](lib/assets/README/home.png)
+As a user, I want to land on an informational home page when I visit the application.
 
 ### Show Super
 ![Show super](lib/assets/README/show-super.png)
+As a user, I want to be able to gain more information
 
 ### Battle Index
 ![Battle index](lib/assets/README/battle-index.png)

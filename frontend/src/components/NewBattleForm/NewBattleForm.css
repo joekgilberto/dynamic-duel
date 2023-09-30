@@ -33,6 +33,10 @@
     border: none;
 }
 
+.new-battle-search-button:active{
+    transform: translateY(0) !important;
+}
+
 .change-super {
     font-size: 18px;
     font-family: 'Koulen', cursive;

@@ -31,6 +31,10 @@
     border: none;
 }
 
+.search-button:active{
+    transform: translateY(0) !important;
+}
+
 .magnifying-glass{
     width: 26px;
     height: 26px;

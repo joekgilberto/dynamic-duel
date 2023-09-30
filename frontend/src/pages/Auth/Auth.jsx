@@ -2,14 +2,14 @@ import "./Auth.css"
 
 import { useState, useContext } from "react";
 import { UserContext } from "../../data";
-import { setUserToken, clearUserToken } from "../../utilities/auth/auth-token";
+import { setUserToken, clearUserToken, setUser, clearUser } from "../../utilities/auth/auth-token";
 import { login, signUp } from "../../utilities/auth/auth-services";
 
 import SignUpForm from "../../components/Auth/SignUpForm";
 import LoginForm from "../../components/Auth/LoginForm";
 
 export default function Auth() {
-    const { setAuth, setUser, user } = useContext(UserContext);
+    const { setAuth, setCurrentUser } = useContext(UserContext);
     const [returningUser, setReturningUser] = useState(true)
 
     async function handleSignUpUser(data) {
@@ -18,6 +18,7 @@ export default function Auth() {
             if (parsedUser.token) {
                 setUserToken(parsedUser.token);
                 setUser(parsedUser.user);
+                setCurrentUser(parsedUser.user)
                 setAuth(parsedUser.isLoggedIn);
                 return parsedUser
             } else {
@@ -26,6 +27,8 @@ export default function Auth() {
         } catch (err) {
             console.log(err);
             clearUserToken();
+            clearUser()
+            setCurrentUser(null)
             setAuth(false);
             return null;
         }
@@ -41,6 +44,7 @@ export default function Auth() {
             if (parsedUser.token) {
                 setUserToken(parsedUser.token);
                 setUser(parsedUser.user);
+                setCurrentUser(parsedUser.user)
                 setAuth(parsedUser.isLoggedIn);
             } else {
                 throw `Server Error: ${parsedUser.err}`;
@@ -49,6 +53,8 @@ export default function Auth() {
         } catch (err) {
             console.log(err);
             clearUserToken();
+            clearUser()
+            setCurrentUser(null)
             setAuth(false);
             return null;
         }
