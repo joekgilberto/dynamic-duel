@@ -8,6 +8,9 @@ main{
     margin-top: 115px;
 }
 
+main>div{
+    width: 100%;
+}
 .super-results{
     width: 100%;
     display: flex;

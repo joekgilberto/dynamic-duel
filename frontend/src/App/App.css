@@ -59,3 +59,14 @@ button:active{
       box-shadow: 0px 7.5px 0 #406bb0;
   }
 }
+
+@keyframes rise-yellow {
+  0%{
+      transform: translateY(0);
+      box-shadow: 0px 2.5px 0 #ffc400;
+  }
+  100%{
+      transform: translateY(-5px);
+      box-shadow: 0px 7.5px 0 #ffc400;
+  }
+}

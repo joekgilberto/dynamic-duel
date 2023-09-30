@@ -2,7 +2,7 @@ import "./BattleChampion.css"
 
 export default function BattleChampion({image,name}) {
     return (
-        <div className="show-battle-info">
+        <div className="BattleChampion">
             <div className="show-battle-display">
                 <img className="show-battle-image" src={image} alt={name} onError={({ currentTarget }) => {
                     currentTarget.onerror = null;

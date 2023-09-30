@@ -1,6 +1,6 @@
 
 
-.show-battle-info{
+.BattleChampion{
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,10 @@
     border-radius: 10px;
     background-color: #ffd500ff;
     box-shadow: 0px 2.5px 0 #ffc400;
+}
+
+.BattleChampion:hover{
+    animation: .25s rise-yellow forwards;
 }
 
 .show-battle-image{
