@@ -41,7 +41,7 @@ export default function Home({ setUpdatedSearch }) {
             <h1 className="headline">Dynamic Duel</h1>
             <div className="intro">
                 <p>
-                This full-stack MERN application is your gateway to the extraordinary world of superheroes and supervillains! It's your own personal superhero encyclopedia, available whenever you need it. We encourage you to join our vibrant community of fans, where you can share your thoughts on epic super battles, and like and comment on others'.<br/><br/>Whether you're a DC devotee, a Marvel maniac, or a fan of any other comic book universe, Dynamic Duel welcomes all fans to come together, celebrate the legends, and become part of an ever-expanding community of enthusiasts.
+                This full-stack MERN application is your gateway to the extraordinary world of superheroes and supervillains! It's your own personal superhero encyclopedia, available whenever you need it. We encourage you to join our vibrant community of fans, where you can share your thoughts on epic super battles, and like and comment on others' posts.
                 </p>
             </div>
             <div className="super-results">
