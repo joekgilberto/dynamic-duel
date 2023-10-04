@@ -16,7 +16,8 @@ async function signUp(req, res, next) {
 
         if (newUser) {
             req.body.password = cachedPW;
-            const authenticatedUserToken = createUserToken(req, newUser);
+            const authenticatedUserToken = await createUserToken(req, newUser);
+
             res.status(201).json({
                 user: newUser,
                 token: authenticatedUserToken,
@@ -78,7 +79,6 @@ async function show(req, res, next) {
     try {
       const foundUsersArr = await User.find({username: req.params.id})
       const foundUser = {username: foundUsersArr[0].username, favorites: foundUsersArr[0].favorites}
-      console.log(foundUser)
       res.status(200).json(foundUser);
     } catch (error) {
       res.status(400).json(error);

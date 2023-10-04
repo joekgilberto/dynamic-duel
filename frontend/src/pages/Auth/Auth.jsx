@@ -17,7 +17,7 @@ export default function Auth() {
             const parsedUser = await signUp(data);
             if (parsedUser.token) {
                 setUserToken(parsedUser.token);
-                setUser(parsedUser.user);
+                setUser(JSON.stringify(parsedUser.user));
                 setCurrentUser(parsedUser.user)
                 setAuth(parsedUser.isLoggedIn);
                 return parsedUser
