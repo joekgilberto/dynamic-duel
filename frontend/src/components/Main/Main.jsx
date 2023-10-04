@@ -50,7 +50,7 @@ export default function Main() {
                     }
                 />
                 <Route
-                    path="/user"
+                    path="/profile"
                     element={
                         <PrivateRoute>
                             <User setUpdatedSearch={setUpdatedSearch} />
@@ -58,7 +58,7 @@ export default function Main() {
                     }
                 />
 
-                <Route path="/user/:id" element={<OtherUser setUpdatedSearch={setUpdatedSearch} />} />
+                <Route path="/profile/:id" element={<OtherUser setUpdatedSearch={setUpdatedSearch} />} />
                 <Route path={"/*"} element={<Error setUpdatedSearch={setUpdatedSearch} />} />
             </Routes>
             </div>

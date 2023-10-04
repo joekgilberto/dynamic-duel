@@ -34,7 +34,7 @@ export default function User({ setUpdatedSearch }) {
 
             if (user) {
                 if (user.username === otherUserResponse.username) {
-                    navigate("/user")
+                    navigate("/profile")
                 }
             }
 

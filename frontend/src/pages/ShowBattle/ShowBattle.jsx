@@ -157,7 +157,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
                                 return (
                                     <div className="comment-box">
                                         <div key={idx} className={idx === (comments.comments.length - 1) ? "indiv-comment no-bottom" : "indiv-comment"}>
-                                            <Link to={`/user/${pulledComment.username}`}>
+                                            <Link to={`/profile/${pulledComment.username}`}>
                                                 <p className="username">{pulledComment.username}</p>
                                             </Link>
                                             <p>{pulledComment.textContent}</p>
@@ -181,7 +181,7 @@ export default function ShowBattle({ setUpdatedSearch }) {
                             )}
                             <button type="submit">POST</button>
                         </form>
-                        <Link to={`/user/${battle.owner.username}`}>
+                        <Link to={`/profile/${battle.owner.username}`}>
                             <p className="by">Posted by {battle.owner.username}</p>
                         </Link>
 

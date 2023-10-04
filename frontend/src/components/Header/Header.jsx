@@ -46,7 +46,7 @@ export default function Header() {
                             <Link to="/battles/new/0">
                                 <button key={2} style={{ animation: 'bump .5s forwards .75s' }}>Pick A Fight</button>
                             </Link>
-                            <Link to="/user">
+                            <Link to="/profile">
                                 <button key={1} className="auth-button" style={{ animation: 'blue-bump .5s forwards .5s' }}>Profile</button>
                             </Link>
                             <Link to="/" onClick={handleLogout}>
