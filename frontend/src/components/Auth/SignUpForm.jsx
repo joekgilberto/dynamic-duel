@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function SignUpForm({ signUp, setReturningUser }) {
-  const initialState = { username: "", password: "", reenterPassword: "" };
+  const initialState = { username: "", password: "", confirmPassword: "" };
   const [input, setInput] = useState(initialState);
   const [incorrect, setIncorrect] = useState('')
 
@@ -10,7 +10,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (input.password === input.reenterPassword) {
+    if (input.password === input.confirmPassword) {
       const createdUserToken = await signUp(input);
       if (createdUserToken) {
         if (createdUserToken.token) {
@@ -60,12 +60,12 @@ export default function SignUpForm({ signUp, setReturningUser }) {
           />
         </div>
         <div className="auth-label-input">
-          <label className="signup-password" htmlFor="password">Re-Enter Password: </label>
+          <label className="signup-password" htmlFor="password">Confirm Password: </label>
           <input
             type="password"
             id="password"
-            name="reenterPassword"
-            value={input.reenterPassword}
+            name="confirmPassword"
+            value={input.confirmPassword}
             onChange={handleChange}
             minlength="8"
             required
