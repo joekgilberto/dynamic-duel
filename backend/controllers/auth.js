@@ -1,4 +1,4 @@
-const { User, Battles } = require('../models')
+const { User } = require('../models')
 const bcrypt = require("bcrypt");
 const { createUserToken } = require("../middleware/auth");
 
