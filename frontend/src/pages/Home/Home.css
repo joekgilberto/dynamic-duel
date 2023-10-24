@@ -15,6 +15,30 @@
     margin-bottom: 0;
 }
 
+.Home .modal-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px 5px 5px;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-family: 'Koulen', cursive;
+    line-height: 1.1;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    background-color: #f25555ff;
+    box-shadow: 0px 2.5px 0 #ba3535;
+    border-radius: 10px;
+    border: none;
+}
+
+.Home .modal-button:hover{
+    animation: .25s rise-red forwards;
+    cursor: pointer;
+}
+
 .more-supers {
     width: 180px;
     height: 70px;
@@ -32,7 +56,6 @@
     color: #fff;
     border: none;
     text-shadow: 0px 2.5px 0 #00000040;
-    
 }
 
 .intro {
