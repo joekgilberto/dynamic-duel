@@ -10,5 +10,8 @@ footer p{
 
 footer a{
     color: #a4810d;
+}
+
+footer:hover a{
     text-decoration: underline !important;
 }
