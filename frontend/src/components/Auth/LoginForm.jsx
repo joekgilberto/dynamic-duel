@@ -39,6 +39,7 @@ export default function LoginForm({ login }) {
           <input
             id="username"
             name="username"
+            autoComplete="username"
             value={input.username}
             onChange={handleChange}
             required
@@ -50,6 +51,7 @@ export default function LoginForm({ login }) {
             type="password"
             id="password"
             name="password"
+            autoComplete="current-password"
             value={input.password}
             onChange={handleChange}
             required

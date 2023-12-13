@@ -43,6 +43,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
           <input
             id="username"
             name="username"
+            autoComplete="username"
             value={input.username}
             onChange={handleChange}
             required
@@ -55,6 +56,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
             type="password"
             id="password"
             name="password"
+            autoComplete="new-password"
             value={input.password}
             onChange={handleChange}
             minlength="8"
@@ -67,6 +69,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
             type="password"
             id="password"
             name="confirmPassword"
+            autoComplete="new-password"
             value={input.confirmPassword}
             onChange={handleChange}
             minlength="8"
