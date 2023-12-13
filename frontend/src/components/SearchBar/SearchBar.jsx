@@ -1,7 +1,6 @@
 import "./SearchBar.css"
 
 import { useNavigate } from "react-router";
-import { searchString } from "../../utilities/tools";
 
 export default function SearchBar({ updatedSearch, setUpdatedSearch, setSearched }) {
 
@@ -15,7 +14,7 @@ export default function SearchBar({ updatedSearch, setUpdatedSearch, setSearched
         e.preventDefault()
         try {
             setSearched(true)
-            navigate(`/supers/search/${searchString(updatedSearch)}`)
+            navigate(`/supers/search/${encodeURIComponent(updatedSearch)}`)
             setUpdatedSearch('')
         } catch (error) {
             navigate(`/`)

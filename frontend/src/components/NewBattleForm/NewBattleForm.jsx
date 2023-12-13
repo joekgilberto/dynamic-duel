@@ -1,7 +1,6 @@
 import "./NewBattleForm.css"
 
 import { useState } from "react"
-import { searchString } from "../../utilities/tools";
 
 import SelectSuper from "./SelectSuper";
 
@@ -18,7 +17,7 @@ export default function NewBattleForm({ whichOne, thisSuper, setThisSuper, id, s
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            setSuperSearched(searchString(superTyping))
+            setSuperSearched(encodeURIComponent(superTyping))
             setBattleSearched(true)
         } catch (error) {
             console.log(error)
