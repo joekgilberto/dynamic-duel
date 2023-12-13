@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function SignUpForm({ signUp, setReturningUser }) {
   const initialState = { username: "", password: "", confirmPassword: "" };
   const [input, setInput] = useState(initialState);
-  const [incorrect, setIncorrect] = useState('')
+  const [incorrect, setIncorrect] = useState(null)
 
   const navigate = useNavigate();
 
@@ -16,14 +16,16 @@ export default function SignUpForm({ signUp, setReturningUser }) {
         if (createdUserToken.token) {
           navigate("/");
         } else {
-          navigate("/auth");
+          setInput(initialState)
+          setIncorrect('Sign Up Error: Please try again.');
         }
         setInput(initialState);
       } else {
         setReturningUser(true)
       }
     } else {
-      setIncorrect('Passwords do not match.')
+      setInput(initialState)
+      setIncorrect('Sign Up Error: Passwords do not match.')
     }
   }
 
@@ -34,8 +36,8 @@ export default function SignUpForm({ signUp, setReturningUser }) {
   return (
     <div className="login-signup">
       <h1>Sign Up</h1>
-      <form className="login-signup-form" onSubmit={handleSubmit}>
-        <div className="auth-label-input">
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <div className="signup-label-input">
 
           <label htmlFor="username">Username: </label>
           <input
@@ -46,7 +48,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
             required
           />
         </div>
-        <div className="auth-label-input">
+        <div className="signup-label-input">
 
           <label className="signup-password" htmlFor="password">Password: </label>
           <input
@@ -59,7 +61,7 @@ export default function SignUpForm({ signUp, setReturningUser }) {
             required
           />
         </div>
-        <div className="auth-label-input">
+        <div className="signup-label-input">
           <label className="signup-password" htmlFor="password">Confirm Password: </label>
           <input
             type="password"
@@ -72,9 +74,11 @@ export default function SignUpForm({ signUp, setReturningUser }) {
           />
         </div>
         <p className="new-password">Password must have a minimum of eight (8) characters.</p>
-        <div className="incorrect-div">
-          <p className="incorrect">{incorrect}</p>
-        </div>
+        {incorrect ?
+          <div className="incorrect-signup">
+            <p className="incorrect">{incorrect}</p>
+          </div>
+          : null}
         <button className="login-signup-submit" type="submit">Submit</button>
       </form>
     </div>

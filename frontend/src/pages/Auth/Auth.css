@@ -17,12 +17,12 @@
     text-shadow: 0px 2.5px 0 #ba3535;
 }
 
-.login-signup-form{
+.login-form,
+.signup-form{
     width: 500px;
-    height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin: 15px;
     padding: 30px 10px 10px 10px;
@@ -31,7 +31,16 @@
     box-shadow: 0px 2.5px 0 #ffc400;
 }
 
-.auth-label-input {
+.login-form{
+    gap: 40px;
+}
+
+.signup-form{
+    gap: 30px;
+}
+
+.login-label-input,
+.signup-label-input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +48,8 @@
     border-radius: 5px;
 }
 
-.auth-label-input label{
+.login-label-input label,
+.signup-label-input label{
     width: 220px;
     height: 100%;
     margin: 0;
@@ -50,12 +60,12 @@
     font-weight: bold;
     color: #fff;
     background-color: #4a86e8ff;
-    border: none;
     border-radius:  5px 0 0 5px;
 }
 
-.auth-label-input input{
-    height: 100%;
+.login-label-input input,
+.signup-label-input input{
+    height: 44px;
     margin: 0;
     padding: 7px;
     font-size: 20px;
@@ -63,7 +73,16 @@
     border-radius:  0 5px 5px 0;
 }
 
-.auth-label-input input:focus {
+.login-label-input input{
+    width: 100%;
+}
+
+.signup-label-input input{
+    width: 55%;
+}
+
+.login-label-input input:focus,
+.signup-label-input input:focus {
     outline: none;
 }
 
@@ -130,8 +149,8 @@
     box-shadow: 0px 2.5px 0 #ba3535;
 }
 
-.incorrect-div{
-    height: 20px;
+.incorrect-login{
+    margin-bottom: 10px;
 }
 
 .incorrect{
