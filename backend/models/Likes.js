@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const likeSchema = new mongoose.Schema(
+const LikeSchema = new mongoose.Schema(
     {
         likes: {
             type: Array,
@@ -12,4 +12,4 @@ const likeSchema = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("Likes", likeSchema);
+module.exports = mongoose.model("Likes", LikeSchema);
