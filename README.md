@@ -4,6 +4,8 @@ A full-stack MERN application that allows users to read up on their favorite sup
 ## Deployment
 Find the app deployed on Netlify, here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/992e97ec-8377-48fd-b95f-e5af3d331f8b/deploy-status)](https://app.netlify.com/sites/dynamic-duel/deploys)
+
 ## Screenshots
 ### Home
 ![Home](lib/assets/README/home.png)

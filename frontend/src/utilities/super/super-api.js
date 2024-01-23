@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_API_URL;
 
 export async function index() {
-    let rando = Math.ceil(Math.random()*732)
+    const rando = Math.ceil(Math.random()*732)
     const res = await fetch(`${BASE_URL}/${rando}`, {
       method: "GET",
     });
