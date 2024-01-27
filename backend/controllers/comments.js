@@ -27,7 +27,7 @@ async function show(req, res, next) {
 
 async function destroy(req, res, next) {
   try {
-    const deletedComment = await Comments.findByIdAndRemove(req.params.id);
+    const deletedComment = await Comments.findByIdAndDelete(req.params.id);
     res.status(200).json(deletedComment);
   } catch (error) {
     res.status(400).json(error);

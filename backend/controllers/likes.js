@@ -29,7 +29,7 @@ async function show(req, res, next) {
 
 async function destroy(req, res, next) {
   try {
-    const deletedLikes = await Likes.findByIdAndRemove(req.params.id);
+    const deletedLikes = await Likes.findByIdAndDelete(req.params.id);
     res.status(200).json(deletedLikes);
   } catch (error) {
     res.status(400).json(error);

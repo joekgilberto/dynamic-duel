@@ -55,7 +55,7 @@ async function destroy(req, res, next) {
   try {
     handleValidateOwnership(req, await Battles.findById(req.params.id))
 
-    const deletedBattle = await Battles.findByIdAndRemove(req.params.id);
+    const deletedBattle = await Battles.findByIdAndDelete(req.params.id);
     res.status(200).json(deletedBattle);
   } catch (error) {
     res.status(400).json(error);

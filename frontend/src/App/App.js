@@ -6,6 +6,7 @@ import Main from '../components/Main/Main';
 import { useState, useEffect } from 'react';
 import { UserContext } from '../data';
 import { getUserToken, setUserToken, getUser } from '../utilities/auth/auth-token';
+
 function App() {
   const initUser = getUser()
   const { Provider: UserInfo } = UserContext;
