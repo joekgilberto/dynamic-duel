@@ -1,4 +1,4 @@
-import { jwt_decode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 export function getUserToken() {
     return localStorage.getItem("token");
@@ -29,5 +29,5 @@ export function clearUser() {
 };
 
 export function decodeToken(token) {
-    return jwt_decode(token);
+    return jwtDecode(token);
 }

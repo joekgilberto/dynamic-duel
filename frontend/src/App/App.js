@@ -5,7 +5,8 @@ import Main from '../components/Main/Main';
 
 import { useState, useEffect } from 'react';
 import { UserContext } from '../data';
-import { getUserToken, setUserToken, getUser } from '../utilities/auth/auth-token';
+import { getUserToken, getUser, clearUserToken, clearUser } from '../utilities/auth/auth-token';
+import { decodeToken } from '../utilities/auth/auth-token';
 
 function App() {
   const initUser = getUser()
@@ -13,10 +14,22 @@ function App() {
   const [currentUser, setCurrentUser] = useState(initUser);
   const [auth, setAuth] = useState(null)
 
-  useEffect(()=>{
+  useEffect(() => {
+    const token = getUserToken();
+    if (token) {
+      try {
+        const { exp } = decodeToken(token);
+        if (Date.now() >= exp * 1000) {
+          clearUserToken();
+          clearUser();
+        }
+      } catch (err) {
+        clearUserToken();
+        clearUser();
+      }
+    }
     setCurrentUser(getUser())
-    setUserToken(getUserToken())
-  },[])
+  }, [])
 
   return (
     <div className="App">
