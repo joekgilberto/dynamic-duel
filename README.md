@@ -1,10 +1,8 @@
 # Dynamic Duel
-A full-stack MERN application that allows users to read up on their favorite superheroes and supervillains and make posts about them.  Utilizes a React frontend with AJAX API calls to the Superhero API deployed on Netlify, and an Express.js and Node.js backend deployed on Heroku interacting with a MongoDB database structured by Mongoose schemas.  Built by [Joe Gilberto](https://joekgilberto.com/).
+A full-stack MERN application that allows users to read up on their favorite superheroes and supervillains and make posts about them.  Utilizes a React frontend with AJAX API calls to the Superhero API, and an Express.js and Node.js backend interacting with a MongoDB database structured by Mongoose schemas.  Built by [Joe Gilberto](https://joekgilberto.com/).
 
 ## Deployment
-Find the app deployed on Netlify, here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/992e97ec-8377-48fd-b95f-e5af3d331f8b/deploy-status)](https://app.netlify.com/sites/dynamic-duel/deploys)
+Not currently deployed.
 
 ## Screenshots
 ### Home
@@ -45,7 +43,7 @@ As a new user, I want to be able to sign up to create personalized data.
 
 ## Technologies Used
 
-Dynamic Duel is a MERN stack application.  In employs a [React](https://react.dev/) frontend deployed on [Netlify](https://www.netlify.com/) that interacts with a [third-party Superhero API](https://superheroapi.com/) and a [Node.js](https://nodejs.org/en) backend with a [Express.js](https://expressjs.com/) framework deployed on [Heroku](https://www.heroku.com/).  The backend interacts with a [MongoDB](https://www.mongodb.com/) database structured by [Mongoose](https://mongoosejs.com/) schemas.
+Dynamic Duel is a MERN stack application.  In employs a [React](https://react.dev/) frontend that interacts with a [third-party Superhero API](https://superheroapi.com/) and a [Node.js](https://nodejs.org/en) backend with a [Express.js](https://expressjs.com/) framework.  The backend interacts with a [MongoDB](https://www.mongodb.com/) database structured by [Mongoose](https://mongoosejs.com/) schemas.
 
 ## Attributions and Acknowledgements
 Below are specific relevant resources I referenced while building this application.
@@ -123,8 +121,6 @@ Now, you can go to localhost:3000 in your browser (Google Chrome is reccommended
 
 
 ## Current User Flow
-Explore the app here: [https://dynamic-duel.netlify.app/](https://dynamic-duel.netlify.app/)
-
 Use the searchbar at the top to browse our supers on file.  Click their cards to learn more about each super.  Login (or sign up) to pick fights, pitting super against super, and favorite your top three supers!  Determine the outcome, fill in the battle's details, and post.  From there you can browse battles, like them, and post your comments.  You even have a personal user pages to view your top three supers and the battles you've created- and the user pages of others too!
 
 ## Future Features
