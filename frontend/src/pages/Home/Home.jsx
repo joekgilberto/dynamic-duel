@@ -52,8 +52,8 @@ export default function Home({ setUpdatedSearch }) {
             ) : (
                 <button className="modal-button" onClick={()=>{setIntro(!intro)}}>Info</button>
             )}
-
-            <div className="super-results">
+            <p>Dynamic Duel is currently under construction. Please come back later, or reach out to <a href='https://joekgilberto.com/contact' target='_blank' style={{color: '#f25555ff'}}>Joe Gilberto</a> for more information!</p>
+            {/* <div className="super-results">
                 {homeSupers ? homeSupers.map((superhero, idx) =>
                     <Link key={idx} to={`/supers/${superhero.id}`}>
                         <SuperCard superhero={superhero} />
@@ -61,7 +61,7 @@ export default function Home({ setUpdatedSearch }) {
                 ) :
                     <Loading />}
             </div>
-            {homeSupers ? <button className="more-supers" onClick={handleClick}>More Supers</button> : null}
+            {homeSupers ? <button className="more-supers" onClick={handleClick}>More Supers</button> : null} */}
         </section>
     )
 }

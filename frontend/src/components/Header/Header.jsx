@@ -22,7 +22,7 @@ export default function Header() {
                     <img className="logo" src={require("../../assets/logo.png")} alt="Dynamic Duel logo" />
                 </Link>
 
-                <div className="nav-buttons">
+                {/* <div className="nav-buttons">
                     {!user ? (
                         <>
                             <Link to="/">
@@ -54,7 +54,7 @@ export default function Header() {
                             </Link>
                         </>
                     )}
-                </div>
+                </div> */}
             </nav>
         </header>
     )
