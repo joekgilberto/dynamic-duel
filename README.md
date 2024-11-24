@@ -125,5 +125,5 @@ Use the searchbar at the top to browse our supers on file.  Click their cards to
 
 ## Future Features
 Features to be added in further edits:
-- Raking the top three supers on your user page
+- Ranking the top three supers on your user page
 - Creating a page specifically to edit a user's own favorite supers, utilizing a search funciton and the ability to save results
